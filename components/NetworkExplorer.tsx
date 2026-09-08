@@ -6,17 +6,22 @@ import { Legend } from "@/components/Legend";
 import { NetworkGraph } from "@/components/NetworkGraph";
 import { RegionSelect } from "@/components/RegionSelect";
 import { buildGraph, CATEGORIES, REGIONS } from "@/lib/data";
+import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
-const DEFAULT_REGION = REGIONS.find((r) => r.code === "K")?.code ?? REGIONS[0]?.code;
-
-export function NetworkExplorer() {
-  const [regionCode, setRegionCode] = useState(DEFAULT_REGION);
+export function NetworkExplorer({ initialRegion }: { initialRegion: string }) {
+  const router = useRouter();
+  const [regionCode, setRegionCode] = useState(initialRegion);
   const [granteeStatus, setGranteeStatus] = useState<GranteeStatusFilter>("all");
   const [selectedCategories, setSelectedCategories] = useState(() => new Set(CATEGORIES));
 
   const graph = useMemo(() => buildGraph(regionCode), [regionCode]);
   const activeRegion = REGIONS.find((r) => r.code === regionCode);
+
+  function handleRegionChange(code: string) {
+    setRegionCode(code);
+    router.replace(`/regions/${code}`);
+  }
 
   const filteredGraph = useMemo(() => {
     const nodes = graph.nodes.filter(
@@ -36,7 +41,7 @@ export function NetworkExplorer() {
           {activeRegion?.label}
         </h1>
         <p className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
-          {filteredGraph.nodes.length} locations serving residents
+          {filteredGraph.nodes.length} organizations serving residents
         </p>
       </div>
 
@@ -47,7 +52,7 @@ export function NetworkExplorer() {
               <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 Region
               </h3>
-              <RegionSelect regions={REGIONS} value={regionCode} onChange={setRegionCode} />
+              <RegionSelect regions={REGIONS} value={regionCode} onChange={handleRegionChange} />
             </div>
 
             <div>
