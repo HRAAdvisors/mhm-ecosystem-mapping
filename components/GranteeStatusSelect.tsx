@@ -1,14 +1,15 @@
 "use client";
 
+import { GRANTEE_STATUS_LABELS } from "@/lib/labels";
 import type { GranteeStatus } from "@/lib/types";
 
 export type GranteeStatusFilter = GranteeStatus | "all";
 
 const OPTIONS: { value: GranteeStatusFilter; label: string }[] = [
   { value: "all", label: "All" },
-  { value: "current", label: "Current Grantee" },
-  { value: "past", label: "Past Grantee" },
-  { value: "not", label: "Not a Grantee" },
+  { value: "current", label: GRANTEE_STATUS_LABELS.current },
+  { value: "past", label: GRANTEE_STATUS_LABELS.past },
+  { value: "not", label: GRANTEE_STATUS_LABELS.not },
 ];
 
 export function GranteeStatusSelect({

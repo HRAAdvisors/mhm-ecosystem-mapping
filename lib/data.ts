@@ -93,6 +93,20 @@ function lookupFunding(name: string): string | null {
   return null;
 }
 
+/** Prefers a specific county/city the tracker cites for this org (checking its
+ *  own "Organization"-role rows first, since that's where locations are
+ *  written up in detail), falling back to the current region's label when
+ *  the tracker doesn't cite one for it. */
+function lookupServiceArea(name: string, regionLabel: string): string {
+  for (const row of ALL_ROWS) {
+    if (row.organization === name && row.locationCited) return row.locationCited;
+  }
+  for (const row of ALL_ROWS) {
+    if (row.grantee === name && row.locationCited) return row.locationCited;
+  }
+  return regionLabel;
+}
+
 function lookupActiveGrant(name: string): string | null {
   for (const row of ALL_ROWS) {
     if (row.grantee === name && row.activeGrant2026) {
@@ -148,6 +162,7 @@ function isSingleRegionOrg(name: string): boolean {
 
 export function buildGraph(regionCode: string): Graph {
   const regionalRows = ALL_ROWS.filter((row) => row.regionCode === regionCode);
+  const regionLabel = REGIONS.find((r) => r.code === regionCode)?.label ?? regionCode;
 
   const names = new Set<string>();
   for (const row of regionalRows) {
@@ -187,6 +202,7 @@ export function buildGraph(regionCode: string): Graph {
       isGrantee,
       granteeStatus: granteeStatusFor(name, isGrantee),
       locationStatus: isSingleRegionOrg(name) ? "primary" : "secondary",
+      serviceArea: lookupServiceArea(name, regionLabel),
       fundingAmount: lookupFunding(name),
       activeGrant: lookupActiveGrant(name),
       primaryRegionCodes: Array.from(touchedRegions),

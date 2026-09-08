@@ -50,6 +50,8 @@ export interface GraphNode {
   isGrantee: boolean;
   granteeStatus: GranteeStatus;
   locationStatus: "primary" | "secondary";
+  /** A county if the tracker cites one, otherwise the current region's label. */
+  serviceArea: string;
   fundingAmount: string | null;
   activeGrant: string | null;
   primaryRegionCodes: string[];

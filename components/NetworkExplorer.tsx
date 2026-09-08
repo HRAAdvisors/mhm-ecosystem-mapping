@@ -5,7 +5,7 @@ import { GranteeStatusSelect, type GranteeStatusFilter } from "@/components/Gran
 import { Legend } from "@/components/Legend";
 import { NetworkGraph } from "@/components/NetworkGraph";
 import { RegionSelect } from "@/components/RegionSelect";
-import { buildGraph, CATEGORIES, GENERATED_AT, REGIONS } from "@/lib/data";
+import { buildGraph, CATEGORIES, REGIONS } from "@/lib/data";
 import { useMemo, useState } from "react";
 
 const DEFAULT_REGION = REGIONS.find((r) => r.code === "K")?.code ?? REGIONS[0]?.code;
@@ -36,9 +36,7 @@ export function NetworkExplorer() {
           {activeRegion?.label}
         </h1>
         <p className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
-          {filteredGraph.nodes.length} of {graph.nodes.length} organizations shown &middot;{" "}
-          {filteredGraph.links.length} documented relationships
-          {GENERATED_AT ? ` · tracker data as of ${GENERATED_AT}` : ""}
+          {filteredGraph.nodes.length} locations serving residents
         </p>
       </div>
 

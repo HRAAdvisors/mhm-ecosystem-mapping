@@ -13,8 +13,8 @@ export function Legend() {
         <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           Relationship Strength
         </h3>
-        <LegendLine dash={null} width={2.4} opacity={0.85} label="Strong / Active" />
-        <LegendLine dash={null} width={1} opacity={0.45} label="Weak / Existing" />
+        <LegendLine dash={null} width={2.4} opacity={0.85} label="Active" />
+        <LegendLine dash={null} width={1} opacity={0.45} label="Existing" />
       </div>
 
       <div className="border-t border-border pt-4">

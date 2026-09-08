@@ -1,6 +1,7 @@
 "use client";
 
 import { colorForCategory, dashForRelationshipType, styleForRelationshipStrength, textColorForFill } from "@/lib/colors";
+import { GRANTEE_STATUS_LABELS, relationshipStrengthLabel } from "@/lib/labels";
 import type { Graph, GraphNode } from "@/lib/types";
 import * as d3 from "d3";
 import { useEffect, useRef, useState } from "react";
@@ -179,12 +180,14 @@ export function NetworkGraph({ graph }: { graph: Graph }) {
         "collide",
         d3.forceCollide<SimNode>((d) => radius(d.id) + 14),
       )
-      // More damping (default 0.4) so a big, busy region settles instead of
-      // oscillating/overshooting on every tick, and a slightly faster decay
-      // (default ~0.0228) so it reaches a calm rest sooner rather than
-      // visibly jittering at low energy for a long tail.
-      .velocityDecay(0.55)
-      .alphaDecay(0.035);
+      // Heavy damping (default 0.4) so nodes settle instead of oscillating/
+      // overshooting on every tick, a faster decay (default ~0.0228) so it
+      // reaches a calm rest sooner, and a reduced starting alpha (default 1)
+      // since the spiral seeding above already gives the sim a reasonable
+      // layout to refine rather than one it needs a lot of energy to escape.
+      .velocityDecay(0.72)
+      .alphaDecay(0.05)
+      .alpha(0.6);
 
     const link = root
       .append("g")
@@ -207,10 +210,14 @@ export function NetworkGraph({ graph }: { graph: Graph }) {
       .attr("stroke", "var(--foreground)")
       .attr("stroke-width", (d) => (d.isGrantee ? 2.5 : 1.2))
       .attr("stroke-dasharray", (d) => (d.locationStatus === "secondary" ? "3,3" : null))
-      .style("cursor", "grab")
+      .style("cursor", "pointer")
       .call(
         d3
           .drag<SVGCircleElement, SimNode>()
+          // A real drag has to move the pointer at least this many pixels;
+          // anything less still counts as a plain click, so click-to-zoom
+          // below fires reliably even with a slightly unsteady click.
+          .clickDistance(6)
           .on("start", (event, d) => {
             if (!event.active) simulation.alphaTarget(0.25).restart();
             d.fx = d.x;
@@ -226,8 +233,15 @@ export function NetworkGraph({ graph }: { graph: Graph }) {
             d.fy = null;
           }),
       )
+      .on("click", (event, d) => {
+        const targetScale = 2.2;
+        const transform = d3.zoomIdentity
+          .translate(WIDTH / 2, HEIGHT / 2)
+          .scale(targetScale)
+          .translate(-d.x, -d.y);
+        svg.transition().duration(500).call(zoomBehavior.transform, transform);
+      })
       .on("mouseenter", function (event, d) {
-        d3.select(this).attr("opacity", 0.85);
         const [x, y] = d3.pointer(event, svgRef.current?.parentElement);
         setTooltip({ node: d, x, y });
       })
@@ -236,7 +250,6 @@ export function NetworkGraph({ graph }: { graph: Graph }) {
         setTooltip((prev) => (prev ? { ...prev, x, y } : prev));
       })
       .on("mouseleave", function () {
-        d3.select(this).attr("opacity", 1);
         setTooltip(null);
       });
 
@@ -331,11 +344,8 @@ function Tooltip({ state }: { state: TooltipState }) {
       <div className="mb-1 text-sm font-semibold text-foreground">{node.id}</div>
       <dl className="space-y-1">
         <Row label="Category" value={node.category} />
-        <Row label="Is Grantee?" value={node.isGrantee ? "Yes" : "No"} />
-        <Row label="Location" value={node.locationStatus === "primary" ? "Primary service area" : "Secondary service area"} />
-        {node.fundingAmount && <Row label="Grantee Funding Amount" value={node.fundingAmount} />}
-        {node.activeGrant && <Row label="Active Grant (2026)?" value={node.activeGrant} />}
-        {node.notes && <Row label="Notes / Flags" value={node.notes} />}
+        <Row label="Grantee Status" value={GRANTEE_STATUS_LABELS[node.granteeStatus]} />
+        <Row label="Primary Service Area" value={node.serviceArea} />
       </dl>
       {node.connections.length > 0 && (
         <div className="mt-2 border-t border-border pt-2">
@@ -345,7 +355,7 @@ function Tooltip({ state }: { state: TooltipState }) {
               <li key={i} className="text-muted-foreground">
                 {c.direction === "outgoing" ? "→ " : "← "}
                 {c.other}
-                <span className="text-muted-foreground/70"> ({c.relationshipStrength ?? "—"})</span>
+                <span className="text-muted-foreground/70"> ({relationshipStrengthLabel(c.relationshipStrength)})</span>
               </li>
             ))}
           </ul>
