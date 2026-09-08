@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  /* HR&A brand palette: Raisin, Cobalt, cool/warm neutrals, secondary accents
+     — matches mhm-broadband-infrastructure-mapping's design tokens. */
+  --raisin: #1b1b33;
+  --cobalt: #3c4ed6;
+  --teal: #2f9e8f;
+  --gold: #c99a2e;
+  --purple: #7a5fb0;
+  --red: #c4433a;
+
+  --background: #ffffff;
+  --foreground: var(--raisin);
+  --card: #ffffff;
+  --card-foreground: var(--raisin);
+  --popover: #ffffff;
+  --popover-foreground: var(--raisin);
+  --primary: var(--cobalt);
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f7;
+  --secondary-foreground: var(--raisin);
+  --muted: #f4f4f7;
+  --muted-foreground: #5a5a6e;
+  --accent: #eceffb;
+  --accent-foreground: var(--raisin);
+  --destructive: var(--red);
+  --border: #b8b8c4;
+  --input: #b8b8c4;
+  --ring: var(--cobalt);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
