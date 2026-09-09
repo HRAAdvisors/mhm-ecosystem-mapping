@@ -327,7 +327,7 @@ export function NetworkGraph({ graph }: { graph: Graph }) {
   }, [graph]);
 
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
+    <div className="relative h-full w-full overflow-hidden rounded-xl bg-card">
       <svg ref={svgRef} viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="h-full w-full" />
       {tooltip && <Tooltip state={tooltip} />}
     </div>
