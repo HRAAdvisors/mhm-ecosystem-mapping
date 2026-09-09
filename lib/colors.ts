@@ -1,23 +1,25 @@
 // Primary Service Category -> fill color. Same categorical families and hues
-// as the source Miro diagram's legend, but re-tuned so white label text sits
-// on every fill at >=4.5:1 (WCAG AA normal text) — all sit at ~4.8:1, which
-// also clears 1.4.11's 3:1 non-text minimum with room to spare — while
-// staying pairwise distinguishable from one another (hues spread >=25 degrees).
+// as the source Miro diagram's legend, pushed to a higher, more consistent
+// saturation so the palette reads as vivid rather than flat, while still
+// re-tuned so white label text sits on every fill at >=4.5:1 (WCAG AA normal
+// text) — all sit at ~4.9:1, which also clears 1.4.11's 3:1 non-text minimum
+// with room to spare — while staying pairwise distinguishable from one
+// another (hues spread >=25 degrees).
 export const CATEGORY_COLORS: Record<string, string> = {
-  "Education (Higher Ed / School)": "#86710B",
-  "Health": "#CE411D",
-  "Digital Equity / Digital Literacy": "#CA2BA2",
-  "Human & Social Services": "#25815B",
-  "Government / Municipal": "#1B79A8",
-  "Youth Development": "#7F5DD0",
-  "Community & Economic Development": "#657A24",
-  "Workforce Development": "#A2640D",
-  "Library": "#E11920",
-  "Domestic Violence / Victim Services": "#218331",
-  "Housing": "#5D67D6",
-  "Senior Services": "#AD41C8",
-  "Disability Services": "#876F37",
-  "Homeless Services": "#7B7070",
+  "Education (Higher Ed / School)": "#856F06",
+  "Health": "#D3360D",
+  "Digital Equity / Digital Literacy": "#D111A0",
+  "Human & Social Services": "#0E8152",
+  "Government / Municipal": "#0E78AC",
+  "Youth Development": "#7F52EA",
+  "Community & Economic Development": "#607A11",
+  "Workforce Development": "#A36207",
+  "Library": "#E10E16",
+  "Domestic Violence / Victim Services": "#0F8322",
+  "Housing": "#5461EC",
+  "Senior Services": "#B81CE0",
+  "Disability Services": "#8E6B19",
+  "Homeless Services": "#836B6B",
 };
 
 export const FALLBACK_CATEGORY_COLOR = "#6B6B6B"; // also clears both thresholds

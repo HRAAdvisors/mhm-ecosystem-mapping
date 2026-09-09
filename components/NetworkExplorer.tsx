@@ -4,6 +4,7 @@ import { CategoryLegend } from "@/components/CategoryLegend";
 import { GranteeStatusSelect, type GranteeStatusFilter } from "@/components/GranteeStatusSelect";
 import { Legend } from "@/components/Legend";
 import { NetworkGraph } from "@/components/NetworkGraph";
+import { OrganizationSelect } from "@/components/OrganizationSelect";
 import { RegionSelect } from "@/components/RegionSelect";
 import { buildGraph, CATEGORIES, REGIONS } from "@/lib/data";
 import { useRouter } from "next/navigation";
@@ -14,6 +15,7 @@ export function NetworkExplorer({ initialRegion }: { initialRegion: string }) {
   const [regionCode, setRegionCode] = useState(initialRegion);
   const [granteeStatus, setGranteeStatus] = useState<GranteeStatusFilter>("all");
   const [selectedCategories, setSelectedCategories] = useState(() => new Set(CATEGORIES));
+  const [focusOrgId, setFocusOrgId] = useState<string | null>(null);
   // Collapsed by default on mobile, where the panel would otherwise push the
   // graph below the fold; irrelevant on desktop, which always shows it (the
   // aside below ignores this state at the md breakpoint and up).
@@ -21,10 +23,23 @@ export function NetworkExplorer({ initialRegion }: { initialRegion: string }) {
 
   const graph = useMemo(() => buildGraph(regionCode), [regionCode]);
   const activeRegion = REGIONS.find((r) => r.code === regionCode);
+  const organizationNames = useMemo(
+    () => graph.nodes.map((n) => n.id).sort((a, b) => a.localeCompare(b)),
+    [graph],
+  );
 
   function handleRegionChange(code: string) {
     setRegionCode(code);
+    setFocusOrgId(null);
     router.replace(`/regions/${code}`);
+  }
+
+  // "Find an organization" should surface it regardless of the current
+  // filters, so jumping to it also resets them to show everything.
+  function handleOrganizationSelect(name: string) {
+    setSelectedCategories(new Set(CATEGORIES));
+    setGranteeStatus("all");
+    setFocusOrgId(name);
   }
 
   const filteredGraph = useMemo(() => {
@@ -89,6 +104,13 @@ export function NetworkExplorer({ initialRegion }: { initialRegion: string }) {
             </div>
 
             <div className="border-t border-border pt-4">
+              <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Organizations
+              </h3>
+              <OrganizationSelect organizations={organizationNames} onSelect={handleOrganizationSelect} />
+            </div>
+
+            <div className="border-t border-border pt-4">
               <CategoryLegend selected={selectedCategories} onChange={setSelectedCategories} />
             </div>
 
@@ -99,7 +121,7 @@ export function NetworkExplorer({ initialRegion }: { initialRegion: string }) {
         </aside>
 
         <div className="relative min-h-0 flex-1 p-4 sm:p-6">
-          <NetworkGraph graph={filteredGraph} />
+          <NetworkGraph graph={filteredGraph} focusNodeId={focusOrgId} />
         </div>
       </div>
     </div>

@@ -27,7 +27,7 @@ export function HeroRegionPicker({
       >
         {regions.map((region) => (
           <option key={region.code} value={region.code}>
-            {region.label} — {region.orgCount} organization{region.orgCount === 1 ? "" : "s"}
+            {region.label}
           </option>
         ))}
       </select>

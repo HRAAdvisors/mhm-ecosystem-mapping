@@ -20,28 +20,26 @@ interface SimLink extends d3.SimulationLinkDatum<SimNode> {
   relationshipStrength: string | null;
 }
 
-interface TooltipState {
-  node: GraphNode;
+interface HoverState {
+  name: string;
   x: number;
   y: number;
-}
-
-interface FittedLabel {
-  lines: string[];
-  fontSize: number;
-  lineHeight: number;
-  radius: number;
 }
 
 const WIDTH = 960;
 const HEIGHT = 680;
 const VIEW_PADDING = 48;
-const MIN_RADIUS = 24;
-const MAX_RADIUS = 60;
-const MAX_FONT = 8.5;
-const MIN_FONT = 6.5;
+const MIN_RADIUS = 10;
+const MAX_FONT = 9;
+const MIN_FONT = 5.5;
 
-function greedyWrap(text: string, maxCharsPerLine: number): string[] {
+interface FittedLabel {
+  lines: string[];
+  fontSize: number;
+  lineHeight: number;
+}
+
+function wrapLabel(text: string, maxCharsPerLine: number): string[] {
   const words = text.split(/\s+/);
   const lines: string[] = [];
   let current = "";
@@ -58,41 +56,51 @@ function greedyWrap(text: string, maxCharsPerLine: number): string[] {
   return lines;
 }
 
-/** Wraps a node's org name to fit inside its own circle, growing the circle
- *  (up to MAX_RADIUS) for longer names and shrinking the font (down to
- *  MIN_FONT) only once growing the circle stops being enough. */
-function fitLabel(text: string, baseRadius: number): FittedLabel {
+/** Fits a node's name inside its own (fixed, connectivity-driven) radius by
+ *  shrinking the font and wrapping — never by growing the circle, since size
+ *  should keep tracking connection count only. Falls back to the smallest
+ *  font with a truncated 3-line wrap if nothing fits (a long name on a tiny,
+ *  low-degree node), rather than shrinking to illegibility. */
+function fitLabelToRadius(text: string, r: number): FittedLabel {
   for (let fontSize = MAX_FONT; fontSize >= MIN_FONT; fontSize -= 0.5) {
     const avgCharWidth = fontSize * 0.56;
     const lineHeight = fontSize * 1.15;
-    // Try every radius from the node's natural (degree-based) size up to the cap.
-    for (let r = baseRadius; r <= MAX_RADIUS; r += 2) {
-      const maxCharsPerLine = Math.max(4, Math.floor((r * 2 * 0.82) / avgCharWidth));
-      const lines = greedyWrap(text, maxCharsPerLine);
-      const longest = Math.max(...lines.map((l) => l.length));
-      const halfW = (longest * avgCharWidth) / 2;
-      const halfH = (lines.length * lineHeight) / 2;
-      const needed = Math.sqrt(halfW ** 2 + halfH ** 2) / 0.82;
-      if (needed <= r) {
-        return { lines, fontSize, lineHeight, radius: Math.max(r, MIN_RADIUS) };
-      }
-    }
+    const maxCharsPerLine = Math.max(4, Math.floor((r * 2 * 0.82) / avgCharWidth));
+    const lines = wrapLabel(text, maxCharsPerLine);
+    const longest = Math.max(...lines.map((l) => l.length));
+    const halfW = (longest * avgCharWidth) / 2;
+    const halfH = (lines.length * lineHeight) / 2;
+    const needed = Math.sqrt(halfW ** 2 + halfH ** 2) / 0.82;
+    if (needed <= r) return { lines, fontSize, lineHeight };
   }
-  // Fallback: smallest font, biggest circle, truncate to 4 lines.
   const fontSize = MIN_FONT;
   const avgCharWidth = fontSize * 0.56;
   const lineHeight = fontSize * 1.15;
-  const maxCharsPerLine = Math.max(4, Math.floor((MAX_RADIUS * 2 * 0.82) / avgCharWidth));
-  let lines = greedyWrap(text, maxCharsPerLine);
-  if (lines.length > 4) {
-    lines = [...lines.slice(0, 3), `${lines[3].slice(0, maxCharsPerLine - 1)}…`];
+  const maxCharsPerLine = Math.max(4, Math.floor((r * 2 * 1.3) / avgCharWidth));
+  let lines = wrapLabel(text, maxCharsPerLine);
+  if (lines.length > 3) {
+    lines = [...lines.slice(0, 2), `${lines[2].slice(0, maxCharsPerLine - 1)}…`];
   }
-  return { lines, fontSize, lineHeight, radius: MAX_RADIUS };
+  return { lines, fontSize, lineHeight };
 }
 
-export function NetworkGraph({ graph }: { graph: Graph }) {
+function linkEndpointId(end: string | number | SimNode): string {
+  return typeof end === "object" ? end.id : String(end);
+}
+
+export function NetworkGraph({
+  graph,
+  focusNodeId,
+}: {
+  graph: Graph;
+  /** Set (to an org name present in `graph`) to programmatically zoom to and
+   *  select that node, e.g. from an "Organizations" search control. */
+  focusNodeId?: string | null;
+}) {
   const svgRef = useRef<SVGSVGElement | null>(null);
-  const [tooltip, setTooltip] = useState<TooltipState | null>(null);
+  const [hover, setHover] = useState<HoverState | null>(null);
+  const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
+  const focusNodeRef = useRef<(id: string) => void>(() => {});
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -103,15 +111,9 @@ export function NetworkGraph({ graph }: { graph: Graph }) {
       degree.set(link.target, (degree.get(link.target) ?? 0) + 1);
     }
 
-    // Node size is driven by BOTH how connected a node is (hubs read as more
-    // important) and how much text its name needs — labels live inside the
-    // circle now, so the circle has to be big enough to hold them.
-    const baseRadius = (id: string) => 20 + Math.min(degree.get(id) ?? 0, 10) * 2.4;
-    const labels = new Map<string, FittedLabel>();
-    for (const n of graph.nodes) {
-      labels.set(n.id, fitLabel(n.id, baseRadius(n.id)));
-    }
-    const radius = (id: string) => labels.get(id)?.radius ?? MIN_RADIUS;
+    // Node size reflects connectivity alone: a hub with more documented
+    // relationships reads as bigger/more important.
+    const radius = (id: string) => MIN_RADIUS + Math.min(degree.get(id) ?? 0, 12) * 2.6;
 
     // Seed positions on a sunflower-seed spiral rather than jittering everyone
     // into the same tiny box at the center. Starting a big region's ~180
@@ -170,7 +172,7 @@ export function NetworkGraph({ graph }: { graph: Graph }) {
         d3
           .forceLink<SimNode, SimLink>(links)
           .id((d) => d.id)
-          .distance((d) => radius((d.source as SimNode).id ?? (d.source as unknown as string)) + radius((d.target as SimNode).id ?? (d.target as unknown as string)) + 46)
+          .distance((d) => radius(linkEndpointId(d.source)) + radius(linkEndpointId(d.target)) + 46)
           .strength(0.55),
       )
       .force("charge", d3.forceManyBody().strength(-280).distanceMax(400))
@@ -191,14 +193,70 @@ export function NetworkGraph({ graph }: { graph: Graph }) {
 
     const link = root
       .append("g")
-      .selectAll("line")
+      .selectAll("path")
       .data(links)
-      .join("line")
-      .attr("stroke", "var(--muted-foreground)")
-      .attr("stroke-width", (d) => styleForRelationshipStrength(d.relationshipStrength).width)
-      .attr("stroke-opacity", (d) => styleForRelationshipStrength(d.relationshipStrength).opacity)
+      .join("path")
+      .attr("fill", "none")
       .attr("stroke-dasharray", (d) => dashForRelationshipType(d.relationshipType) ?? null)
       .attr("stroke-linecap", "round");
+
+    const neighborsOf = new Map<string, Set<string>>();
+    for (const l of links) {
+      const a = linkEndpointId(l.source);
+      const b = linkEndpointId(l.target);
+      (neighborsOf.get(a) ?? neighborsOf.set(a, new Set()).get(a)!).add(b);
+      (neighborsOf.get(b) ?? neighborsOf.set(b, new Set()).get(b)!).add(a);
+    }
+
+    // Selecting a node (by click, or programmatically via focusNodeId) bolds
+    // every edge touching it and fades the rest, and reveals the titles of
+    // that node and its neighbors (titles otherwise stay hidden — hover's
+    // small tooltip below is how a name shows up before then). Clicking
+    // empty canvas or pressing Escape clears all of that without resetting
+    // the current zoom/pan.
+    let selectedNodeId: string | null = null;
+    function isTouching(d: SimLink, id: string) {
+      return linkEndpointId(d.source) === id || linkEndpointId(d.target) === id;
+    }
+    function applyHighlight() {
+      link
+        .attr("stroke", (d) =>
+          selectedNodeId && isTouching(d, selectedNodeId) ? "var(--foreground)" : "var(--muted-foreground)",
+        )
+        .attr("stroke-width", (d) => {
+          const base = styleForRelationshipStrength(d.relationshipStrength).width;
+          return selectedNodeId && isTouching(d, selectedNodeId) ? base + 2 : base;
+        })
+        .attr("stroke-opacity", (d) => {
+          if (!selectedNodeId) return styleForRelationshipStrength(d.relationshipStrength).opacity;
+          return isTouching(d, selectedNodeId) ? 1 : 0.08;
+        });
+      const visible = selectedNodeId
+        ? new Set([selectedNodeId, ...(neighborsOf.get(selectedNodeId) ?? [])])
+        : null;
+      label.style("opacity", (d) => (visible && visible.has(d.id) ? 1 : 0));
+    }
+
+    function selectNode(d: SimNode) {
+      selectedNodeId = d.id;
+      applyHighlight();
+      setSelectedNode(d);
+      const targetScale = 2.2;
+      const transform = d3.zoomIdentity
+        .translate(WIDTH / 2, HEIGHT / 2)
+        .scale(targetScale)
+        .translate(-d.x, -d.y);
+      svg.transition().duration(500).call(zoomBehavior.transform, transform);
+    }
+    function clearSelection() {
+      selectedNodeId = null;
+      applyHighlight();
+      setSelectedNode(null);
+    }
+    focusNodeRef.current = (id: string) => {
+      const target = nodes.find((n) => n.id === id);
+      if (target) selectNode(target);
+    };
 
     const node = root
       .append("g")
@@ -233,39 +291,46 @@ export function NetworkGraph({ graph }: { graph: Graph }) {
             d.fy = null;
           }),
       )
-      .on("click", (event, d) => {
-        const targetScale = 2.2;
-        const transform = d3.zoomIdentity
-          .translate(WIDTH / 2, HEIGHT / 2)
-          .scale(targetScale)
-          .translate(-d.x, -d.y);
-        svg.transition().duration(500).call(zoomBehavior.transform, transform);
-      })
+      .on("click", (event, d) => selectNode(d))
       .on("mouseenter", function (event, d) {
         const [x, y] = d3.pointer(event, svgRef.current?.parentElement);
-        setTooltip({ node: d, x, y });
+        setHover({ name: d.id, x, y });
       })
       .on("mousemove", function (event) {
         const [x, y] = d3.pointer(event, svgRef.current?.parentElement);
-        setTooltip((prev) => (prev ? { ...prev, x, y } : prev));
+        setHover((prev) => (prev ? { ...prev, x, y } : prev));
       })
       .on("mouseleave", function () {
-        setTooltip(null);
+        setHover(null);
       });
 
+    // Clicking empty canvas (not a node) clears the selection/highlight and
+    // closes the organization panel; Escape does the same from anywhere.
+    svg.on("click", (event) => {
+      if (event.target !== svgRef.current) return;
+      clearSelection();
+    });
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") clearSelection();
+    }
+    window.addEventListener("keydown", onKeyDown);
+
+    // Hidden by default (see applyHighlight above) — a title only shows once
+    // its node is selected or is a neighbor of the selection; before that,
+    // hovering a node's own small tooltip is how its name is surfaced.
     const label = root
       .append("g")
       .attr("pointer-events", "none")
       .selectAll<SVGTextElement, SimNode>("text")
       .data(nodes)
       .join("text")
+      .style("opacity", 0)
       .attr("font-family", "var(--font-sans)")
       .attr("font-weight", 600)
       .attr("fill", (d) => textColorForFill(colorForCategory(d.category)))
       .attr("text-anchor", "middle")
       .each(function (d) {
-        const fit = labels.get(d.id);
-        if (!fit) return;
+        const fit = fitLabelToRadius(d.id, radius(d.id));
         const el = d3.select(this).attr("font-size", fit.fontSize);
         const startDy = -((fit.lines.length - 1) / 2) * fit.lineHeight;
         fit.lines.forEach((line, i) => {
@@ -275,6 +340,8 @@ export function NetworkGraph({ graph }: { graph: Graph }) {
             .text(line);
         });
       });
+
+    applyHighlight(); // establish the baseline (unselected) link + label styling
 
     let settled = false;
     function fitToView() {
@@ -302,11 +369,21 @@ export function NetworkGraph({ graph }: { graph: Graph }) {
     }
 
     simulation.on("tick", () => {
-      link
-        .attr("x1", (d) => (d.source as SimNode).x)
-        .attr("y1", (d) => (d.source as SimNode).y)
-        .attr("x2", (d) => (d.target as SimNode).x)
-        .attr("y2", (d) => (d.target as SimNode).y);
+      link.attr("d", (d) => {
+        const source = d.source as SimNode;
+        const target = d.target as SimNode;
+        const dx = target.x - source.x;
+        const dy = target.y - source.y;
+        const dist = Math.hypot(dx, dy) || 1;
+        // A gentle arc rather than a straight segment: bow the midpoint out
+        // perpendicular to the line by ~15% of its length, so crossing/
+        // overlapping edges between the same cluster of nodes stay visually
+        // distinguishable instead of stacking into one straight line.
+        const bow = dist * 0.15;
+        const mx = (source.x + target.x) / 2 - (dy / dist) * bow;
+        const my = (source.y + target.y) / 2 + (dx / dist) * bow;
+        return `M${source.x},${source.y} Q${mx},${my} ${target.x},${target.y}`;
+      });
 
       node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
       label.attr("transform", (d) => `translate(${d.x},${d.y})`);
@@ -323,26 +400,63 @@ export function NetworkGraph({ graph }: { graph: Graph }) {
       // the root element itself — so the remount's zoom behavior stacks on
       // top of it instead of replacing it.
       svg.on(".zoom", null);
+      svg.on("click", null);
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, [graph]);
+
+  // Runs after the effect above, in the same commit, whenever a caller (e.g.
+  // an "Organizations" search control) asks to focus a specific org — by
+  // then focusNodeRef.current is already bound to this graph's own nodes.
+  useEffect(() => {
+    if (focusNodeId) focusNodeRef.current(focusNodeId);
+  }, [focusNodeId]);
 
   return (
     <div className="relative h-full w-full overflow-hidden rounded-xl bg-card">
       <svg ref={svgRef} viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="h-full w-full" />
-      {tooltip && <Tooltip state={tooltip} />}
+      {hover && <NameTooltip x={hover.x} y={hover.y} name={hover.name} />}
+      {selectedNode && <OrganizationPanel node={selectedNode} onClose={() => setSelectedNode(null)} />}
     </div>
   );
 }
 
-function Tooltip({ state }: { state: TooltipState }) {
-  const { node, x, y } = state;
+function NameTooltip({ x, y, name }: { x: number; y: number; name: string }) {
   return (
     <div
-      className="pointer-events-none absolute z-10 w-72 rounded-lg bg-popover p-3 text-xs text-popover-foreground shadow-lg ring-1 ring-foreground/10"
-      style={{ left: x + 16, top: y + 16 }}
+      className="pointer-events-none absolute z-20"
+      style={{ left: x, top: y, transform: "translate(-50%, calc(-100% - 10px))" }}
     >
-      <div className="mb-1 text-sm font-semibold text-foreground">{node.id}</div>
-      <dl className="space-y-1">
+      <div className="relative whitespace-nowrap rounded-md bg-popover px-2.5 py-1 text-xs font-medium text-popover-foreground shadow-md ring-1 ring-foreground/10">
+        {name}
+        <div
+          className="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2"
+          style={{
+            borderLeft: "5px solid transparent",
+            borderRight: "5px solid transparent",
+            borderTop: "5px solid var(--popover)",
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function OrganizationPanel({ node, onClose }: { node: GraphNode; onClose: () => void }) {
+  return (
+    <div className="absolute top-3 right-3 bottom-3 z-10 w-64 overflow-y-auto rounded-lg bg-popover p-3 text-xs text-popover-foreground shadow-lg ring-1 ring-foreground/10 sm:w-72">
+      <div className="flex items-start justify-between gap-2">
+        <div className="text-sm font-semibold text-foreground">{node.id}</div>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="shrink-0 rounded text-muted-foreground hover:text-foreground"
+        >
+          ✕
+        </button>
+      </div>
+      <dl className="mt-2 space-y-1">
         <Row label="Category" value={node.category} />
         <Row label="Grantee Status" value={GRANTEE_STATUS_LABELS[node.granteeStatus]} />
         <Row label="Primary Service Area" value={node.serviceArea} />
@@ -350,7 +464,7 @@ function Tooltip({ state }: { state: TooltipState }) {
       {node.connections.length > 0 && (
         <div className="mt-2 border-t border-border pt-2">
           <div className="mb-1 font-medium text-foreground">Connections in this region</div>
-          <ul className="max-h-32 space-y-1 overflow-y-auto">
+          <ul className="space-y-1">
             {node.connections.map((c, i) => (
               <li key={i} className="text-muted-foreground">
                 {c.direction === "outgoing" ? "→ " : "← "}
