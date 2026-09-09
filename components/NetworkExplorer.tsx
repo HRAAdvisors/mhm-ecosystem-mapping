@@ -55,7 +55,7 @@ export function NetworkExplorer({ initialRegion }: { initialRegion: string }) {
         aria-expanded={panelOpen}
         className="flex shrink-0 items-center justify-between gap-2 border-b border-border bg-secondary/40 px-4 py-2.5 text-sm font-medium text-foreground md:hidden"
       >
-        Filters &amp; legend
+        Filters &amp; Legend
         <svg
           viewBox="0 0 20 20"
           className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform ${panelOpen ? "rotate-180" : ""}`}
