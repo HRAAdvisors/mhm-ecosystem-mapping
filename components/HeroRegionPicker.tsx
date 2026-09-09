@@ -23,7 +23,7 @@ export function HeroRegionPicker({
         value={selected}
         onChange={(e) => setSelected(e.target.value)}
         aria-label="Choose a region"
-        className="h-11 w-full rounded-full border-0 bg-white px-5 text-sm font-medium text-[var(--raisin)] shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-white/70 sm:w-auto sm:min-w-64"
+        className="h-11 w-full rounded-lg border-0 bg-white px-5 text-sm font-medium text-[var(--raisin)] shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-white/70 sm:w-auto sm:min-w-64"
       >
         {regions.map((region) => (
           <option key={region.code} value={region.code}>
@@ -33,7 +33,7 @@ export function HeroRegionPicker({
       </select>
       <button
         type="submit"
-        className="h-11 w-full shrink-0 rounded-full bg-[var(--cobalt)] px-6 text-sm font-medium text-white transition-opacity hover:opacity-90 sm:w-auto"
+        className="h-11 w-full shrink-0 rounded-lg bg-[var(--cobalt)] px-6 text-sm font-medium text-white transition-opacity hover:opacity-90 sm:w-auto"
       >
         Explore region
       </button>
