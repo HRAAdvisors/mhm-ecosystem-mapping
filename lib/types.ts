@@ -1,3 +1,5 @@
+import type { OrgKpiSummary } from "./kpi";
+
 export type TrackerSection = "relationship" | "key_regional_player";
 
 export interface TrackerRow {
@@ -46,13 +48,24 @@ export type GranteeStatus = "current" | "past" | "not";
 
 export interface GraphNode {
   id: string;
+  /** Organization Service Type: 5 broad groupings used for node color and
+   *  the category filter/legend. */
   category: string;
+  /** Service Subsector: the tracker's original, more granular "Primary
+   *  Service Category" column, shown alongside the broader category above. */
+  subsector: string;
   isGrantee: boolean;
   granteeStatus: GranteeStatus;
   locationStatus: "primary" | "secondary";
   /** A county if the tracker cites one, otherwise the current region's label. */
   serviceArea: string;
   fundingAmount: string | null;
+  /** Year(s) the funding figure covers, e.g. "2025" or "2021, 2023, 2024",
+   *  pulled from the tracker's funding-source citation. */
+  fundingYear: string | null;
+  /** Plain-language description of what the funding figure represents
+   *  (e.g. "MHM Digital Equity Program" vs. an all-MHM-programs total). */
+  fundingSourceLabel: string | null;
   activeGrant: string | null;
   primaryRegionCodes: string[];
   secondaryRegionCodes: string[];
@@ -64,6 +77,9 @@ export interface GraphNode {
     relationshipStrength: string | null;
   }[];
   notes: string | null;
+  /** KPI report history for this org (across all MHM KPI reports on file),
+   *  matched by name; null if it's never appeared in one. */
+  kpi: OrgKpiSummary | null;
   // populated by the simulation at runtime
   x?: number;
   y?: number;

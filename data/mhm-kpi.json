@@ -1,0 +1,926 @@
+{
+  "periods": [
+    "2024 Mid-Year",
+    "2024 Year-End",
+    "2025 Mid-Year",
+    "2025 Year-End",
+    "2026 Mid-Year"
+  ],
+  "orgs": {
+    "South Texas Rural Health Services, Inc.": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 262,
+        "outreachEvents": 3,
+        "organizationsEngaged": 3,
+        "connectorsHired": 4,
+        "connectorsTrained": 4,
+        "connectorSessions": 35
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 75,
+        "outreachEvents": 3,
+        "organizationsEngaged": 3,
+        "connectorsHired": 4,
+        "connectorsTrained": 4,
+        "connectorSessions": 340
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 104,
+        "outreachEvents": 2,
+        "organizationsEngaged": 2,
+        "connectorsHired": 4,
+        "connectorsTrained": 4,
+        "connectorSessions": 230
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 235,
+        "outreachEvents": 3,
+        "organizationsEngaged": 3,
+        "connectorsHired": 3,
+        "connectorsTrained": 3,
+        "connectorSessions": 215
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 223,
+        "outreachEvents": 4,
+        "organizationsEngaged": 4,
+        "connectorsHired": 4,
+        "connectorsTrained": 4,
+        "connectorSessions": 442
+      }
+    ],
+    "City of Mercedes": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 908,
+        "outreachEvents": 1,
+        "organizationsEngaged": 0,
+        "connectorsHired": 2,
+        "connectorsTrained": 2,
+        "connectorSessions": 42
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 1570,
+        "outreachEvents": 2,
+        "organizationsEngaged": 8,
+        "connectorsHired": 2,
+        "connectorsTrained": 2,
+        "connectorSessions": 68
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 847,
+        "outreachEvents": 6,
+        "organizationsEngaged": 3,
+        "connectorsHired": 2,
+        "connectorsTrained": 2,
+        "connectorSessions": 130
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 1557,
+        "outreachEvents": 8,
+        "organizationsEngaged": 8,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 71
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 710,
+        "outreachEvents": 6,
+        "organizationsEngaged": 7,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 41
+      }
+    ],
+    "MHP Salud": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 75,
+        "outreachEvents": 21,
+        "organizationsEngaged": 12,
+        "connectorsHired": 1,
+        "connectorsTrained": 4,
+        "connectorSessions": 10
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 260,
+        "outreachEvents": null,
+        "organizationsEngaged": 7,
+        "connectorsHired": 1,
+        "connectorsTrained": 0,
+        "connectorSessions": 29
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 412,
+        "outreachEvents": 14,
+        "organizationsEngaged": 11,
+        "connectorsHired": 0,
+        "connectorsTrained": 5,
+        "connectorSessions": 163
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 291,
+        "outreachEvents": 24,
+        "organizationsEngaged": 15,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 42
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 361,
+        "outreachEvents": 22,
+        "organizationsEngaged": 19,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 199
+      }
+    ],
+    "Girls Inc. of San Antonio": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 163,
+        "outreachEvents": 11,
+        "organizationsEngaged": 3,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 28
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 1100,
+        "outreachEvents": 18,
+        "organizationsEngaged": 5,
+        "connectorsHired": 0,
+        "connectorsTrained": 1,
+        "connectorSessions": 10
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 351,
+        "outreachEvents": 8,
+        "organizationsEngaged": 5,
+        "connectorsHired": 1,
+        "connectorsTrained": 10,
+        "connectorSessions": 15
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 519,
+        "outreachEvents": 20,
+        "organizationsEngaged": 7,
+        "connectorsHired": 3,
+        "connectorsTrained": 12,
+        "connectorSessions": 77
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 932,
+        "outreachEvents": 38,
+        "organizationsEngaged": 2,
+        "connectorsHired": 17,
+        "connectorsTrained": 13,
+        "connectorSessions": 33
+      }
+    ],
+    "Community Council of South Central Texas, Inc.": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 6,
+        "outreachEvents": 13,
+        "organizationsEngaged": 26,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 1
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 839,
+        "outreachEvents": 15,
+        "organizationsEngaged": 51,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 2
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 553,
+        "outreachEvents": 3,
+        "organizationsEngaged": 10,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 17
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 237,
+        "outreachEvents": 5,
+        "organizationsEngaged": 4,
+        "connectorsHired": 1,
+        "connectorsTrained": 2,
+        "connectorSessions": 43
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 981,
+        "outreachEvents": 5,
+        "organizationsEngaged": 4,
+        "connectorsHired": 1,
+        "connectorsTrained": 0,
+        "connectorSessions": 338
+      }
+    ],
+    "Goodwill Industries of Central Texas": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 31,
+        "outreachEvents": 5,
+        "organizationsEngaged": 6,
+        "connectorsHired": 1,
+        "connectorsTrained": 3,
+        "connectorSessions": 3
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 98,
+        "outreachEvents": null,
+        "organizationsEngaged": 9,
+        "connectorsHired": 1,
+        "connectorsTrained": 3,
+        "connectorSessions": 126
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 75,
+        "outreachEvents": 12,
+        "organizationsEngaged": 7,
+        "connectorsHired": 1,
+        "connectorsTrained": 7,
+        "connectorSessions": 99
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 194,
+        "outreachEvents": 23,
+        "organizationsEngaged": 9,
+        "connectorsHired": 1,
+        "connectorsTrained": 7,
+        "connectorSessions": 101
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 212,
+        "outreachEvents": 11,
+        "organizationsEngaged": 9,
+        "connectorsHired": 2,
+        "connectorsTrained": 2,
+        "connectorSessions": 86
+      }
+    ],
+    "Community Tech Network, Inc.": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 29,
+        "outreachEvents": 61,
+        "organizationsEngaged": 22,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 0
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 111,
+        "outreachEvents": 34,
+        "organizationsEngaged": 23,
+        "connectorsHired": 4,
+        "connectorsTrained": 111,
+        "connectorSessions": 34
+      }
+    ],
+    "Mission Road Developmental Center": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 488,
+        "outreachEvents": 0,
+        "organizationsEngaged": 2,
+        "connectorsHired": 2,
+        "connectorsTrained": 11,
+        "connectorSessions": 706
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 524,
+        "outreachEvents": 0,
+        "organizationsEngaged": 5,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 400
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 487,
+        "outreachEvents": 0,
+        "organizationsEngaged": 0,
+        "connectorsHired": 0,
+        "connectorsTrained": 2,
+        "connectorSessions": 28759
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 493,
+        "outreachEvents": 0,
+        "organizationsEngaged": 0,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 49440
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 611,
+        "outreachEvents": null,
+        "organizationsEngaged": null,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 53774
+      }
+    ],
+    "Sunrise Homeless Navigation Center": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 753,
+        "outreachEvents": null,
+        "organizationsEngaged": null,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 489
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 858,
+        "outreachEvents": null,
+        "organizationsEngaged": null,
+        "connectorsHired": null,
+        "connectorsTrained": 22,
+        "connectorSessions": 566
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 1775,
+        "outreachEvents": 36,
+        "organizationsEngaged": 3,
+        "connectorsHired": 2,
+        "connectorsTrained": 2,
+        "connectorSessions": 353
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 2036,
+        "outreachEvents": 26,
+        "organizationsEngaged": 3,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 310
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 3054,
+        "outreachEvents": 2,
+        "organizationsEngaged": 2,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 414
+      }
+    ],
+    "Building Promise USA": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 0,
+        "outreachEvents": 0,
+        "organizationsEngaged": 0,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 0
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 375,
+        "outreachEvents": 2,
+        "organizationsEngaged": 25,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 0
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 94,
+        "outreachEvents": 2,
+        "organizationsEngaged": 5,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 8
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 318,
+        "outreachEvents": 0,
+        "organizationsEngaged": 5,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 0
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 287,
+        "outreachEvents": 1,
+        "organizationsEngaged": 5,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 1
+      }
+    ],
+    "Brownsville Housing Opportunity Corporation": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 135,
+        "outreachEvents": 5,
+        "organizationsEngaged": 2,
+        "connectorsHired": 0,
+        "connectorsTrained": 5,
+        "connectorSessions": 11
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 180,
+        "outreachEvents": 7,
+        "organizationsEngaged": 3,
+        "connectorsHired": 0,
+        "connectorsTrained": 3,
+        "connectorSessions": 7
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 114,
+        "outreachEvents": 6,
+        "organizationsEngaged": 4,
+        "connectorsHired": 0,
+        "connectorsTrained": 3,
+        "connectorSessions": 7
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 388,
+        "outreachEvents": 10,
+        "organizationsEngaged": 3,
+        "connectorsHired": 0,
+        "connectorsTrained": 5,
+        "connectorSessions": 239
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 151,
+        "outreachEvents": 0,
+        "organizationsEngaged": 2,
+        "connectorsHired": 0,
+        "connectorsTrained": 3,
+        "connectorSessions": 33
+      }
+    ],
+    "Human-I-T": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 1665,
+        "outreachEvents": 0,
+        "organizationsEngaged": 12,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 0
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 1131,
+        "outreachEvents": null,
+        "organizationsEngaged": 21,
+        "connectorsHired": null,
+        "connectorsTrained": null,
+        "connectorSessions": null
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 3000,
+        "outreachEvents": 0,
+        "organizationsEngaged": 19,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 0
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 3420,
+        "outreachEvents": 0,
+        "organizationsEngaged": 0,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 0
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 4470,
+        "outreachEvents": 0,
+        "organizationsEngaged": 38,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 0
+      }
+    ],
+    "Restore Education": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 23,
+        "outreachEvents": 1,
+        "organizationsEngaged": 6,
+        "connectorsHired": 2,
+        "connectorsTrained": 2,
+        "connectorSessions": 4
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 214,
+        "outreachEvents": 4,
+        "organizationsEngaged": 8,
+        "connectorsHired": 2,
+        "connectorsTrained": 2,
+        "connectorSessions": 14
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 691,
+        "outreachEvents": 1,
+        "organizationsEngaged": 1,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 46
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 939,
+        "outreachEvents": 0,
+        "organizationsEngaged": 6,
+        "connectorsHired": 2,
+        "connectorsTrained": 2,
+        "connectorSessions": 54
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 2805,
+        "outreachEvents": 6,
+        "organizationsEngaged": 11,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 143
+      }
+    ],
+    "City of Pharr": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 914,
+        "outreachEvents": 11,
+        "organizationsEngaged": 26,
+        "connectorsHired": 32,
+        "connectorsTrained": 32,
+        "connectorSessions": 60
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 11184,
+        "outreachEvents": 38,
+        "organizationsEngaged": 3,
+        "connectorsHired": 3,
+        "connectorsTrained": 4,
+        "connectorSessions": 558
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 387,
+        "outreachEvents": 8,
+        "organizationsEngaged": 8,
+        "connectorsHired": 6,
+        "connectorsTrained": 27,
+        "connectorSessions": 286
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 599,
+        "outreachEvents": 16,
+        "organizationsEngaged": 8,
+        "connectorsHired": 7,
+        "connectorsTrained": 24,
+        "connectorSessions": 535
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 12955,
+        "outreachEvents": 15,
+        "organizationsEngaged": 14,
+        "connectorsHired": 8,
+        "connectorsTrained": 32,
+        "connectorSessions": 834
+      }
+    ],
+    "Family Service Association of San Antonio, Inc.": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 294,
+        "outreachEvents": 4,
+        "organizationsEngaged": 13,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 0
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 1576,
+        "outreachEvents": 13,
+        "organizationsEngaged": 14,
+        "connectorsHired": 4,
+        "connectorsTrained": 10,
+        "connectorSessions": 33
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 1225,
+        "outreachEvents": 12,
+        "organizationsEngaged": 20,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 75
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 717,
+        "outreachEvents": 9,
+        "organizationsEngaged": 11,
+        "connectorsHired": 2,
+        "connectorsTrained": 2,
+        "connectorSessions": 108
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 2253,
+        "outreachEvents": 22,
+        "organizationsEngaged": 18,
+        "connectorsHired": 6,
+        "connectorsTrained": 6,
+        "connectorSessions": 227
+      }
+    ],
+    "People's Community Clinic": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 14,
+        "outreachEvents": null,
+        "organizationsEngaged": 2,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 16
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 41,
+        "outreachEvents": null,
+        "organizationsEngaged": null,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 28
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 29,
+        "outreachEvents": null,
+        "organizationsEngaged": 3,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 21
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 27,
+        "outreachEvents": null,
+        "organizationsEngaged": null,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 26
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 52,
+        "outreachEvents": null,
+        "organizationsEngaged": null,
+        "connectorsHired": null,
+        "connectorsTrained": 0,
+        "connectorSessions": 12
+      }
+    ],
+    "Family Violence Prevention Services, Inc.": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 8,
+        "outreachEvents": 0,
+        "organizationsEngaged": 0,
+        "connectorsHired": 1,
+        "connectorsTrained": 0,
+        "connectorSessions": 1
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 116,
+        "outreachEvents": 0,
+        "organizationsEngaged": 0,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 2
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 67,
+        "outreachEvents": 0,
+        "organizationsEngaged": 0,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 2
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 27,
+        "outreachEvents": 0,
+        "organizationsEngaged": 0,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 3
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 59,
+        "outreachEvents": 0,
+        "organizationsEngaged": 0,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 0
+      }
+    ],
+    "Institute for Local Self-Reliance": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 75,
+        "outreachEvents": 3,
+        "organizationsEngaged": 145,
+        "connectorsHired": 2,
+        "connectorsTrained": 2,
+        "connectorSessions": 3
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 0,
+        "outreachEvents": 10,
+        "organizationsEngaged": 28,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": null
+      }
+    ],
+    "Empower House SA": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 154,
+        "outreachEvents": 38,
+        "organizationsEngaged": 2,
+        "connectorsHired": 1,
+        "connectorsTrained": 2,
+        "connectorSessions": 41
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 307,
+        "outreachEvents": 17,
+        "organizationsEngaged": 8,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 129
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 380,
+        "outreachEvents": 28,
+        "organizationsEngaged": 17,
+        "connectorsHired": null,
+        "connectorsTrained": 1,
+        "connectorSessions": 141
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 160,
+        "outreachEvents": 13,
+        "organizationsEngaged": 29,
+        "connectorsHired": 1,
+        "connectorsTrained": 1,
+        "connectorSessions": 121
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 319,
+        "outreachEvents": 7,
+        "organizationsEngaged": 29,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 161
+      }
+    ],
+    "Compudopt": [
+      {
+        "period": "2024 Mid-Year",
+        "individualsServed": 1205,
+        "outreachEvents": 15,
+        "organizationsEngaged": 17,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 80
+      },
+      {
+        "period": "2024 Year-End",
+        "individualsServed": 5053,
+        "outreachEvents": 7,
+        "organizationsEngaged": 19,
+        "connectorsHired": 14,
+        "connectorsTrained": 14,
+        "connectorSessions": 1717
+      },
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 9441,
+        "outreachEvents": 9,
+        "organizationsEngaged": 0,
+        "connectorsHired": 14,
+        "connectorsTrained": 14,
+        "connectorSessions": 0
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 6595,
+        "outreachEvents": 26,
+        "organizationsEngaged": 20,
+        "connectorsHired": 7,
+        "connectorsTrained": 7,
+        "connectorSessions": 1243
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 2046,
+        "outreachEvents": 10,
+        "organizationsEngaged": 0,
+        "connectorsHired": 0,
+        "connectorsTrained": 0,
+        "connectorSessions": 0
+      }
+    ],
+    "Community Tech Network, Inc. (digitalLift)": [
+      {
+        "period": "2025 Mid-Year",
+        "individualsServed": 3516,
+        "outreachEvents": 75,
+        "organizationsEngaged": 44,
+        "connectorsHired": 2,
+        "connectorsTrained": 89,
+        "connectorSessions": 267
+      },
+      {
+        "period": "2025 Year-End",
+        "individualsServed": 3580,
+        "outreachEvents": 165,
+        "organizationsEngaged": 48,
+        "connectorsHired": 0,
+        "connectorsTrained": 28,
+        "connectorSessions": 103
+      },
+      {
+        "period": "2026 Mid-Year",
+        "individualsServed": 3043,
+        "outreachEvents": 30,
+        "organizationsEngaged": 25,
+        "connectorsHired": 0,
+        "connectorsTrained": 84,
+        "connectorSessions": 170
+      }
+    ]
+  }
+}

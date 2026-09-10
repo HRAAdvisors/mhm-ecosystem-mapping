@@ -1,7 +1,14 @@
 "use client";
 
-import { colorForCategory, dashForRelationshipType, styleForRelationshipStrength, textColorForFill } from "@/lib/colors";
-import { GRANTEE_STATUS_LABELS, relationshipStrengthLabel } from "@/lib/labels";
+import {
+  colorForCategory,
+  colorForGranteeStatus,
+  dashForRelationshipType,
+  GRANTEE_LINK_WIDTH,
+  opacityForRelationshipStrength,
+} from "@/lib/colors";
+import { GRANTEE_STATUS_LABELS, LOCATION_STATUS_LABELS, relationshipStrengthLabel } from "@/lib/labels";
+import type { OrgKpiSummary } from "@/lib/kpi";
 import type { Graph, GraphNode } from "@/lib/types";
 import * as d3 from "d3";
 import { useEffect, useRef, useState } from "react";
@@ -32,6 +39,35 @@ const VIEW_PADDING = 48;
 const MIN_RADIUS = 10;
 const MAX_FONT = 9;
 const MIN_FONT = 5.5;
+// Labels sit below/above their node rather than inside it, so wrapping/
+// font-fit is keyed to a fixed notional half-width rather than each node's
+// own (often much smaller) radius. Generous enough that most org names wrap
+// to at most two lines instead of one word per line.
+const LABEL_FIT_RADIUS = 85;
+const LABEL_GAP = 4;
+
+export type SizeMode = "connections" | "grant" | "served";
+
+const SIZE_MODE_OPTIONS: { value: SizeMode; label: string }[] = [
+  { value: "connections", label: "Connections" },
+  { value: "grant", label: "Grant size" },
+  { value: "served", label: "People served" },
+];
+
+// Used for "grant"/"served" sizing when a node has no grant amount or no KPI
+// data to size by — a fixed, medium circle rather than shrinking to nothing.
+const STANDARD_RADIUS = 16;
+// Wider floor-to-ceiling spread than the "connections" mode's radius range,
+// so a grant/served value near the bottom of the pack reads as visibly
+// smaller than one near the top, not just a few pixels off.
+const SIZE_MODE_MIN_RADIUS = 3;
+const MAX_RADIUS = 58;
+
+function parseFundingAmount(value: string | null): number | null {
+  if (!value) return null;
+  const n = Number(value.replace(/[^0-9.]/g, ""));
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
 
 interface FittedLabel {
   lines: string[];
@@ -91,16 +127,35 @@ function linkEndpointId(end: string | number | SimNode): string {
 export function NetworkGraph({
   graph,
   focusNodeId,
+  onSelectionChange,
+  colorMode = "category",
 }: {
   graph: Graph;
   /** Set (to an org name present in `graph`) to programmatically zoom to and
    *  select that node, e.g. from an "Organizations" search control. */
   focusNodeId?: string | null;
+  /** Fires whenever the current selection changes — by node click, the
+   *  focusNodeId prop, or clearing (background click/Escape), with the
+   *  selected org's id or null. Lets a caller (e.g. the "Organizations"
+   *  dropdown) keep its own display in sync with the graph's selection. */
+  onSelectionChange?: (id: string | null) => void;
+  /** Which legend/filter dimension currently drives node (and label) fill
+   *  color — mirrors whichever side of the sidebar's Service Type/Grantee
+   *  Status toggle is active, so the graph's colors match what the legend
+   *  is showing. */
+  colorMode?: "category" | "granteeStatus";
 }) {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [hover, setHover] = useState<HoverState | null>(null);
   const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
+  const [sizeMode, setSizeMode] = useState<SizeMode>("connections");
   const focusNodeRef = useRef<(id: string) => void>(() => {});
+  // Mirrors `selectedNode`'s id so the effect below can restore the
+  // selection (bolded connections, revealed labels) after a rebuild
+  // triggered by toggling sizeMode/colorMode — without depending on
+  // selectedNode itself, which would make every click rebuild the whole
+  // graph.
+  const selectedNodeIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -111,9 +166,50 @@ export function NetworkGraph({
       degree.set(link.target, (degree.get(link.target) ?? 0) + 1);
     }
 
-    // Node size reflects connectivity alone: a hub with more documented
-    // relationships reads as bigger/more important.
-    const radius = (id: string) => MIN_RADIUS + Math.min(degree.get(id) ?? 0, 12) * 2.6;
+    const nodeById = new Map(graph.nodes.map((n) => [n.id, n]));
+
+    // A plain sqrt scale (area-true) reads as too subtle here — the whole
+    // point of these two modes is to make the spread between orgs obvious,
+    // so a shallower exponent (more like linear) exaggerates the difference
+    // between a small and a large value, over a wider radius range too.
+    const fundingValues = graph.nodes
+      .map((n) => parseFundingAmount(n.fundingAmount))
+      .filter((v): v is number => v != null);
+    const fundingScale = d3
+      .scalePow()
+      .exponent(0.65)
+      .domain([0, Math.max(...fundingValues, 1)])
+      .range([SIZE_MODE_MIN_RADIUS, MAX_RADIUS]);
+
+    const servedValues = graph.nodes
+      .map((n) => n.kpi?.latestIndividualsServed ?? n.kpi?.totalIndividualsServed ?? null)
+      .filter((v): v is number => v != null);
+    const servedScale = d3
+      .scalePow()
+      .exponent(0.65)
+      .domain([0, Math.max(...servedValues, 1)])
+      .range([SIZE_MODE_MIN_RADIUS, MAX_RADIUS]);
+
+    // Node size follows whichever basis the "size by" toggle selects. A
+    // node missing the relevant data (no grant, or never appears in a KPI
+    // report) gets a fixed standard size rather than shrinking away.
+    function radius(id: string): number {
+      if (sizeMode === "connections") return MIN_RADIUS + Math.min(degree.get(id) ?? 0, 12) * 2.6;
+      const n = nodeById.get(id);
+      if (sizeMode === "grant") {
+        const amount = n ? parseFundingAmount(n.fundingAmount) : null;
+        return amount != null ? fundingScale(amount) : STANDARD_RADIUS;
+      }
+      const served = n ? (n.kpi?.latestIndividualsServed ?? n.kpi?.totalIndividualsServed ?? null) : null;
+      return served != null ? servedScale(served) : STANDARD_RADIUS;
+    }
+
+    // Node/label fill follows whichever legend dimension is active in the
+    // sidebar — Organization Service Type's 5 colors, or Grantee Status's
+    // three shades of blue.
+    function fillColor(d: SimNode): string {
+      return colorMode === "granteeStatus" ? colorForGranteeStatus(d.granteeStatus) : colorForCategory(d.category);
+    }
 
     // Seed positions on a sunflower-seed spiral rather than jittering everyone
     // into the same tiny box at the center. Starting a big region's ~180
@@ -200,6 +296,12 @@ export function NetworkGraph({
       .attr("stroke-dasharray", (d) => dashForRelationshipType(d.relationshipType) ?? null)
       .attr("stroke-linecap", "round");
 
+    const granteeStatusOf = new Map(nodes.map((n) => [n.id, n.granteeStatus]));
+    function linkWidth(d: SimLink): number {
+      const isCurrentGrantee = granteeStatusOf.get(linkEndpointId(d.source)) === "current";
+      return isCurrentGrantee ? GRANTEE_LINK_WIDTH.current : GRANTEE_LINK_WIDTH.other;
+    }
+
     const neighborsOf = new Map<string, Set<string>>();
     for (const l of links) {
       const a = linkEndpointId(l.source);
@@ -214,33 +316,74 @@ export function NetworkGraph({
     // small tooltip below is how a name shows up before then). Clicking
     // empty canvas or pressing Escape clears all of that without resetting
     // the current zoom/pan.
-    let selectedNodeId: string | null = null;
+    // Restores whatever was selected before this rebuild (e.g. toggling
+    // sizeMode/colorMode) rather than always starting cleared — as long as
+    // that node still exists in this graph.
+    let selectedNodeId: string | null = selectedNodeIdRef.current;
+    if (selectedNodeId && !nodes.some((n) => n.id === selectedNodeId)) {
+      selectedNodeId = null;
+      selectedNodeIdRef.current = null;
+    }
     function isTouching(d: SimLink, id: string) {
       return linkEndpointId(d.source) === id || linkEndpointId(d.target) === id;
     }
     function applyHighlight() {
       link
-        .attr("stroke", (d) =>
-          selectedNodeId && isTouching(d, selectedNodeId) ? "var(--foreground)" : "var(--muted-foreground)",
-        )
-        .attr("stroke-width", (d) => {
-          const base = styleForRelationshipStrength(d.relationshipStrength).width;
-          return selectedNodeId && isTouching(d, selectedNodeId) ? base + 2 : base;
-        })
+        .attr("stroke", (d) => (selectedNodeId && isTouching(d, selectedNodeId) ? "#000000" : "var(--muted-foreground)"))
+        .attr("stroke-width", linkWidth)
         .attr("stroke-opacity", (d) => {
-          if (!selectedNodeId) return styleForRelationshipStrength(d.relationshipStrength).opacity;
+          if (!selectedNodeId) return opacityForRelationshipStrength(d.relationshipStrength);
           return isTouching(d, selectedNodeId) ? 1 : 0.08;
         });
-      const visible = selectedNodeId
-        ? new Set([selectedNodeId, ...(neighborsOf.get(selectedNodeId) ?? [])])
-        : null;
-      label.style("opacity", (d) => (visible && visible.has(d.id) ? 1 : 0));
+      // With nothing selected, every grantee's name is eligible to show (a
+      // standing view of who the current/past grantees are). Once something
+      // is selected, that changes to just the selected node and its direct
+      // connections — grantee or not — so the focus narrows to that org's
+      // neighborhood. Either way, a dense cluster can still have more
+      // eligible labels than fit without overlapping, so pickNonOverlapping
+      // below drops the lowest-priority ones (the selected node itself
+      // always wins; after that, higher-degree hubs win) rather than
+      // painting an unreadable pile of overlapping text.
+      const eligible = !selectedNodeId
+        ? nodes.filter((n) => n.isGrantee).map((n) => n.id)
+        : [selectedNodeId, ...(neighborsOf.get(selectedNodeId) ?? [])];
+      const priority = [...eligible].sort((a, b) => {
+        if (a === selectedNodeId) return -1;
+        if (b === selectedNodeId) return 1;
+        return (degree.get(b) ?? 0) - (degree.get(a) ?? 0);
+      });
+      const shown = pickNonOverlapping(priority);
+      labelGroup.style("opacity", (d) => (shown.has(d.id) ? 1 : 0));
+    }
+
+    // Greedily accepts labels in priority order, skipping any whose box (in
+    // current, post-settle node coordinates) overlaps one already accepted
+    // — so a crowded hub's labels don't render as an illegible pile-up.
+    function pickNonOverlapping(idsInPriorityOrder: string[]): Set<string> {
+      const accepted: { x0: number; x1: number; y0: number; y1: number }[] = [];
+      const shown = new Set<string>();
+      for (const id of idsInPriorityOrder) {
+        const n = nodes.find((nn) => nn.id === id);
+        const box = labelBoxes.get(id);
+        if (!n || !box) continue;
+        const x0 = n.x - box.width / 2;
+        const x1 = n.x + box.width / 2;
+        const y0 = n.y + box.top;
+        const y1 = y0 + box.height;
+        const overlapsAccepted = accepted.some((b) => x0 < b.x1 && x1 > b.x0 && y0 < b.y1 && y1 > b.y0);
+        if (overlapsAccepted) continue;
+        accepted.push({ x0, x1, y0, y1 });
+        shown.add(id);
+      }
+      return shown;
     }
 
     function selectNode(d: SimNode) {
       selectedNodeId = d.id;
+      selectedNodeIdRef.current = d.id;
       applyHighlight();
       setSelectedNode(d);
+      onSelectionChange?.(d.id);
       const targetScale = 2.2;
       const transform = d3.zoomIdentity
         .translate(WIDTH / 2, HEIGHT / 2)
@@ -250,8 +393,11 @@ export function NetworkGraph({
     }
     function clearSelection() {
       selectedNodeId = null;
+      selectedNodeIdRef.current = null;
       applyHighlight();
       setSelectedNode(null);
+      onSelectionChange?.(null);
+      svg.transition().duration(500).call(zoomBehavior.transform, computeFitTransform());
     }
     focusNodeRef.current = (id: string) => {
       const target = nodes.find((n) => n.id === id);
@@ -264,10 +410,10 @@ export function NetworkGraph({
       .data(nodes)
       .join("circle")
       .attr("r", (d) => radius(d.id))
-      .attr("fill", (d) => colorForCategory(d.category))
+      .attr("fill", fillColor)
       .attr("stroke", "var(--foreground)")
-      .attr("stroke-width", (d) => (d.isGrantee ? 2.5 : 1.2))
-      .attr("stroke-dasharray", (d) => (d.locationStatus === "secondary" ? "3,3" : null))
+      .attr("stroke-width", (d) => (d.isGrantee ? 2.5 : 0.75))
+      .attr("stroke-opacity", (d) => (d.isGrantee ? 1 : 0.4))
       .style("cursor", "pointer")
       .call(
         d3
@@ -276,17 +422,26 @@ export function NetworkGraph({
           // anything less still counts as a plain click, so click-to-zoom
           // below fires reliably even with a slightly unsteady click.
           .clickDistance(6)
-          .on("start", (event, d) => {
-            if (!event.active) simulation.alphaTarget(0.25).restart();
-            d.fx = d.x;
-            d.fy = d.y;
-          })
+          // d3-drag's "start"/"end" fire on every pointerdown/up regardless
+          // of clickDistance — only "drag" itself is gated on real movement,
+          // so the simulation restart (and node pin) is deferred to the
+          // first actual "drag" event instead of "start"; that way a plain
+          // click never nudges the layout. `event.active` is NOT useful as
+          // an "is this the first drag event" guard here — it reflects
+          // concurrent gesture count and is already 1 for a normal single
+          // drag by the time "drag" fires, so checking `!event.active`
+          // there is always false and the simulation was never actually
+          // restarted (the node's fx/fy kept updating, but with the sim not
+          // ticking, nothing redrew it — dragging looked "stuck" the moment
+          // the initial settle finished and ticking stopped). `d.fx == null`
+          // is the right one-time gate instead.
           .on("drag", (event, d) => {
+            if (d.fx == null && d.fy == null) simulation.alphaTarget(0.3).restart();
             d.fx = event.x;
             d.fy = event.y;
           })
           .on("end", (event, d) => {
-            if (!event.active) simulation.alphaTarget(0);
+            if (d.fx != null || d.fy != null) simulation.alphaTarget(0);
             d.fx = null;
             d.fy = null;
           }),
@@ -315,37 +470,100 @@ export function NetworkGraph({
     }
     window.addEventListener("keydown", onKeyDown);
 
-    // Hidden by default (see applyHighlight above) — a title only shows once
-    // its node is selected or is a neighbor of the selection; before that,
-    // hovering a node's own small tooltip is how its name is surfaced.
-    const label = root
+    // Hidden by default — see applyHighlight above for exactly when a
+    // label is visible. Text is colored to match the node's category fill
+    // with a white halo (a text outline, via paint-order) so it reads
+    // cleanly over the graph. Grantee names render bold.
+    const labelGroup = root
       .append("g")
       .attr("pointer-events", "none")
-      .selectAll<SVGTextElement, SimNode>("text")
+      .selectAll<SVGGElement, SimNode>("g")
       .data(nodes)
-      .join("text")
-      .style("opacity", 0)
-      .attr("font-family", "var(--font-sans)")
-      .attr("font-weight", 600)
-      .attr("fill", (d) => textColorForFill(colorForCategory(d.category)))
-      .attr("text-anchor", "middle")
-      .each(function (d) {
-        const fit = fitLabelToRadius(d.id, radius(d.id));
-        const el = d3.select(this).attr("font-size", fit.fontSize);
-        const startDy = -((fit.lines.length - 1) / 2) * fit.lineHeight;
+      .join("g")
+      .style("opacity", 0);
+
+    labelGroup.each(function () {
+      d3.select(this)
+        .append("text")
+        .attr("class", "label-text")
+        .attr("font-family", "var(--font-sans)")
+        .attr("text-anchor", "middle")
+        .attr("stroke", "#ffffff")
+        .attr("stroke-width", 3)
+        .attr("stroke-linejoin", "round")
+        .style("paint-order", "stroke fill");
+    });
+
+    // Picks whichever side (above/below the node) currently has fewer other
+    // nodes nearby, so the label tends to land over open space rather than
+    // on top of a neighboring node/label.
+    const LABEL_SIDE_SEARCH_RADIUS = 70;
+    function labelSide(d: SimNode): 1 | -1 {
+      let above = 0;
+      let below = 0;
+      for (const other of nodes) {
+        if (other === d) continue;
+        const dx = other.x - d.x;
+        const dy = other.y - d.y;
+        if (Math.abs(dx) > LABEL_SIDE_SEARCH_RADIUS || Math.abs(dy) > LABEL_SIDE_SEARCH_RADIUS) continue;
+        if (dy < 0) above++;
+        else if (dy > 0) below++;
+      }
+      return above <= below ? -1 : 1;
+    }
+
+    // Each node's label footprint (in local, node-relative coordinates) —
+    // filled in by renderLabels below and read by pickNonOverlapping to
+    // decide which of the currently-eligible labels would actually collide
+    // with one another.
+    const labelBoxes = new Map<string, { width: number; height: number; top: number }>();
+
+    // (Re)computes each label's wrap/side and redraws its tspans. Called
+    // once up front (using the seed layout) and again once the simulation
+    // settles, since the meaningful placement decision depends on final
+    // node positions, not the starting spiral.
+    function renderLabels() {
+      labelGroup.each(function (d) {
+        const g = d3.select(this);
+        const fit = fitLabelToRadius(d.id, LABEL_FIT_RADIUS);
+        const side = labelSide(d);
+        const gap = radius(d.id) + LABEL_GAP;
+        const blockTop = side === 1 ? gap : -(gap + (fit.lines.length - 1) * fit.lineHeight + fit.fontSize);
+
+        const avgCharWidth = fit.fontSize * 0.56;
+        const longest = Math.max(...fit.lines.map((l) => l.length));
+        labelBoxes.set(d.id, {
+          width: longest * avgCharWidth,
+          height: fit.lines.length * fit.lineHeight,
+          top: blockTop - fit.fontSize * 0.2,
+        });
+
+        const text = g
+          .select<SVGTextElement>("text.label-text")
+          .attr("font-size", fit.fontSize)
+          .attr("font-weight", d.isGrantee ? 700 : 500)
+          .attr("fill", fillColor(d));
+        text.selectAll("tspan").remove();
+        const startDy = blockTop + fit.fontSize * 0.8;
         fit.lines.forEach((line, i) => {
-          el.append("tspan")
+          text
+            .append("tspan")
             .attr("x", 0)
             .attr("dy", i === 0 ? startDy : fit.lineHeight)
             .text(line);
         });
       });
+    }
 
+    renderLabels();
     applyHighlight(); // establish the baseline (unselected) link + label styling
 
-    let settled = false;
-    function fitToView() {
-      if (settled || nodes.length === 0) return;
+    // Used by clearSelection's "zoom back out" — there's no automatic
+    // fit-to-view on load/settle (removed: it was firing a zoom transition
+    // right as the simulation first settled, which could land mid-gesture
+    // and leave node dragging unresponsive afterward), so this is computed
+    // fresh only when actually needed.
+    function computeFitTransform(): d3.ZoomTransform {
       const xs = nodes.map((n) => n.x);
       const ys = nodes.map((n) => n.y);
       const [minX, maxX] = [Math.min(...xs), Math.max(...xs)];
@@ -360,12 +578,15 @@ export function NetworkGraph({
       const scale = Math.min(1.3, Math.max(0.6, fitScale));
       const cx = (minX + maxX) / 2;
       const cy = (minY + maxY) / 2;
-      const transform = d3.zoomIdentity
-        .translate(WIDTH / 2, HEIGHT / 2)
-        .scale(scale)
-        .translate(-cx, -cy);
-      svg.transition().duration(400).call(zoomBehavior.transform, transform);
-      settled = true;
+      return d3.zoomIdentity.translate(WIDTH / 2, HEIGHT / 2).scale(scale).translate(-cx, -cy);
+    }
+
+    let settledOnce = false;
+    function onSettle() {
+      if (settledOnce || nodes.length === 0) return;
+      renderLabels(); // re-decide each label's above/below side now that the layout has settled
+      applyHighlight(); // re-run overlap suppression against the settled (not seed) positions
+      settledOnce = true;
     }
 
     simulation.on("tick", () => {
@@ -386,10 +607,10 @@ export function NetworkGraph({
       });
 
       node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-      label.attr("transform", (d) => `translate(${d.x},${d.y})`);
+      labelGroup.attr("transform", (d) => `translate(${d.x},${d.y})`);
     });
 
-    simulation.on("end", fitToView);
+    simulation.on("end", onSettle);
 
     return () => {
       simulation.stop();
@@ -403,7 +624,7 @@ export function NetworkGraph({
       svg.on("click", null);
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [graph]);
+  }, [graph, sizeMode, colorMode, onSelectionChange]);
 
   // Runs after the effect above, in the same commit, whenever a caller (e.g.
   // an "Organizations" search control) asks to focus a specific org — by
@@ -415,8 +636,31 @@ export function NetworkGraph({
   return (
     <div className="relative h-full w-full overflow-hidden rounded-xl bg-card">
       <svg ref={svgRef} viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="h-full w-full" />
+      <SizeModeToggle value={sizeMode} onChange={setSizeMode} />
       {hover && <NameTooltip x={hover.x} y={hover.y} name={hover.name} />}
       {selectedNode && <OrganizationPanel node={selectedNode} onClose={() => setSelectedNode(null)} />}
+    </div>
+  );
+}
+
+function SizeModeToggle({ value, onChange }: { value: SizeMode; onChange: (v: SizeMode) => void }) {
+  return (
+    <div className="absolute top-3 left-3 z-10 flex items-center gap-0.5 rounded-lg bg-popover p-0.5 text-xs shadow-md ring-1 ring-foreground/10">
+      {SIZE_MODE_OPTIONS.map((o) => (
+        <button
+          key={o.value}
+          type="button"
+          onClick={() => onChange(o.value)}
+          aria-pressed={value === o.value}
+          className={`rounded-md px-2 py-1 font-medium transition-colors ${
+            value === o.value
+              ? "bg-primary text-primary-foreground"
+              : "text-muted-foreground hover:bg-accent hover:text-foreground"
+          }`}
+        >
+          {o.label}
+        </button>
+      ))}
     </div>
   );
 }
@@ -457,10 +701,16 @@ function OrganizationPanel({ node, onClose }: { node: GraphNode; onClose: () => 
         </button>
       </div>
       <dl className="mt-2 space-y-1">
-        <Row label="Category" value={node.category} />
+        <Row label="Organization Service Type" value={node.category} />
+        <Row label="Service Subsector" value={node.subsector} />
         <Row label="Grantee Status" value={GRANTEE_STATUS_LABELS[node.granteeStatus]} />
+        {node.fundingAmount && <Row label="Grantee Funding" value={node.fundingAmount} />}
+        {node.fundingYear && <Row label="Funding Year" value={node.fundingYear} />}
+        {node.fundingSourceLabel && <Row label="Funding Source" value={node.fundingSourceLabel} />}
         <Row label="Primary Service Area" value={node.serviceArea} />
+        <Row label="Service Location" value={LOCATION_STATUS_LABELS[node.locationStatus]} />
       </dl>
+      {node.kpi && <KpiSection kpi={node.kpi} />}
       {node.connections.length > 0 && (
         <div className="mt-2 border-t border-border pt-2">
           <div className="mb-1 font-medium text-foreground">Connections in this region</div>
@@ -475,6 +725,49 @@ function OrganizationPanel({ node, onClose }: { node: GraphNode; onClose: () => 
           </ul>
         </div>
       )}
+    </div>
+  );
+}
+
+/** MHM's KPI reports (Mid-Year/Year-End surveys collected from grantees) are
+ *  each their own reporting window, not a running cumulative total — so
+ *  "lifetime" here means summed across every report on file for this org,
+ *  and the table below shows what each individual report captured. */
+function KpiSection({ kpi }: { kpi: OrgKpiSummary }) {
+  return (
+    <div className="mt-2 border-t border-border pt-2">
+      <div className="mb-1 font-medium text-foreground">KPI Reporting</div>
+      <dl className="space-y-1">
+        <Row label="Individuals Served (lifetime)" value={kpi.totalIndividualsServed.toLocaleString()} />
+        {kpi.latestPeriod && (
+          <Row
+            label={`Latest Reported (${kpi.latestPeriod})`}
+            value={(kpi.latestIndividualsServed ?? 0).toLocaleString()}
+          />
+        )}
+      </dl>
+      <div className="mt-1.5 overflow-x-auto">
+        <table className="w-full text-[10px] leading-normal">
+          <thead>
+            <tr className="text-muted-foreground">
+              <th className="pb-0.5 text-left font-medium">Period</th>
+              <th className="pb-0.5 text-right font-medium">Served</th>
+              <th className="pb-0.5 text-right font-medium">Outreach</th>
+              <th className="pb-0.5 text-right font-medium">Sessions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {kpi.records.map((r) => (
+              <tr key={r.period} className="border-t border-border/60">
+                <td className="py-0.5 text-foreground">{r.period}</td>
+                <td className="py-0.5 text-right text-foreground">{r.individualsServed ?? "—"}</td>
+                <td className="py-0.5 text-right text-foreground">{r.outreachEvents ?? "—"}</td>
+                <td className="py-0.5 text-right text-foreground">{r.connectorSessions ?? "—"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

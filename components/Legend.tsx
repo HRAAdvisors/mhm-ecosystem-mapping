@@ -19,28 +19,14 @@ export function Legend() {
 
       <div className="border-t border-border pt-4">
         <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-          Primary Service Location
-        </h3>
-        <div className="flex items-center gap-1.5 py-0.5">
-          <span className="inline-block h-3.5 w-3.5 rounded-full border-2 border-foreground/70" />
-          <span className="text-foreground/80">Primary location</span>
-        </div>
-        <div className="flex items-center gap-1.5 py-0.5">
-          <span className="inline-block h-3.5 w-3.5 rounded-full border-2 border-dashed border-foreground/70" />
-          <span className="text-foreground/80">Secondary location</span>
-        </div>
-      </div>
-
-      <div className="border-t border-border pt-4">
-        <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-          Node Border Weight
+          Node Border
         </h3>
         <div className="flex items-center gap-1.5 py-0.5">
           <span className="inline-block h-3.5 w-3.5 rounded-full border-[2.5px] border-foreground/70" />
           <span className="text-foreground/80">MHM grantee</span>
         </div>
         <div className="flex items-center gap-1.5 py-0.5">
-          <span className="inline-block h-3.5 w-3.5 rounded-full border border-foreground/70" />
+          <span className="inline-block h-3.5 w-3.5 rounded-full bg-foreground/70" />
           <span className="text-foreground/80">Partner organization</span>
         </div>
       </div>

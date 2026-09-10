@@ -1,11 +1,44 @@
 import raw from "@/data/mhm-network.json";
+import { getKpiForOrg } from "./kpi";
 import type { Graph, GraphNode, RegionMeta, TrackerDataset, TrackerRow } from "./types";
 
 const dataset = raw as TrackerDataset;
 
 export const REGIONS: RegionMeta[] = dataset.regions;
-export const CATEGORIES: string[] = dataset.categories;
 export const GENERATED_AT = dataset.generatedAt;
+
+/** The tracker's raw "Primary Service Category" column (14 values) is kept
+ *  as-is and shown in the sidepanel as "Service Subsector." This maps it to
+ *  5 broader "Organization Service Type" groupings, used for node color and
+ *  the category filter/legend. */
+const CATEGORY_MAP: Record<string, string> = {
+  "Education (Higher Ed / School)": "Education & Youth Development",
+  "Youth Development": "Education & Youth Development",
+  "Library": "Education & Youth Development",
+  "Health": "Health & Wellness",
+  "Human & Social Services": "Health & Wellness",
+  "Senior Services": "Health & Wellness",
+  "Disability Services": "Health & Wellness",
+  "Domestic Violence / Victim Services": "Health & Wellness",
+  "Homeless Services": "Health & Wellness",
+  "Housing": "Housing & Community Development",
+  "Community & Economic Development": "Housing & Community Development",
+  "Government / Municipal": "Housing & Community Development",
+  "Workforce Development": "Workforce Training",
+  "Digital Equity / Digital Literacy": "Digital Literacy and Device Support",
+};
+
+export const CATEGORIES: string[] = [
+  "Education & Youth Development",
+  "Health & Wellness",
+  "Housing & Community Development",
+  "Workforce Training",
+  "Digital Literacy and Device Support",
+];
+
+function mapCategory(raw: string): string {
+  return CATEGORY_MAP[raw] ?? raw;
+}
 
 /** Collapse spelling/punctuation variants ("Boys and Girls Clubs of Laredo" vs
  *  "Boys & Girls Clubs of Laredo", "Compudopt" vs "Compudopt (South Texas
@@ -55,7 +88,7 @@ const ALL_ROWS: TrackerRow[] = dataset.rows.map((row) => ({
 }));
 
 const NON_CATEGORY = new Set(["N/A (MHM Grantee)", "N/A - not a real organization", "Unable to classify"]);
-const GRANTEE_DEFAULT_CATEGORY = "Digital Equity / Digital Literacy";
+const GRANTEE_DEFAULT_SUBSECTOR = "Digital Equity / Digital Literacy";
 
 function isRealCategory(value: string | null): value is string {
   return !!value && !NON_CATEGORY.has(value);
@@ -65,32 +98,69 @@ function isRealFunding(value: string | null): value is string {
   return !!value && value.trim().startsWith("$");
 }
 
-/** Best-effort category for a name, found by looking at every row where it appears
- *  as the "Organization" column (which is where category is actually recorded). */
-function lookupCategory(name: string): string {
+/** Best-effort subsector (the tracker's original, raw category) for a name,
+ *  found by looking at every row where it appears as the "Organization"
+ *  column (which is where category is actually recorded). */
+function lookupSubsector(name: string): string {
   for (const row of ALL_ROWS) {
     if (row.organization === name && isRealCategory(row.primaryServiceCategory)) {
       return row.primaryServiceCategory;
     }
   }
-  return GRANTEE_DEFAULT_CATEGORY;
+  return GRANTEE_DEFAULT_SUBSECTOR;
 }
 
-/** Best-effort funding amount for a name: prefer a row where it appears as the
+interface FundingInfo {
+  amount: string;
+  year: string | null;
+  sourceLabel: string | null;
+}
+
+/** The tracker appends a parenthetical caveat to some amounts (e.g. "(all
+ *  MHM programs, DE-specific total not found)") that belongs in the source
+ *  description, not the dollar figure itself. */
+function cleanFundingAmount(raw: string): string {
+  return raw.replace(/\s*\([^)]*\)\s*$/, "").trim();
+}
+
+/** Pulls every plausible year (1900-2099) out of a funding-source citation
+ *  like "...per 2025 Comm Impact Report..." or "...FY2026...", so the
+ *  sidepanel can show what year(s) a figure covers without repeating the
+ *  tracker's full citation text. */
+function extractFundingYears(text: string): string | null {
+  const matches = text.match(/\b(19|20)\d{2}\b/g);
+  if (!matches) return null;
+  return Array.from(new Set(matches)).sort().join(", ");
+}
+
+/** Reduces the tracker's verbose, file-citation-style funding source text
+ *  down to a plain description of what the figure represents. */
+function describeFundingSource(source: string): string {
+  if (/all mhm (program )?themes/i.test(source)) {
+    return "All MHM Programs, not specific to digital equity funding";
+  }
+  if (/digital equity theme/i.test(source)) {
+    return "MHM Digital Equity Program";
+  }
+  return source;
+}
+
+/** Best-effort funding info for a name: prefer a row where it appears as the
  *  grantee (funding describes the grantee's own award), else as a Key Regional
  *  Player organization (funding describes that org's own MHM award). */
-function lookupFunding(name: string): string | null {
-  for (const row of ALL_ROWS) {
-    if (row.grantee === name && isRealFunding(row.granteeFundingAmount)) {
-      return row.granteeFundingAmount;
-    }
-  }
-  for (const row of ALL_ROWS) {
-    if (row.organization === name && row.section === "key_regional_player" && isRealFunding(row.granteeFundingAmount)) {
-      return row.granteeFundingAmount;
-    }
-  }
-  return null;
+function lookupFunding(name: string): FundingInfo | null {
+  const row =
+    ALL_ROWS.find((r) => r.grantee === name && isRealFunding(r.granteeFundingAmount)) ??
+    ALL_ROWS.find(
+      (r) => r.organization === name && r.section === "key_regional_player" && isRealFunding(r.granteeFundingAmount),
+    );
+  if (!row?.granteeFundingAmount) return null;
+  const source = row.fundingSource;
+  return {
+    amount: cleanFundingAmount(row.granteeFundingAmount),
+    year: source ? extractFundingYears(source) : null,
+    sourceLabel: source ? describeFundingSource(source) : null,
+  };
 }
 
 /** Prefers a specific county/city the tracker cites for this org (checking its
@@ -181,9 +251,10 @@ export function buildGraph(regionCode: string): Graph {
     const krpRow = regionalRows.find(
       (row) => row.organization === name && row.section === "key_regional_player",
     );
-    const category = krpRow && isRealCategory(krpRow.primaryServiceCategory)
+    const subsector = krpRow && isRealCategory(krpRow.primaryServiceCategory)
       ? krpRow.primaryServiceCategory
-      : lookupCategory(name);
+      : lookupSubsector(name);
+    const category = mapCategory(subsector);
 
     const connections: GraphNode["connections"] = regionalRows
       .filter((row) => row.grantee === name || row.organization === name)
@@ -195,21 +266,26 @@ export function buildGraph(regionCode: string): Graph {
       }));
 
     const isGrantee = isGranteeAnywhere(name);
+    const funding = lookupFunding(name);
 
     return {
       id: name,
       category,
+      subsector,
       isGrantee,
       granteeStatus: granteeStatusFor(name, isGrantee),
       locationStatus: isSingleRegionOrg(name) ? "primary" : "secondary",
       serviceArea: lookupServiceArea(name, regionLabel),
-      fundingAmount: lookupFunding(name),
+      fundingAmount: funding?.amount ?? null,
+      fundingYear: funding?.year ?? null,
+      fundingSourceLabel: funding?.sourceLabel ?? null,
       activeGrant: lookupActiveGrant(name),
       primaryRegionCodes: Array.from(touchedRegions),
       secondaryRegionCodes: Array.from(secondaryRegions),
       section: krpRow ? "key_regional_player" : "relationship",
       connections,
       notes: krpRow?.notesFlags ?? null,
+      kpi: getKpiForOrg(name),
     };
   });
 

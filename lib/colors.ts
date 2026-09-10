@@ -1,25 +1,13 @@
-// Primary Service Category -> fill color. Same categorical families and hues
-// as the source Miro diagram's legend, pushed to a higher, more consistent
-// saturation so the palette reads as vivid rather than flat, while still
-// re-tuned so white label text sits on every fill at >=4.5:1 (WCAG AA normal
-// text) — all sit at ~4.9:1, which also clears 1.4.11's 3:1 non-text minimum
-// with room to spare — while staying pairwise distinguishable from one
-// another (hues spread >=25 degrees).
+// Organization Service Type -> fill color (see lib/data.ts's CATEGORY_MAP
+// for how the tracker's raw "Service Subsector" categories roll up into
+// these 5). textColorForFill below picks white or dark label text per-color
+// at runtime so this palette doesn't need to be pre-tuned for contrast.
 export const CATEGORY_COLORS: Record<string, string> = {
-  "Education (Higher Ed / School)": "#856F06",
-  "Health": "#D3360D",
-  "Digital Equity / Digital Literacy": "#D111A0",
-  "Human & Social Services": "#0E8152",
-  "Government / Municipal": "#0E78AC",
-  "Youth Development": "#7F52EA",
-  "Community & Economic Development": "#607A11",
-  "Workforce Development": "#A36207",
-  "Library": "#E10E16",
-  "Domestic Violence / Victim Services": "#0F8322",
-  "Housing": "#5461EC",
-  "Senior Services": "#B81CE0",
-  "Disability Services": "#8E6B19",
-  "Homeless Services": "#836B6B",
+  "Education & Youth Development": "#173F5F",
+  "Health & Wellness": "#ED553B",
+  "Housing & Community Development": "#20639B",
+  "Workforce Training": "#F6D55C",
+  "Digital Literacy and Device Support": "#3CAEA3",
 };
 
 export const FALLBACK_CATEGORY_COLOR = "#6B6B6B"; // also clears both thresholds
@@ -27,6 +15,20 @@ export const FALLBACK_CATEGORY_COLOR = "#6B6B6B"; // also clears both thresholds
 export function colorForCategory(category: string | null | undefined): string {
   if (!category) return FALLBACK_CATEGORY_COLOR;
   return CATEGORY_COLORS[category] ?? FALLBACK_CATEGORY_COLOR;
+}
+
+// Grantee Status -> fill color: darkest blue for current grantees, a
+// lighter blue for past grantees, and light gray for orgs that have never
+// been a grantee (so "not a grantee" doesn't read as just another, paler
+// shade of the same blue).
+export const GRANTEE_STATUS_COLORS: Record<"current" | "past" | "not", string> = {
+  current: "#0B3D6B",
+  past: "#4E86B8",
+  not: "#C7CCD1",
+};
+
+export function colorForGranteeStatus(status: "current" | "past" | "not"): string {
+  return GRANTEE_STATUS_COLORS[status];
 }
 
 const RAISIN = "#1B1B33";
@@ -69,13 +71,23 @@ export function dashForRelationshipType(type: string | null | undefined): string
   return RELATIONSHIP_TYPE_STYLE[type]?.dash ?? null;
 }
 
-// Relationship Strength -> link weight/opacity
-export const RELATIONSHIP_STRENGTH_STYLE: Record<string, { width: number; opacity: number }> = {
-  "Strong/Active": { width: 2.4, opacity: 0.85 }, // "Active Collaborators"
-  "Weak/Existing": { width: 1, opacity: 0.45 }, // "Frequent Collaborators"
+// Relationship Strength -> link opacity. Width is no longer driven by
+// strength — it privileges current grantees instead (see
+// GRANTEE_LINK_WIDTH / NetworkGraph).
+export const RELATIONSHIP_STRENGTH_STYLE: Record<string, { opacity: number }> = {
+  "Strong/Active": { opacity: 0.85 }, // "Active Collaborators"
+  "Weak/Existing": { opacity: 0.45 }, // "Frequent Collaborators"
 };
 
-export function styleForRelationshipStrength(strength: string | null | undefined) {
-  if (!strength) return RELATIONSHIP_STRENGTH_STYLE["Weak/Existing"];
-  return RELATIONSHIP_STRENGTH_STYLE[strength] ?? RELATIONSHIP_STRENGTH_STYLE["Weak/Existing"];
+export function opacityForRelationshipStrength(strength: string | null | undefined): number {
+  if (!strength) return RELATIONSHIP_STRENGTH_STYLE["Weak/Existing"].opacity;
+  return (RELATIONSHIP_STRENGTH_STYLE[strength] ?? RELATIONSHIP_STRENGTH_STYLE["Weak/Existing"]).opacity;
 }
+
+// Current grantees' relationships get a visibly heavier stroke than everyone
+// else's, so the diagram privileges the org MHM is actively funding right now
+// over other partners/collaborators.
+export const GRANTEE_LINK_WIDTH: Record<"current" | "other", number> = {
+  current: 3,
+  other: 1.2,
+};
