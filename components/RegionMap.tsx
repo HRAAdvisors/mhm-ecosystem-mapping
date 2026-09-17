@@ -14,6 +14,9 @@ export interface RegionMapItem {
 /** Path to the region-boundary GeoJSON (features carry a `REGION` property). */
 const GEOJSON_URL = "/service-area-regions.json";
 
+/** Faded full-state outline drawn behind the regions for geographic context. */
+const TEXAS_URL = "/texas-outline.json";
+
 /** Dark-blue canvas that matches the site's hero/footer (`--raisin`). */
 const CANVAS = "#1b1b33";
 
@@ -179,22 +182,57 @@ export function RegionMap({ regions }: { regions: RegionMapItem[] }) {
       }
       if (cancelled || !map.getLayer("canvas")) return;
 
-      // Build pin/label points from each region's centroid (active regions only).
+      // Build pin points from each region's centroid (active regions only).
+      // Centroids are also reused to anchor the hover name popup.
       const pinFeatures: GeoJSON.Feature[] = [];
+      const centroidByCode = new Map<string, [number, number]>();
       for (const feature of collection.features) {
         const code = String(feature.properties?.REGION ?? "");
         if (!code || code === INACTIVE_REGION) continue;
         const ring = feature.geometry ? largestOuterRing(feature.geometry) : null;
         if (!ring) continue;
+        const centroid = ringCentroid(ring);
+        centroidByCode.set(code, centroid);
         pinFeatures.push({
           type: "Feature",
-          geometry: { type: "Point", coordinates: ringCentroid(ring) },
+          geometry: { type: "Point", coordinates: centroid },
           properties: {
             code,
             name: labelByCode.get(code) ?? code,
             count: countByCode.get(code) ?? 0,
           },
         });
+      }
+
+      // Faded full-Texas backdrop so the whole state stays visible behind the
+      // prominent color-coded regions. Fetched separately; failure is
+      // non-fatal — the regions still render on the dark canvas.
+      let texasFeature: GeoJSON.Feature | null = null;
+      try {
+        const texasRes = await fetch(TEXAS_URL);
+        const texas = (await texasRes.json()) as GeoJSON.Feature;
+        if (!cancelled && map.getLayer("canvas")) {
+          texasFeature = texas;
+          map.addSource("texas", { type: "geojson", data: texas });
+          map.addLayer({
+            id: "texas-fill",
+            type: "fill",
+            source: "texas",
+            paint: { "fill-color": "#242440", "fill-opacity": 1 },
+          });
+          map.addLayer({
+            id: "texas-outline",
+            type: "line",
+            source: "texas",
+            paint: {
+              "line-color": "#ffffff",
+              "line-width": 1.2,
+              "line-opacity": 0.28,
+            },
+          });
+        }
+      } catch {
+        // Ignore — the Texas backdrop is decorative.
       }
 
       map.addSource("regions", { type: "geojson", data: collection, generateId: true });
@@ -268,37 +306,21 @@ export function RegionMap({ regions }: { regions: RegionMapItem[] }) {
         paint: { "text-color": "#ffffff" },
       });
 
-      // 5. Region name label — topmost layer, so names always render above the
-      //    pins. Names collide among themselves (rather than overlapping into
-      //    an unreadable mush); the always-on lettered pins below still
-      //    identify every region even where a name is dropped. Pins use
-      //    ignore-placement, so a pin never suppresses a name label.
-      map.addLayer({
-        id: "region-label",
-        type: "symbol",
-        source: "region-pins",
-        layout: {
-          "text-field": ["get", "name"],
-          "text-font": ["DIN Offc Pro Bold", "Arial Unicode MS Bold"],
-          "text-size": 11,
-          "text-anchor": "bottom",
-          "text-offset": [0, -1.5],
-          "text-max-width": 8,
-          "text-padding": 4,
-          // Lower sort key places first / wins collisions — negate the org
-          // count so larger regions keep their name where space is tight.
-          "symbol-sort-key": ["*", ["get", "count"], -1],
-        },
-        paint: {
-          "text-color": "#ffffff",
-          "text-halo-color": CANVAS,
-          "text-halo-width": 1.6,
-        },
+      // Names are no longer drawn on the map — the region letter identifies
+      // each region, and the full name appears in a hover popup (below), which
+      // renders above the canvas and repositions to never be obscured.
+      const popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false,
+        offset: 18,
+        className: "region-popup",
       });
 
-      const features = collection.features ?? [];
-      if (features.length) {
-        map.fitBounds(bboxOf(features), { padding: 48, duration: 0 });
+      // Fit to the full Texas outline so the whole state stays in view; fall
+      // back to the region bounds if the outline didn't load.
+      const boundsFeatures = texasFeature ? [texasFeature] : (collection.features ?? []);
+      if (boundsFeatures.length) {
+        map.fitBounds(bboxOf(boundsFeatures), { padding: 32, duration: 0 });
       }
 
       const isActive = (code: string) => code && code !== INACTIVE_REGION;
@@ -325,10 +347,19 @@ export function RegionMap({ regions }: { regions: RegionMapItem[] }) {
           map.setFeatureState({ source: "regions", id }, { hover: true });
           setHovered(code);
           map.getCanvas().style.cursor = "pointer";
+          const centroid = centroidByCode.get(code);
+          const name = labelByCode.get(code) ?? code;
+          if (centroid) {
+            popup
+              .setLngLat(centroid)
+              .setText(`Region ${code} · ${name}`)
+              .addTo(map);
+          }
         } else {
           hoverIdRef.current = null;
           setHovered(null);
           map.getCanvas().style.cursor = "";
+          popup.remove();
         }
       };
 
