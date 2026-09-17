@@ -96,7 +96,7 @@ export default function HomePage() {
             <div>
               <HeroRegionPicker regions={regions} />
               <p className="mt-4 text-xs text-white/50">
-                Prefer a map? Click any region marker below.
+                Prefer a map? Click any region on the map below.
               </p>
             </div>
           </div>
