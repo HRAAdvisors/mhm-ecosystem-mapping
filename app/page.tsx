@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { HeroRegionPicker } from "@/components/HeroRegionPicker";
+import { RegionMap } from "@/components/RegionMap";
 import { ExecutiveSummary } from "@/components/ExecutiveSummary";
 import { buildGraph, REGIONS } from "@/lib/data";
 
@@ -94,7 +95,15 @@ export default function HomePage() {
             {/* Right side - Region Picker */}
             <div>
               <HeroRegionPicker regions={regions} />
+              <p className="mt-4 text-xs text-white/50">
+                Prefer a map? Click any region marker below.
+              </p>
             </div>
+          </div>
+
+          {/* Interactive map */}
+          <div className="mt-12">
+            <RegionMap regions={regions} />
           </div>
         </div>
       </section>
