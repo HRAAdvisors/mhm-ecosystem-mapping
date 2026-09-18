@@ -18,6 +18,7 @@ export function OrganizationPanel({
 }) {
   return (
     <div
+      data-tour="panel"
       className={`z-10 overflow-y-auto rounded-lg bg-popover p-3 text-xs text-popover-foreground shadow-lg ring-1 ring-foreground/10 ${className}`}
     >
       <div className="flex items-start justify-between gap-2">

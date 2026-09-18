@@ -650,7 +650,7 @@ export function NetworkGraph({
 
 function SizeModeToggle({ value, onChange }: { value: SizeMode; onChange: (v: SizeMode) => void }) {
   return (
-    <div className="absolute top-3 left-3 z-10 flex items-center gap-0.5 rounded-lg bg-popover p-0.5 text-xs shadow-md ring-1 ring-foreground/10">
+    <div data-tour="size-mode" className="absolute top-3 left-3 z-10 flex items-center gap-0.5 rounded-lg bg-popover p-0.5 text-xs shadow-md ring-1 ring-foreground/10">
       {SIZE_MODE_OPTIONS.map((o) => (
         <button
           key={o.value}
