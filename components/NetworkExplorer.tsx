@@ -3,7 +3,12 @@
 import { FilterLegend, type LegendMode } from "@/components/FilterLegend";
 import { GuidedTour, type TourStep } from "@/components/GuidedTour";
 import { Legend } from "@/components/Legend";
-import { NetworkGraph } from "@/components/NetworkGraph";
+import {
+  NetworkGraph,
+  SIZE_MODE_OPTIONS,
+  type ConnectivityFilter,
+  type SizeMode,
+} from "@/components/NetworkGraph";
 import { OrganizationSelect } from "@/components/OrganizationSelect";
 import { RegionSelect } from "@/components/RegionSelect";
 import { buildGraph, CATEGORIES, REGIONS } from "@/lib/data";
@@ -38,24 +43,29 @@ const TOUR_STEPS: TourStep[] = [
     body: "Switch the coloring between Service Type (what an organization does) and Grantee Status (their funding relationship with MHM). Click any item in the list to show or hide those organizations.",
   },
   {
-    target: '[data-tour="legend"]',
-    title: "4. Read the map's key",
-    body: "Lines show relationships: a solid line is a grantee collaboration and a dashed line is funding. Thicker, darker lines are active relationships; thin ones are existing. A ringed circle is an MHM grantee, and a filled circle is a partner organization.",
-  },
-  {
     target: '[data-tour="size-mode"]',
-    title: "5. Resize the circles",
+    title: "4. Size the circles",
     body: "Choose what a circle's size represents: number of Connections, Grant size (dollars awarded), or People served. It's a quick way to spot the biggest players by each measure.",
   },
   {
+    target: '[data-tour="legend"]',
+    title: "5. Read the map's key",
+    body: "Lines show relationships: a solid line is a grantee collaboration and a dashed line is funding. Thicker, darker lines are active relationships; thin ones are existing. A ringed circle is an MHM grantee, and a filled circle is a partner organization.",
+  },
+  {
+    target: '[data-tour="connectivity"]',
+    title: "6. Connected or all organizations",
+    body: "Switch between every organization in the region and only those with a relationship here. “Connected only” hides organizations that aren't linked to anyone in the region, so you can focus on the active network — and see at a glance who stands apart.",
+  },
+  {
     target: '[data-tour="graph"]',
-    title: "6. Explore the network",
+    title: "7. Explore the network",
     body: "Every circle is an organization. Click one to focus it and bold its connections. Drag circles to rearrange them, and scroll to zoom in and out.",
   },
   {
     target: '[data-tour="panel"]',
     openPanel: true,
-    title: "7. Read an organization's full profile",
+    title: "8. Read an organization's full profile",
     body: "When a circle is selected, this panel shows its service type, grantee status, funding, primary service area, live KPI reporting pulled from grantee submissions, and every connection it has in this region.",
   },
   {
@@ -78,9 +88,14 @@ export function NetworkExplorer({
 }) {
   const router = useRouter();
   const [regionCode, setRegionCode] = useState(initialRegion);
-  const [legendMode, setLegendMode] = useState<LegendMode>("granteeStatus");
+  const [legendMode, setLegendMode] = useState<LegendMode>("category");
   const [selectedCategories, setSelectedCategories] = useState(() => new Set(CATEGORIES));
   const [selectedGranteeStatuses, setSelectedGranteeStatuses] = useState(() => new Set(ALL_GRANTEE_STATUSES));
+  const [sizeMode, setSizeMode] = useState<SizeMode>("connections");
+  // Whether the map shows every org in the region or only those with at least
+  // one relationship here. This is how connected vs. unconnected orgs are
+  // visualized — "connected" simply hides the isolated ones.
+  const [connectivity, setConnectivity] = useState<ConnectivityFilter>("all");
   const [focusOrgId, setFocusOrgId] = useState<string | null>(initialOrg);
   // Mirrors whatever's currently selected on the graph — set both when the
   // "Organizations" dropdown itself picks something, and by the graph
@@ -171,6 +186,7 @@ export function NetworkExplorer({
   function handleOrganizationSelect(name: string) {
     setSelectedCategories(new Set(CATEGORIES));
     setSelectedGranteeStatuses(new Set(ALL_GRANTEE_STATUSES));
+    setConnectivity("all");
     setFocusOrgId(name);
     setSelectedOrgName(name);
   }
@@ -181,18 +197,34 @@ export function NetworkExplorer({
     if (!initialOrg) return;
     setSelectedCategories(new Set(CATEGORIES));
     setSelectedGranteeStatuses(new Set(ALL_GRANTEE_STATUSES));
+    setConnectivity("all");
     setFocusOrgId(initialOrg);
     setSelectedOrgName(initialOrg);
   }, [initialOrg]);
 
+  // Every org that has at least one relationship in this region, computed from
+  // the full region graph (not the category-filtered subset) so "connected"
+  // means the same thing regardless of which service types are toggled on.
+  const connectedIds = useMemo(() => {
+    const ids = new Set<string>();
+    for (const l of graph.links) {
+      ids.add(l.source);
+      ids.add(l.target);
+    }
+    return ids;
+  }, [graph]);
+
   const filteredGraph = useMemo(() => {
     const nodes = graph.nodes.filter(
-      (n) => selectedCategories.has(n.category) && selectedGranteeStatuses.has(n.granteeStatus),
+      (n) =>
+        selectedCategories.has(n.category) &&
+        selectedGranteeStatuses.has(n.granteeStatus) &&
+        (connectivity === "all" || connectedIds.has(n.id)),
     );
     const nodeIds = new Set(nodes.map((n) => n.id));
     const links = graph.links.filter((l) => nodeIds.has(l.source) && nodeIds.has(l.target));
     return { nodes, links };
-  }, [graph, selectedCategories, selectedGranteeStatuses]);
+  }, [graph, selectedCategories, selectedGranteeStatuses, connectivity, connectedIds]);
 
   return (
     <div className="flex h-full min-h-0 flex-1 flex-col">
@@ -262,7 +294,7 @@ export function NetworkExplorer({
               />
             </div>
 
-            <div className="border-t border-border pt-4" data-tour="filters">
+            <div className="border-t border-dashed border-border pt-4" data-tour="filters">
               <FilterLegend
                 mode={legendMode}
                 onModeChange={setLegendMode}
@@ -273,7 +305,30 @@ export function NetworkExplorer({
               />
             </div>
 
-            <div className="border-t border-border pt-4" data-tour="legend">
+            <div className="border-t border-dashed border-border pt-4" data-tour="size-mode">
+              <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Size circles by
+              </h3>
+              <div className="flex items-center gap-0.5 rounded-lg bg-secondary/60 p-0.5 text-xs">
+                {SIZE_MODE_OPTIONS.map((o) => (
+                  <button
+                    key={o.value}
+                    type="button"
+                    onClick={() => setSizeMode(o.value)}
+                    aria-pressed={sizeMode === o.value}
+                    className={`flex-1 rounded-md px-2 py-1 text-center font-medium transition-colors ${
+                      sizeMode === o.value
+                        ? "bg-card text-foreground shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {o.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="border-t border-dashed border-border pt-4" data-tour="legend">
               <Legend />
             </div>
           </div>
@@ -285,6 +340,9 @@ export function NetworkExplorer({
             focusNodeId={focusOrgId}
             onSelectionChange={setSelectedOrgName}
             colorMode={legendMode}
+            sizeMode={sizeMode}
+            connectivity={connectivity}
+            onConnectivityChange={setConnectivity}
           />
         </div>
       </div>

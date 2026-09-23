@@ -47,10 +47,17 @@ const LABEL_GAP = 4;
 
 export type SizeMode = "connections" | "grant" | "served";
 
-const SIZE_MODE_OPTIONS: { value: SizeMode; label: string }[] = [
+export const SIZE_MODE_OPTIONS: { value: SizeMode; label: string }[] = [
   { value: "connections", label: "Connections" },
   { value: "grant", label: "Grant size" },
   { value: "served", label: "People served" },
+];
+
+export type ConnectivityFilter = "all" | "connected";
+
+const CONNECTIVITY_OPTIONS: { value: ConnectivityFilter; label: string }[] = [
+  { value: "all", label: "All in region" },
+  { value: "connected", label: "Connected only" },
 ];
 
 // Used for "grant"/"served" sizing when a node has no grant amount or no KPI
@@ -128,6 +135,9 @@ export function NetworkGraph({
   focusNodeId,
   onSelectionChange,
   colorMode = "category",
+  sizeMode = "connections",
+  connectivity,
+  onConnectivityChange,
 }: {
   graph: Graph;
   /** Set (to an org name present in `graph`) to programmatically zoom to and
@@ -143,11 +153,18 @@ export function NetworkGraph({
    *  Status toggle is active, so the graph's colors match what the legend
    *  is showing. */
   colorMode?: "category" | "granteeStatus";
+  /** Circle-size basis, driven by the sidebar's "Size circles by" control. */
+  sizeMode?: SizeMode;
+  /** Connectivity filter, shown as an on-graph toggle where the size control
+   *  used to sit. "all" shows every org in the region; "connected" hides orgs
+   *  with no relationship here. The parent owns it (it also filters the graph
+   *  data) and passes it down so the toggle renders over the map. */
+  connectivity: ConnectivityFilter;
+  onConnectivityChange: (value: ConnectivityFilter) => void;
 }) {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [hover, setHover] = useState<HoverState | null>(null);
   const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
-  const [sizeMode, setSizeMode] = useState<SizeMode>("connections");
   const focusNodeRef = useRef<(id: string) => void>(() => {});
   // Mirrors `selectedNode`'s id so the effect below can restore the
   // selection (bolded connections, revealed labels) after a rebuild
@@ -635,7 +652,7 @@ export function NetworkGraph({
   return (
     <div className="relative h-full w-full overflow-hidden rounded-xl bg-card">
       <svg ref={svgRef} viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="h-full w-full" />
-      <SizeModeToggle value={sizeMode} onChange={setSizeMode} />
+      <ConnectivityToggle value={connectivity} onChange={onConnectivityChange} />
       {hover && <NameTooltip x={hover.x} y={hover.y} name={hover.name} />}
       {selectedNode && (
         <OrganizationPanel
@@ -648,16 +665,25 @@ export function NetworkGraph({
   );
 }
 
-function SizeModeToggle({ value, onChange }: { value: SizeMode; onChange: (v: SizeMode) => void }) {
+function ConnectivityToggle({
+  value,
+  onChange,
+}: {
+  value: ConnectivityFilter;
+  onChange: (v: ConnectivityFilter) => void;
+}) {
   return (
-    <div data-tour="size-mode" className="absolute top-3 left-3 z-10 flex items-center gap-0.5 rounded-lg bg-popover p-0.5 text-xs shadow-md ring-1 ring-foreground/10">
-      {SIZE_MODE_OPTIONS.map((o) => (
+    <div
+      data-tour="connectivity"
+      className="absolute top-3 left-3 z-10 flex items-center gap-0.5 rounded-lg bg-popover p-0.5 text-xs shadow-md ring-1 ring-foreground/10"
+    >
+      {CONNECTIVITY_OPTIONS.map((o) => (
         <button
           key={o.value}
           type="button"
           onClick={() => onChange(o.value)}
           aria-pressed={value === o.value}
-          className={`rounded-md px-2 py-1 font-medium transition-colors ${
+          className={`rounded-md px-2.5 py-1 font-medium transition-colors ${
             value === o.value
               ? "bg-primary text-primary-foreground"
               : "text-muted-foreground hover:bg-accent hover:text-foreground"
@@ -690,4 +716,3 @@ function NameTooltip({ x, y, name }: { x: number; y: number; name: string }) {
     </div>
   );
 }
-
