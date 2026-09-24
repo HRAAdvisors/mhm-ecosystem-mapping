@@ -97,10 +97,18 @@ function isRealFunding(value: string | null): value is string {
   return !!value && value.trim().startsWith("$");
 }
 
-/** Best-effort subsector (the tracker's original, raw category) for a name,
- *  found by looking at every row where it appears as the "Organization"
- *  column (which is where category is actually recorded). */
+/** Best-effort subsector (the tracker's original, raw category) for a name.
+ *  Checked in two places: first a grantee's own "self row" (Organization
+ *  blank, Grantee === name) -- the only place a pure grantee with no
+ *  documented partner org can carry its own category -- then every row
+ *  where the name appears as the "Organization" column (the normal case,
+ *  where category is recorded for a partner organization). */
 function lookupSubsector(name: string): string {
+  for (const row of ALL_ROWS) {
+    if (row.grantee === name && !row.organization && isRealCategory(row.primaryServiceCategory)) {
+      return row.primaryServiceCategory;
+    }
+  }
   for (const row of ALL_ROWS) {
     if (row.organization === name && isRealCategory(row.primaryServiceCategory)) {
       return row.primaryServiceCategory;

@@ -183,13 +183,27 @@ def extract_rows(ws, start, end, section, column_index):
         values = {field: clean(ws.cell(row=r, column=c).value) for field, c in column_index.items()}
         if all(v is None for v in values.values()):
             continue
-        if not values.get("organization"):
+        # Keep a row if it has a partner organization (the normal case), or
+        # if it's a grantee's own summary row with no documented partner yet
+        # (organization blank, grantee filled) -- otherwise that grantee's
+        # own category/region can never be displayed. See lookupSubsector in
+        # lib/data.ts, which reads such rows for a grantee's own category.
+        if not values.get("organization") and not values.get("grantee"):
             continue
         row = values
         row["section"] = section
         row["sourceRow"] = r
-        row["regionCode"] = region_code(row.get("region"))
-        row["additionalRegionCodes"] = additional_region_codes(row.get("additionalRegions"))
+        # The "region"/"additionalRegions" fields describe the ORGANIZATION's
+        # location and are meaningless without one -- a stray value there on
+        # an org-less grantee self-row would otherwise make
+        # organizationServesRegion() match on a null organization (lib/data.ts),
+        # inserting `null` into a region's node set and crashing name.localeCompare.
+        if row.get("organization"):
+            row["regionCode"] = region_code(row.get("region"))
+            row["additionalRegionCodes"] = additional_region_codes(row.get("additionalRegions"))
+        else:
+            row["regionCode"] = None
+            row["additionalRegionCodes"] = []
         row["granteeRegionCode"], row["granteeAdditionalRegionCodes"] = grantee_region_codes(
             row.get("granteeRegion")
         )
