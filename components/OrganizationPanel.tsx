@@ -34,7 +34,6 @@ export function OrganizationPanel({
       </div>
       <dl className="mt-2 space-y-1">
         <Row label="Organization Service Type" value={node.category} />
-        <Row label="Service Subsector" value={node.subsector} />
         <Row label="Grantee Status" value={GRANTEE_STATUS_LABELS[node.granteeStatus]} />
         {node.otherMhmGrantee !== null && (
           <Row label="Other MHM Grantee Status" value={node.otherMhmGrantee ? "Grantee" : "Not a Grantee"} />

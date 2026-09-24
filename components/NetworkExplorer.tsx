@@ -88,7 +88,7 @@ export function NetworkExplorer({
 }) {
   const router = useRouter();
   const [regionCode, setRegionCode] = useState(initialRegion);
-  const [legendMode, setLegendMode] = useState<LegendMode>("category");
+  const [legendMode, setLegendMode] = useState<LegendMode>("granteeStatus");
   const [selectedCategories, setSelectedCategories] = useState(() => new Set(CATEGORIES));
   const [selectedGranteeStatuses, setSelectedGranteeStatuses] = useState(() => new Set(ALL_GRANTEE_STATUSES));
   const [sizeMode, setSizeMode] = useState<SizeMode>("connections");

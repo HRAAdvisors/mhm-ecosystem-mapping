@@ -53,16 +53,6 @@ export function FilterLegend({
       <div className="mb-2 flex items-center gap-1 rounded-lg bg-secondary/60 p-0.5 text-xs">
         <button
           type="button"
-          onClick={() => onModeChange("category")}
-          aria-pressed={isCategory}
-          className={`flex-1 rounded-md px-2 py-1 font-medium transition-colors ${
-            isCategory ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
-          }`}
-        >
-          Service Type
-        </button>
-        <button
-          type="button"
           onClick={() => onModeChange("granteeStatus")}
           aria-pressed={!isCategory}
           className={`flex-1 rounded-md px-2 py-1 font-medium transition-colors ${
@@ -70,6 +60,16 @@ export function FilterLegend({
           }`}
         >
           Grantee Status
+        </button>
+        <button
+          type="button"
+          onClick={() => onModeChange("category")}
+          aria-pressed={isCategory}
+          className={`flex-1 rounded-md px-2 py-1 font-medium transition-colors ${
+            isCategory ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          Service Type
         </button>
       </div>
 
