@@ -56,6 +56,13 @@
   --input: #b8b8c4;
   --ring: var(--cobalt);
   --radius: 0.5rem;
+
+  /* Soft background fields behind the two groups in the
+     "Additional ecosystem partners" view of the ecosystem map. */
+  --field-documented: #f8dcc8;
+  --field-documented-title: #b5642f;
+  --field-partners: #cfe8e0;
+  --field-partners-title: #2f7a6e;
 }
 
 @layer base {

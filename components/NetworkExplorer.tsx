@@ -4,6 +4,8 @@ import { FilterLegend, type LegendMode } from "@/components/FilterLegend";
 import { GuidedTour, type TourStep } from "@/components/GuidedTour";
 import { Legend } from "@/components/Legend";
 import {
+  ConnectivityDescription,
+  ConnectivityTabs,
   NetworkGraph,
   SIZE_MODE_OPTIONS,
   type ConnectivityFilter,
@@ -54,8 +56,8 @@ const TOUR_STEPS: TourStep[] = [
   },
   {
     target: '[data-tour="connectivity"]',
-    title: "6. Connected or all organizations",
-    body: "Switch between every organization in the region and only those with a relationship here. “Connected only” hides organizations that aren't linked to anyone in the region, so you can focus on the active network — and see at a glance who stands apart.",
+    title: "6. Two views of the network",
+    body: "The map opens on the Connected network: organizations with a documented relationship in this region. Switch to Additional ecosystem partners for a broader view that also includes organizations whose relationships may not be documented here, shown in their own field.",
   },
   {
     target: '[data-tour="graph"]',
@@ -88,14 +90,14 @@ export function NetworkExplorer({
 }) {
   const router = useRouter();
   const [regionCode, setRegionCode] = useState(initialRegion);
-  const [legendMode, setLegendMode] = useState<LegendMode>("granteeStatus");
+  const [legendMode, setLegendMode] = useState<LegendMode>("category");
   const [selectedCategories, setSelectedCategories] = useState(() => new Set(CATEGORIES));
   const [selectedGranteeStatuses, setSelectedGranteeStatuses] = useState(() => new Set(ALL_GRANTEE_STATUSES));
   const [sizeMode, setSizeMode] = useState<SizeMode>("connections");
   // Whether the map shows every org in the region or only those with at least
   // one relationship here. This is how connected vs. unconnected orgs are
   // visualized — "connected" simply hides the isolated ones.
-  const [connectivity, setConnectivity] = useState<ConnectivityFilter>("all");
+  const [connectivity, setConnectivity] = useState<ConnectivityFilter>("connected");
   const [focusOrgId, setFocusOrgId] = useState<string | null>(initialOrg);
   // Mirrors whatever's currently selected on the graph — set both when the
   // "Organizations" dropdown itself picks something, and by the graph
@@ -228,7 +230,8 @@ export function NetworkExplorer({
 
   return (
     <div className="flex h-full min-h-0 flex-1 flex-col">
-      <div className="flex shrink-0 items-start justify-between gap-3 border-b border-border px-4 py-3 sm:px-6 sm:py-4">
+      <div className="flex shrink-0 flex-col gap-4 border-b border-border pt-3 sm:gap-5 sm:pt-4">
+      <div className="flex items-start justify-between gap-3 px-4 sm:px-6">
         <div>
           <h1 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
             {activeRegion?.label}
@@ -249,6 +252,13 @@ export function NetworkExplorer({
           </svg>
           How to use
         </button>
+      </div>
+      <div className="flex">
+        <div aria-hidden="true" className="hidden shrink-0 md:block md:w-72 lg:w-80 xl:w-[26rem]" />
+        <div className="min-w-0 flex-1 px-4 sm:px-6">
+          <ConnectivityTabs value={connectivity} onChange={setConnectivity} />
+        </div>
+      </div>
       </div>
 
       <button
@@ -334,16 +344,18 @@ export function NetworkExplorer({
           </div>
         </aside>
 
-        <div className="relative min-h-0 flex-1 p-4 sm:p-6" data-tour="graph">
-          <NetworkGraph
-            graph={filteredGraph}
-            focusNodeId={focusOrgId}
-            onSelectionChange={setSelectedOrgName}
-            colorMode={legendMode}
-            sizeMode={sizeMode}
-            connectivity={connectivity}
-            onConnectivityChange={setConnectivity}
-          />
+        <div className="flex min-h-0 flex-1 flex-col">
+          <ConnectivityDescription value={connectivity} />
+          <div className="relative min-h-0 flex-1" data-tour="graph">
+            <NetworkGraph
+              graph={filteredGraph}
+              focusNodeId={focusOrgId}
+              onSelectionChange={setSelectedOrgName}
+              colorMode={legendMode}
+              sizeMode={sizeMode}
+              connectivity={connectivity}
+            />
+          </div>
         </div>
       </div>
 
