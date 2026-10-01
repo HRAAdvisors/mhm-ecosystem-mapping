@@ -13,10 +13,10 @@ export default async function RegionPage({
   searchParams,
 }: {
   params: Promise<{ code: string }>;
-  searchParams: Promise<{ org?: string }>;
+  searchParams: Promise<{ org?: string; view?: string }>;
 }) {
   const { code } = await params;
-  const { org } = await searchParams;
+  const { org, view } = await searchParams;
   const region = REGIONS.find((r) => r.code === code.toUpperCase());
   if (!region) notFound();
 
@@ -35,6 +35,7 @@ export default async function RegionPage({
       key={region.code}
       initialRegion={region.code}
       initialOrg={org ?? null}
+      initialView={view === "all" ? "all" : "connected"}
       kpiMap={kpiMap}
     />
   );

@@ -79,9 +79,11 @@ const TOUR_STEPS: TourStep[] = [
 export function NetworkExplorer({
   initialRegion,
   initialOrg = null,
+  initialView = "connected",
   kpiMap,
 }: {
   initialRegion: string;
+  initialView?: ConnectivityFilter;
   /** Org to focus on load, e.g. when arriving from the global search
    *  (`/regions/{code}?org=…`). Reset filters and select it so its data opens
    *  immediately. */
@@ -97,7 +99,7 @@ export function NetworkExplorer({
   // Whether the map shows every org in the region or only those with at least
   // one relationship here. This is how connected vs. unconnected orgs are
   // visualized — "connected" simply hides the isolated ones.
-  const [connectivity, setConnectivity] = useState<ConnectivityFilter>("connected");
+  const [connectivity, setConnectivity] = useState<ConnectivityFilter>(initialView);
   const [focusOrgId, setFocusOrgId] = useState<string | null>(initialOrg);
   // Mirrors whatever's currently selected on the graph — set both when the
   // "Organizations" dropdown itself picks something, and by the graph
@@ -180,7 +182,8 @@ export function NetworkExplorer({
     setRegionCode(code);
     setFocusOrgId(null);
     setSelectedOrgName(null);
-    router.replace(`/regions/${code}`);
+    // The explorer remounts per region, so the chosen view travels in the URL.
+    router.replace(connectivity === "all" ? `/regions/${code}?view=all` : `/regions/${code}`);
   }
 
   // "Find an organization" should surface it regardless of the current
