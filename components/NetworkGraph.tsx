@@ -162,6 +162,7 @@ function linkEndpointId(end: string | number | SimNode): string {
 export function NetworkGraph({
   graph,
   focusNodeId,
+  focusRequest = 0,
   onSelectionChange,
   colorMode = "category",
   sizeMode = "connections",
@@ -171,6 +172,8 @@ export function NetworkGraph({
   /** Set (to an org name present in `graph`) to programmatically zoom to and
    *  select that node, e.g. from an "Organizations" search control. */
   focusNodeId?: string | null;
+  /** Increment to re-focus focusNodeId even when it is unchanged. */
+  focusRequest?: number;
   /** Fires whenever the current selection changes — by node click, the
    *  focusNodeId prop, or clearing (background click/Escape), with the
    *  selected org's id or null. Lets a caller (e.g. the "Organizations"
@@ -785,7 +788,7 @@ export function NetworkGraph({
   // then focusNodeRef.current is already bound to this graph's own nodes.
   useEffect(() => {
     if (focusNodeId) focusNodeRef.current(focusNodeId);
-  }, [focusNodeId]);
+  }, [focusNodeId, focusRequest]);
 
   return (
     <div className="relative h-full w-full overflow-hidden">
