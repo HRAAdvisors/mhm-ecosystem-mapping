@@ -466,11 +466,9 @@ export function NetworkGraph({
       // standing view of who the current/past grantees are). Once something
       // is selected, that changes to just the selected node and its direct
       // connections — grantee or not — so the focus narrows to that org's
-      // neighborhood. Either way, a dense cluster can still have more
-      // eligible labels than fit without overlapping, so pickNonOverlapping
-      // below drops the lowest-priority ones (the selected node itself
-      // always wins; after that, higher-degree hubs win) rather than
-      // painting an unreadable pile of overlapping text.
+      // neighborhood. In a dense cluster, placeLabelsApart below pushes
+      // colliding labels apart rather than hiding them (the selected node
+      // keeps its spot first; after that, higher-degree hubs do).
       const eligible = !selectedNodeId
         ? nodes.filter((n) => n.isGrantee).map((n) => n.id)
         : [selectedNodeId, ...(neighborsOf.get(selectedNodeId) ?? [])];
@@ -479,30 +477,53 @@ export function NetworkGraph({
         if (b === selectedNodeId) return 1;
         return (degree.get(b) ?? 0) - (degree.get(a) ?? 0);
       });
-      const shown = pickNonOverlapping(priority);
+      const shown = placeLabelsApart(priority);
       labelGroup.style("opacity", (d) => (shown.has(d.id) ? 1 : 0));
+      positionLabels();
     }
 
-    // Greedily accepts labels in priority order, skipping any whose box (in
-    // current, post-settle node coordinates) overlaps one already accepted
-    // — so a crowded hub's labels don't render as an illegible pile-up.
-    function pickNonOverlapping(idsInPriorityOrder: string[]): Set<string> {
-      const accepted: { x0: number; x1: number; y0: number; y1: number }[] = [];
+    // Every eligible label is shown. In priority order, a label whose box
+    // would cover one already placed is nudged to the nearest free spot
+    // (up/down first, then sideways) instead of being hidden.
+    const labelOffsets = new Map<string, { dx: number; dy: number }>();
+    function placeLabelsApart(idsInPriorityOrder: string[]): Set<string> {
+      const placed: { x0: number; x1: number; y0: number; y1: number }[] = [];
       const shown = new Set<string>();
+      labelOffsets.clear();
       for (const id of idsInPriorityOrder) {
         const n = nodes.find((nn) => nn.id === id);
         const box = labelBoxes.get(id);
         if (!n || !box) continue;
-        const x0 = n.x - box.width / 2;
-        const x1 = n.x + box.width / 2;
-        const y0 = n.y + box.top;
-        const y1 = y0 + box.height;
-        const overlapsAccepted = accepted.some((b) => x0 < b.x1 && x1 > b.x0 && y0 < b.y1 && y1 > b.y0);
-        if (overlapsAccepted) continue;
-        accepted.push({ x0, x1, y0, y1 });
+        const stepY = box.height + 2;
+        const stepX = box.width / 2 + 4;
+        const candidates: { dx: number; dy: number }[] = [{ dx: 0, dy: 0 }];
+        for (let ring = 1; ring <= 6; ring++) {
+          candidates.push({ dx: 0, dy: -stepY * ring }, { dx: 0, dy: stepY * ring });
+          candidates.push({ dx: stepX * ring, dy: 0 }, { dx: -stepX * ring, dy: 0 });
+          candidates.push({ dx: stepX * ring, dy: -stepY * ring }, { dx: -stepX * ring, dy: stepY * ring });
+        }
+        let chosen = candidates[candidates.length - 1];
+        let chosenBox = { x0: 0, x1: 0, y0: 0, y1: 0 };
+        for (const c of candidates) {
+          const x0 = n.x + c.dx - box.width / 2;
+          const x1 = x0 + box.width;
+          const y0 = n.y + c.dy + box.top;
+          const y1 = y0 + box.height;
+          chosen = c;
+          chosenBox = { x0, x1, y0, y1 };
+          if (!placed.some((b) => x0 < b.x1 && x1 > b.x0 && y0 < b.y1 && y1 > b.y0)) break;
+        }
+        placed.push(chosenBox);
+        labelOffsets.set(id, chosen);
         shown.add(id);
       }
       return shown;
+    }
+    function positionLabels() {
+      labelGroup.attr("transform", (d) => {
+        const off = labelOffsets.get(d.id);
+        return `translate(${d.x + (off?.dx ?? 0)},${d.y + (off?.dy ?? 0)})`;
+      });
     }
 
     function selectNode(d: SimNode) {
@@ -641,9 +662,8 @@ export function NetworkGraph({
     }
 
     // Each node's label footprint (in local, node-relative coordinates) —
-    // filled in by renderLabels below and read by pickNonOverlapping to
-    // decide which of the currently-eligible labels would actually collide
-    // with one another.
+    // filled in by renderLabels below and read by placeLabelsApart to
+    // nudge colliding labels into free space.
     const labelBoxes = new Map<string, { width: number; height: number; top: number }>();
 
     // (Re)computes each label's wrap/side and redraws its tspans. Called
@@ -740,7 +760,7 @@ export function NetworkGraph({
       });
 
       node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-      labelGroup.attr("transform", (d) => `translate(${d.x},${d.y})`);
+      positionLabels();
       updateFields();
     });
 
