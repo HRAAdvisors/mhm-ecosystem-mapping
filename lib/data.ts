@@ -27,12 +27,17 @@ const CATEGORY_MAP: Record<string, string> = {
   "Digital Equity / Digital Literacy": "Digital Literacy and Device Support",
 };
 
+/** Partners the tracker hasn't assigned a service category yet. Shown in
+ *  neutral gray rather than guessed, so missing data is visible. */
+export const UNCLASSIFIED_CATEGORY = "Not yet classified";
+
 export const CATEGORIES: string[] = [
   "Education & Youth Development",
   "Health & Wellness",
   "Housing & Community Development",
   "Workforce Training",
   "Digital Literacy and Device Support",
+  UNCLASSIFIED_CATEGORY,
 ];
 
 function mapCategory(raw: string): string {
@@ -103,7 +108,7 @@ function isRealFunding(value: string | null): value is string {
  *  documented partner org can carry its own category -- then every row
  *  where the name appears as the "Organization" column (the normal case,
  *  where category is recorded for a partner organization). */
-function lookupSubsector(name: string): string {
+function lookupSubsector(name: string): string | null {
   for (const row of ALL_ROWS) {
     if (row.grantee === name && !row.organization && isRealCategory(row.primaryServiceCategory)) {
       return row.primaryServiceCategory;
@@ -114,7 +119,7 @@ function lookupSubsector(name: string): string {
       return row.primaryServiceCategory;
     }
   }
-  return GRANTEE_DEFAULT_SUBSECTOR;
+  return null;
 }
 
 /** Whether `name` holds an MHM grant outside the Digital Equity program,
@@ -411,9 +416,14 @@ export function buildGraph(regionCode: string): Graph {
     const krpRow = regionalRows.find(
       (row) => row.organization === name && row.section === "key_regional_player",
     );
-    const subsector = krpRow && isRealCategory(krpRow.primaryServiceCategory)
+    const isGrantee = isGranteeAnywhere(name);
+    const recordedSubsector = krpRow && isRealCategory(krpRow.primaryServiceCategory)
       ? krpRow.primaryServiceCategory
       : lookupSubsector(name);
+    // Grantees are all Digital Equity program grantees, so that is a safe
+    // default for them. Partners without a category are left unclassified.
+    const subsector = recordedSubsector
+      ?? (isGrantee ? GRANTEE_DEFAULT_SUBSECTOR : UNCLASSIFIED_CATEGORY);
     const category = mapCategory(subsector);
 
     const ownConnectionRows = regionalRows.filter((row) => row.grantee === name || row.organization === name);
@@ -426,7 +436,6 @@ export function buildGraph(regionCode: string): Graph {
       relationshipStrength: row.relationshipStrength,
     }));
 
-    const isGrantee = isGranteeAnywhere(name);
     const funding = lookupFunding(name);
 
     return {

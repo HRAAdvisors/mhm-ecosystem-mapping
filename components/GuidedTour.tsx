@@ -12,6 +12,9 @@ export interface TourStep {
    *  (e.g. the organization detail panel). The host reacts via onStepChange;
    *  the tour itself just retries measuring until the target appears. */
   openPanel?: boolean;
+  /** Target lives in the sidebar, which is a collapsed drawer on mobile. The
+   *  host opens the drawer for these steps and closes it for the rest. */
+  inSidebar?: boolean;
 }
 
 const CARD_WIDTH = 340;
@@ -19,36 +22,69 @@ const HOLE_PAD = 8;
 const CARD_GAP = 14;
 const VIEWPORT_MARGIN = 12;
 
+function cardWidth() {
+  return Math.min(CARD_WIDTH, window.innerWidth - VIEWPORT_MARGIN * 2);
+}
+
 interface Placement {
   cardTop: number;
   cardLeft: number;
-  arrow: "up" | "down" | null;
+  cardWidth: number;
+  arrow: "up" | "down" | "left" | "right" | null;
+  /** Arrow offset along the card edge it sits on: from the left for up/down,
+   *  from the top for left/right. */
   arrowLeft: number;
 }
 
 function centeredPlacement(): Placement {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
+  const width = cardWidth();
   return {
     cardTop: Math.max(VIEWPORT_MARGIN, vh / 2 - 140),
-    cardLeft: Math.max(VIEWPORT_MARGIN, vw / 2 - CARD_WIDTH / 2),
+    cardLeft: Math.max(VIEWPORT_MARGIN, vw / 2 - width / 2),
+    cardWidth: width,
     arrow: null,
-    arrowLeft: CARD_WIDTH / 2,
+    arrowLeft: width / 2,
   };
 }
 
 function computePlacement(rect: DOMRect, cardHeight: number): Placement {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
+  const width = cardWidth();
 
   // Horizontal: center the card on the target, then clamp into the viewport.
   const targetCenterX = rect.left + rect.width / 2;
-  let cardLeft = targetCenterX - CARD_WIDTH / 2;
-  cardLeft = Math.min(Math.max(cardLeft, VIEWPORT_MARGIN), vw - CARD_WIDTH - VIEWPORT_MARGIN);
+  let cardLeft = targetCenterX - width / 2;
+  cardLeft = Math.min(Math.max(cardLeft, VIEWPORT_MARGIN), vw - width - VIEWPORT_MARGIN);
 
-  // Prefer below the target; fall back to above; else pin within viewport.
   const spaceBelow = vh - rect.bottom;
   const spaceAbove = rect.top;
+  const fitsVertically = Math.max(spaceBelow, spaceAbove) >= cardHeight + CARD_GAP + VIEWPORT_MARGIN;
+
+  // Tall targets like the detail panel leave no room above or below, so the
+  // card would cover them. Sit beside the target instead when there is room.
+  if (!fitsVertically) {
+    const spaceLeft = rect.left - HOLE_PAD;
+    const spaceRight = vw - rect.right - HOLE_PAD;
+    const side = spaceLeft >= spaceRight ? "left" : "right";
+    if (Math.max(spaceLeft, spaceRight) >= width + CARD_GAP + VIEWPORT_MARGIN) {
+      const sideLeft = side === "left" ? rect.left - HOLE_PAD - CARD_GAP - width : rect.right + HOLE_PAD + CARD_GAP;
+      const anchorY = rect.top + Math.min(rect.height / 2, 120);
+      let sideTop = anchorY - 60;
+      sideTop = Math.min(Math.max(sideTop, VIEWPORT_MARGIN), vh - cardHeight - VIEWPORT_MARGIN);
+      return {
+        cardTop: sideTop,
+        cardLeft: sideLeft,
+        cardWidth: width,
+        arrow: side === "left" ? "right" : "left",
+        arrowLeft: Math.min(Math.max(anchorY - sideTop, 20), cardHeight - 20),
+      };
+    }
+  }
+
+  // Prefer below the target; fall back to above; else pin within viewport.
   let cardTop: number;
   let arrow: "up" | "down";
   if (spaceBelow >= cardHeight + CARD_GAP || spaceBelow >= spaceAbove) {
@@ -60,8 +96,8 @@ function computePlacement(rect: DOMRect, cardHeight: number): Placement {
   }
   cardTop = Math.min(Math.max(cardTop, VIEWPORT_MARGIN), vh - cardHeight - VIEWPORT_MARGIN);
 
-  const arrowLeft = Math.min(Math.max(targetCenterX - cardLeft, 20), CARD_WIDTH - 20);
-  return { cardTop, cardLeft, arrow, arrowLeft };
+  const arrowLeft = Math.min(Math.max(targetCenterX - cardLeft, 20), width - 20);
+  return { cardTop, cardLeft, cardWidth: width, arrow, arrowLeft };
 }
 
 export function GuidedTour({
@@ -121,6 +157,7 @@ export function GuidedTour({
     if (!open) return;
     let raf = 0;
     let retryTimer = 0;
+    let settleTimer = 0;
     // A step's target may mount asynchronously — the detail panel only exists
     // after the host selects a node for this step. Retry briefly before
     // falling back to a centered card, so the spotlight lands once it appears.
@@ -133,7 +170,10 @@ export function GuidedTour({
         return;
       }
       const el = document.querySelector(step.target);
-      if (!el) {
+      // A target inside a collapsed (display: none) container measures 0x0 at
+      // the page corner, so treat it as not-yet-visible and keep retrying.
+      const hidden = !el || el.getClientRects().length === 0;
+      if (!el || hidden) {
         if (retries < 25) {
           retries += 1;
           retryTimer = window.setTimeout(measure, 60);
@@ -144,6 +184,14 @@ export function GuidedTour({
         return;
       }
       el.scrollIntoView({ block: "nearest", inline: "nearest" });
+      window.clearTimeout(settleTimer);
+      // The mobile drawer and page can still be scrolling into place; measure
+      // once more after it settles so the spotlight lands on the final spot.
+      settleTimer = window.setTimeout(() => {
+        const settled = el.getBoundingClientRect();
+        setRect(settled);
+        setPlacement(computePlacement(settled, cardRef.current?.offsetHeight ?? 220));
+      }, 350);
       raf = requestAnimationFrame(() => {
         const r = el.getBoundingClientRect();
         setRect(r);
@@ -158,6 +206,7 @@ export function GuidedTour({
     return () => {
       cancelAnimationFrame(raf);
       window.clearTimeout(retryTimer);
+      window.clearTimeout(settleTimer);
       window.removeEventListener("resize", measure);
       window.removeEventListener("scroll", measure, true);
     };
@@ -229,16 +278,20 @@ export function GuidedTour({
         aria-label={step.title}
         tabIndex={-1}
         className="fixed rounded-xl bg-popover text-popover-foreground shadow-2xl ring-1 ring-foreground/10 outline-none"
-        style={{ top: placement.cardTop, left: placement.cardLeft, width: CARD_WIDTH, zIndex: 10000 }}
+        style={{ top: placement.cardTop, left: placement.cardLeft, width: placement.cardWidth, zIndex: 10000 }}
       >
         {placement.arrow && (
           <div
             aria-hidden="true"
             className="absolute h-3 w-3 rotate-45 bg-popover ring-1 ring-foreground/10"
             style={
-              placement.arrow === "up"
-                ? { top: -6, left: placement.arrowLeft - 6, clipPath: "polygon(0 0, 100% 0, 0 100%)" }
-                : { bottom: -6, left: placement.arrowLeft - 6, clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }
+                placement.arrow === "up"
+                  ? { top: -6, left: placement.arrowLeft - 6, clipPath: "polygon(0 0, 100% 0, 0 100%)" }
+                  : placement.arrow === "down"
+                    ? { bottom: -6, left: placement.arrowLeft - 6, clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }
+                    : placement.arrow === "right"
+                      ? { right: -6, top: placement.arrowLeft - 6, clipPath: "polygon(0 0, 100% 0, 100% 100%)" }
+                      : { left: -6, top: placement.arrowLeft - 6, clipPath: "polygon(0 0, 0 100%, 100% 100%)" }
             }
           />
         )}

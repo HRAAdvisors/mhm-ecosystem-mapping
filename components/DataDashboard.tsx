@@ -11,6 +11,11 @@ type DataView = "charts" | "relationships";
 const COLORS = ["#3C4ED6", "#5563E1", "#7080E8", "#8B9DEF", "#A6BAF6"];
 const COLORS_ACCENT = ["#FF6B6B", "#FFA550", "#FFD93D", "#6BCB77", "#4D96FF"];
 
+const formatNumber = (value: number) => value.toLocaleString("en-US");
+const formatDollars = (value: number) => `$${value.toLocaleString("en-US")}`;
+const formatTooltipNumber = (value: unknown) =>
+  typeof value === "number" ? value.toLocaleString("en-US") : String(value);
+
 function LiveBadge() {
   return (
     <span className="ml-3 inline-flex items-center gap-1.5 rounded-full bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800 align-middle">
@@ -136,12 +141,12 @@ export function DataDashboard({
               <BarChart
                 data={reportData.organizationsByService}
                 layout="vertical"
-                margin={{ top: 5, right: 30, left: 280, bottom: 5 }}
+                margin={{ top: 5, right: 30, left: 10, bottom: 5 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis type="number" />
-                <YAxis dataKey="service" type="category" width={270} tick={{ fontSize: 12 }} />
-                <Tooltip />
+                <XAxis type="number" tickFormatter={formatNumber} />
+                <YAxis dataKey="service" type="category" width={230} tick={{ fontSize: 12 }} />
+                <Tooltip formatter={formatTooltipNumber} />
                 <Bar dataKey="count" fill="#3C4ED6" />
               </BarChart>
             </ResponsiveContainer>
@@ -164,8 +169,8 @@ export function DataDashboard({
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="region" angle={-45} textAnchor="end" height={100} tick={{ fontSize: 12 }} />
-                <YAxis />
-                <Tooltip />
+                <YAxis tickFormatter={formatNumber} width={64} />
+                <Tooltip formatter={formatTooltipNumber} />
                 <Bar dataKey="count" fill="#6BCB77" />
               </BarChart>
             </ResponsiveContainer>
@@ -185,10 +190,10 @@ export function DataDashboard({
               <BarChart
                 data={reportData.recentFunding.ytdGrantFundsSpent.slice(0, 15)}
                 layout="vertical"
-                margin={{ top: 5, right: 30, left: 200, bottom: 5 }}
+                margin={{ top: 5, right: 30, left: 10, bottom: 5 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis type="number" />
+                <XAxis type="number" tickFormatter={formatDollars} />
                 <YAxis dataKey="organization" type="category" width={190} tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(value) => `$${typeof value === 'number' ? value.toLocaleString() : value}`} />
                 <Bar dataKey="amount" fill="#3C4ED6" />
@@ -210,7 +215,7 @@ export function DataDashboard({
               <LineChart data={reportData.totalFunding.ytdGrantFundsSpent}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="year" />
-                <YAxis />
+                <YAxis tickFormatter={formatDollars} width={88} />
                 <Tooltip formatter={(value) => `$${typeof value === 'number' ? (value / 1000000).toFixed(1) : value}M`} />
                 <Line
                   type="monotone"
@@ -277,7 +282,7 @@ export function DataDashboard({
                   <BarChart data={servedTimeline}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="period" angle={-45} textAnchor="end" height={100} tick={{ fontSize: 11 }} />
-                    <YAxis />
+                    <YAxis tickFormatter={formatNumber} width={64} />
                     <Tooltip formatter={(value) => typeof value === 'number' ? value.toLocaleString() : value} />
                     <Bar dataKey="count" fill="#3C4ED6" />
                   </BarChart>
@@ -318,7 +323,7 @@ export function DataDashboard({
               <BarChart data={reportData.deviceDistribution.timeline}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="period" angle={-45} textAnchor="end" height={100} tick={{ fontSize: 11 }} />
-                <YAxis />
+                <YAxis tickFormatter={formatNumber} width={64} />
                 <Tooltip formatter={(value) => typeof value === 'number' ? value.toLocaleString() : value} />
                 <Bar dataKey="count" fill="#FF6B6B" />
               </BarChart>
@@ -346,8 +351,8 @@ export function DataDashboard({
                   <BarChart data={outreachTimeline}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="period" angle={-45} textAnchor="end" height={100} tick={{ fontSize: 11 }} />
-                    <YAxis />
-                    <Tooltip />
+                    <YAxis tickFormatter={formatNumber} width={64} />
+                    <Tooltip formatter={formatTooltipNumber} />
                     <Bar dataKey="count" fill="#FFA550" />
                   </BarChart>
                 </ResponsiveContainer>
@@ -363,8 +368,8 @@ export function DataDashboard({
                   <BarChart data={partnerTimeline}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="period" angle={-45} textAnchor="end" height={100} tick={{ fontSize: 11 }} />
-                    <YAxis />
-                    <Tooltip />
+                    <YAxis tickFormatter={formatNumber} width={64} />
+                    <Tooltip formatter={formatTooltipNumber} />
                     <Bar dataKey="count" fill="#6BCB77" />
                   </BarChart>
                 </ResponsiveContainer>
@@ -406,7 +411,7 @@ export function DataDashboard({
                       <Cell fill="#3C4ED6" />
                       <Cell fill="#A0AEC0" />
                     </Pie>
-                    <Tooltip />
+                    <Tooltip formatter={formatTooltipNumber} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>

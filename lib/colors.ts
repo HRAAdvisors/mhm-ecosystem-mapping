@@ -8,6 +8,7 @@ export const CATEGORY_COLORS: Record<string, string> = {
   "Housing & Community Development": "#20639B",
   "Workforce Training": "#F6D55C",
   "Digital Literacy and Device Support": "#3CAEA3",
+  "Not yet classified": "#9AA0A6",
 };
 
 export const FALLBACK_CATEGORY_COLOR = "#6B6B6B"; // also clears both thresholds

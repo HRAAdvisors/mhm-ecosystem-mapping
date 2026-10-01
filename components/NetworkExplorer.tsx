@@ -31,26 +31,31 @@ const TOUR_STEPS: TourStep[] = [
   },
   {
     target: '[data-tour="region"]',
+    inSidebar: true,
     title: "1. Pick a region",
     body: "Each region has its own network. Choose one here and the whole map redraws to show the organizations serving that area.",
   },
   {
     target: '[data-tour="organizations"]',
+    inSidebar: true,
     title: "2. Find a specific organization",
     body: "Know who you're looking for? Select them here to jump straight to their circle on the map, highlight it, and open their details.",
   },
   {
     target: '[data-tour="filters"]',
+    inSidebar: true,
     title: "3. Color and filter the map",
     body: "Switch the coloring between Service Type (what an organization does) and Grantee Status (their funding relationship with MHM). Click any item in the list to show or hide those organizations.",
   },
   {
     target: '[data-tour="size-mode"]',
+    inSidebar: true,
     title: "4. Size the circles",
     body: "Choose what a circle's size represents: number of Connections, Grant size (dollars awarded), or People served. It's a quick way to spot the biggest players by each measure.",
   },
   {
     target: '[data-tour="legend"]',
+    inSidebar: true,
     title: "5. Read the map's key",
     body: "Lines show relationships: a solid line is a grantee collaboration and a dashed line is funding. Thicker, darker lines are active relationships; thin ones are existing. A ringed circle is an MHM grantee, and a filled circle is a partner organization.",
   },
@@ -170,6 +175,10 @@ export function NetworkExplorer({
   // node so the detail panel exists for the tour to spotlight.
   const handleTourStep = useCallback(
     (i: number) => {
+      // Mobile only: the sidebar is a collapsed drawer there. Open it for
+      // sidebar steps and close it for map steps so the map is visible.
+      // Desktop always shows the sidebar and ignores this state.
+      setPanelOpen(Boolean(TOUR_STEPS[i]?.inSidebar));
       if (TOUR_STEPS[i]?.openPanel && exampleOrg) {
         setFocusOrgId(exampleOrg);
         setSelectedOrgName(exampleOrg);
@@ -366,7 +375,10 @@ export function NetworkExplorer({
         open={tourOpen}
         steps={TOUR_STEPS}
         storageKey={TOUR_DISMISS_KEY}
-        onClose={() => setTourOpen(false)}
+        onClose={() => {
+          setTourOpen(false);
+          setPanelOpen(false);
+        }}
         onStepChange={handleTourStep}
       />
     </div>
