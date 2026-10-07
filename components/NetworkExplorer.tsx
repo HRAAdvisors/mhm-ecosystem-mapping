@@ -161,31 +161,9 @@ export function NetworkExplorer({
     [graph],
   );
 
-  // A representative node for the tour's "read the panel" step: prefer one
-  // with live KPI data (richest panel), then any grantee, then anything.
-  const exampleOrg = useMemo(() => {
-    const withKpi = graph.nodes.find((n) => n.kpi);
-    if (withKpi) return withKpi.id;
-    const grantee = graph.nodes.find((n) => n.isGrantee);
-    if (grantee) return grantee.id;
-    return graph.nodes[0]?.id ?? null;
-  }, [graph]);
-
-  // Drive host state as the tour advances: the panel step needs a selected
-  // node so the detail panel exists for the tour to spotlight.
-  const handleTourStep = useCallback(
-    (i: number) => {
-      // Mobile only: the sidebar is a collapsed drawer there. Open it for
-      // sidebar steps and close it for map steps so the map is visible.
-      // Desktop always shows the sidebar and ignores this state.
-      setPanelOpen(Boolean(TOUR_STEPS[i]?.inSidebar));
-      if (TOUR_STEPS[i]?.openPanel && exampleOrg) {
-        setFocusOrgId(exampleOrg);
-        setSelectedOrgName(exampleOrg);
-      }
-    },
-    [exampleOrg],
-  );
+  // Bumped to re-run a focus even when focusOrgId hasn't changed, e.g. the
+  // tour reopening the same example org after its panel was closed.
+  const [focusRequest, setFocusRequest] = useState(0);
 
   function handleRegionChange(code: string) {
     setRegionCode(code);
@@ -239,6 +217,35 @@ export function NetworkExplorer({
     const links = graph.links.filter((l) => nodeIds.has(l.source) && nodeIds.has(l.target));
     return { nodes, links };
   }, [graph, selectedCategories, selectedGranteeStatuses, connectivity, connectedIds]);
+
+  // A representative node for the tour's "read the panel" step, chosen from
+  // what's actually on the map (filters and the current view can hide some):
+  // prefer one with live KPI data, then any grantee, then anything.
+  const exampleOrg = useMemo(() => {
+    const nodes = filteredGraph.nodes;
+    const withKpi = nodes.find((n) => graph.nodes.find((g) => g.id === n.id)?.kpi);
+    if (withKpi) return withKpi.id;
+    const grantee = nodes.find((n) => n.isGrantee);
+    if (grantee) return grantee.id;
+    return nodes[0]?.id ?? null;
+  }, [filteredGraph, graph]);
+
+  // Drive host state as the tour advances: the panel step needs a selected
+  // node so the detail panel exists for the tour to spotlight.
+  const handleTourStep = useCallback(
+    (i: number) => {
+      // Mobile only: the sidebar is a collapsed drawer there. Open it for
+      // sidebar steps and close it for map steps so the map is visible.
+      // Desktop always shows the sidebar and ignores this state.
+      setPanelOpen(Boolean(TOUR_STEPS[i]?.inSidebar));
+      if (TOUR_STEPS[i]?.openPanel && exampleOrg) {
+        setFocusOrgId(exampleOrg);
+        setSelectedOrgName(exampleOrg);
+        setFocusRequest((n) => n + 1);
+      }
+    },
+    [exampleOrg],
+  );
 
   return (
     <div className="flex h-full min-h-0 flex-1 flex-col">
@@ -362,6 +369,7 @@ export function NetworkExplorer({
             <NetworkGraph
               graph={filteredGraph}
               focusNodeId={focusOrgId}
+              focusRequest={focusRequest}
               onSelectionChange={setSelectedOrgName}
               colorMode={legendMode}
               sizeMode={sizeMode}
