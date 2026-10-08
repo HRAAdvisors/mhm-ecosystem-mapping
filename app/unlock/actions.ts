@@ -25,3 +25,10 @@ export async function unlock(_prev: UnlockState, formData: FormData): Promise<Un
 
   redirect(next);
 }
+
+export async function lock(formData: FormData) {
+  const next = safeNextPath(String(formData.get("next") ?? ""));
+  const cookieStore = await cookies();
+  cookieStore.delete({ name: ACCESS_COOKIE, path: "/", secure: true, sameSite: "none" });
+  redirect(`/unlock?next=${encodeURIComponent(next)}`);
+}
