@@ -38,7 +38,7 @@ function buildCategories(portfolioTotals: PortfolioTotals): StatCategory[] {
       borderClass: "border-teal-200",
       textClass: "text-[var(--teal)]",
       stats: [
-        { value: "$22.5M", label: "Digital Equity funding awarded" },
+        { value: "$31.3M", label: "Digital equity funding awarded since 2024*" },
         { value: String(portfolioTotals.relationshipCount), label: "Tracked ecosystem relationships" },
       ],
     },
@@ -50,7 +50,7 @@ function buildCategories(portfolioTotals: PortfolioTotals): StatCategory[] {
       textClass: "text-[var(--gold)]",
       stats: [
         { value: "79K", label: "Individuals served since 2024" },
-        { value: "32.4K", label: "Devices distributed" },
+        { value: "33.1K", label: "Devices distributed" },
       ],
     },
   ];
@@ -135,7 +135,7 @@ export function ExecutiveSummary({ portfolioTotals }: { portfolioTotals: Portfol
               Together, this network has served nearly 79,000 individuals
               since 2024, nearly tripling its first year&apos;s reach,
               largely by putting devices directly into people&apos;s hands:
-              over 32,400 laptops, hotspots, smartphones, and other devices
+              over 33,100 laptops, hotspots, smartphones, and other devices
               distributed to date.
             </p>
                         <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -169,6 +169,9 @@ export function ExecutiveSummary({ portfolioTotals }: { portfolioTotals: Portfol
                 </div>
               </div>
             ))}
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              *Includes grants and donations.
+            </p>
           </div>
         </div>
       </div>

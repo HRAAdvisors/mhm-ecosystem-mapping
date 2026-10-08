@@ -11,6 +11,16 @@ type DataView = "charts" | "relationships";
 const COLORS = ["#3C4ED6", "#5563E1", "#7080E8", "#8B9DEF", "#A6BAF6"];
 const COLORS_ACCENT = ["#FF6B6B", "#FFA550", "#FFD93D", "#6BCB77", "#4D96FF"];
 
+const DE_AWARDED_BY_YEAR = [
+  { year: "2020", amount: 175000 },
+  { year: "2021", amount: 185000 },
+  { year: "2022", amount: 434544 },
+  { year: "2023", amount: 4040860 },
+  { year: "2024", amount: 10570931 },
+  { year: "2025", amount: 10777175 },
+  { year: "2026", amount: 9938777 },
+];
+
 const formatNumber = (value: number) => value.toLocaleString("en-US");
 const formatDollars = (value: number) => `$${value.toLocaleString("en-US")}`;
 const formatTooltipNumber = (value: unknown) =>
@@ -187,28 +197,25 @@ export function DataDashboard({
         {/* Total Funding Trends */}
         <section className="mb-16 bg-white rounded-lg p-8 shadow-sm border border-gray-200">
           <h2 className="text-2xl font-semibold text-[var(--raisin)] mb-2">
-            DE Total Funding
+            DE Total Awarded
           </h2>
           <p className="text-gray-600 mb-8">
-            YTD grant spending grew from $5.8 million at 2024 Year-End to $7.6 million at 2025 Year-End from reported organizations. Spending in 2026 is on track to exceed both 2024 and 2025.
+            Digital equity awards grew from under $0.5 million a year before 2023 to over $10 million a year in 2024 and 2025, for $31.3 million awarded from 2024 to 2026.
           </p>
           <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={reportData.totalFunding.ytdGrantFundsSpent}>
+              <BarChart data={DE_AWARDED_BY_YEAR}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="year" />
-                <YAxis tickFormatter={formatDollars} width={88} />
-                <Tooltip formatter={(value) => `$${typeof value === 'number' ? (value / 1000000).toFixed(1) : value}M`} />
-                <Line
-                  type="monotone"
-                  dataKey="amount"
-                  stroke="#3C4ED6"
-                  strokeWidth={3}
-                  dot={{ fill: "#3C4ED6", r: 6 }}
-                />
-              </LineChart>
+                <YAxis tickFormatter={(value: number) => `$${(value / 1000000).toFixed(0)}M`} width={64} />
+                <Tooltip formatter={(value) => (typeof value === "number" ? formatDollars(value) : String(value))} />
+                <Bar dataKey="amount" name="Awarded" fill="#3C4ED6" />
+              </BarChart>
             </ResponsiveContainer>
           </div>
+              <p className="mt-4 text-xs text-gray-500">
+                *Includes grants and donations.
+              </p>
         </section>
 
         {/* MHM Total Funding Context */}
@@ -235,8 +242,9 @@ export function DataDashboard({
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-              <p className="text-3xl font-bold text-[#6BCB77] mb-2">$22.5M</p>
-              <p className="text-sm font-medium text-gray-700 mb-4">Digital Equity - Awarded total</p>
+              <p className="text-3xl font-bold text-[#6BCB77] mb-2">$31.3M</p>
+              <p className="text-sm font-medium text-gray-700">Digital equity funding awarded since 2024*</p>
+              <p className="text-xs text-gray-500 mb-4">*Includes grants and donations.</p>
               <p className="text-2xl font-bold text-[#6BCB77]">7%</p>
               <p className="text-sm font-medium text-gray-700">Of all MHM organizations funded</p>
             </div>
