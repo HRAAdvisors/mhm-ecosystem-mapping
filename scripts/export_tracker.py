@@ -133,6 +133,7 @@ def clean(v):
 # separate organization (e.g. the "Service" variant lost its 2026 status).
 NAME_ALIASES = {
     "South Texas Rural Health Service, Inc.": "South Texas Rural Health Services, Inc.",
+    "Rocksprings ISD": "Rocksprings Independent School District",
 }
 
 

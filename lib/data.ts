@@ -438,17 +438,18 @@ export function buildGraph(regionCode: string): Graph {
     }));
 
     const funding = lookupFunding(name);
+    const granteeStatus = granteeStatusFor(name, isGrantee);
 
     return {
       id: name,
       category,
       subsector,
       isGrantee,
-      granteeStatus: granteeStatusFor(name, isGrantee),
+      granteeStatus,
       locationStatus: isSingleRegionOrg(name) ? "primary" : "secondary",
       serviceArea: lookupServiceArea(name, regionLabel),
       fundingAmount: funding?.amount ?? null,
-      fundingYear: funding?.year ?? null,
+      fundingYear: granteeStatus === "current" ? "2026" : (funding?.year ?? null),
       fundingSourceLabel: funding?.sourceLabel ?? null,
       activeGrant: lookupActiveGrant(name),
       otherMhmGrantee: lookupOtherMhmGrantee(name),

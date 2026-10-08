@@ -49,7 +49,6 @@ function buildCategories(portfolioTotals: PortfolioTotals): StatCategory[] {
       borderClass: "border-amber-200",
       textClass: "text-[var(--gold)]",
       stats: [
-        { value: "78.7K", label: "Individuals served (total)" },
         { value: "79K", label: "Individuals served since 2024" },
         { value: "32.4K", label: "Devices distributed" },
       ],
@@ -137,11 +136,7 @@ export function ExecutiveSummary({ portfolioTotals }: { portfolioTotals: Portfol
               since 2024, nearly tripling its first year&apos;s reach,
               largely by putting devices directly into people&apos;s hands:
               over 32,400 laptops, hotspots, smartphones, and other devices
-              distributed to date. Human I-T is one meaningfully impactful example grantee. Alongside the
-              City of Pharr and Compudopt, it&apos;s one of three grantees
-              that account for nearly half of all program spending,
-              refurbishing and distributing devices to residents who
-              otherwise couldn&apos;t get online.
+              distributed to date.
             </p>
                         <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
       MHM continues to anchor, lead, and promote digital access services throughout the 74-county South Texas region. 

@@ -6,7 +6,7 @@ export function SiteHeader() {
     <header className="z-20 shrink-0 border-b border-border bg-background/95 backdrop-blur">
       <div className="container-wide">
         <div className="flex h-14 items-center justify-between gap-2 sm:h-16">
-          <Link href="/" className="flex shrink-0 items-center gap-2">
+          <Link href="/home" className="flex shrink-0 items-center gap-2">
             <span className="text-base font-bold tracking-tight text-foreground sm:text-lg">
               MHM
             </span>

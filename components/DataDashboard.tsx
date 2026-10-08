@@ -455,19 +455,19 @@ export function DataDashboard({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="border border-gray-200 rounded-lg p-6">
               <h3 className="font-semibold text-[var(--cobalt)] mb-3">Year-End Report PDFs</h3>
-              <p className="text-2xl font-bold text-[var(--raisin)] mb-2">18 grantees</p>
+              <p className="text-2xl font-bold text-[var(--raisin)] mb-2">20 grantees</p>
               <p className="text-xs uppercase tracking-wide text-gray-600">2024</p>
               <p className="text-xs text-gray-600 mt-3">Individual narrative PDFs including grant finance summaries</p>
             </div>
             <div className="border border-gray-200 rounded-lg p-6">
               <h3 className="font-semibold text-[var(--cobalt)] mb-3">Fluxx Progress Reports</h3>
-              <p className="text-2xl font-bold text-[var(--raisin)] mb-2">18-34 grantees</p>
+              <p className="text-2xl font-bold text-[var(--raisin)] mb-2">20-34 grantees</p>
               <p className="text-xs uppercase tracking-wide text-gray-600">2024-2026</p>
               <p className="text-xs text-gray-600 mt-3">Progress Reports consolidated in excel reports</p>
             </div>
             <div className="border border-gray-200 rounded-lg p-6">
               <h3 className="font-semibold text-[var(--cobalt)] mb-3">KPI Data Exports</h3>
-              <p className="text-2xl font-bold text-[var(--raisin)] mb-2">19-20 grantees</p>
+              <p className="text-2xl font-bold text-[var(--raisin)] mb-2">19-34 grantees</p>
               <p className="text-xs uppercase tracking-wide text-gray-600">2024-2025</p>
               <p className="text-xs text-gray-600 mt-3">4 CSV exports highlighting reach, skills, and devices</p>
             </div>
