@@ -83,10 +83,10 @@ export default function MethodologyPage() {
           <ol className="mt-3 flex flex-col gap-3 text-sm text-muted-foreground">
             <li>
               <span className="font-medium text-foreground">Fill color</span>{" "}
-              shows primary service category by default. Switching the
-              legend to &quot;Grantee status&quot; recolors every node by
-              whether it&apos;s a current grantee, a past grantee, or not a
-              grantee instead.
+              shows grantee status by default: whether an organization is a
+              current grantee, a past grantee, or not a grantee. Switching the
+              legend to &quot;Service Type&quot; recolors every node by its
+              primary service category instead.
             </li>
             <li>
               <span className="font-medium text-foreground">

@@ -45,6 +45,18 @@ export function RelationshipsTable({ kpiMap }: { kpiMap: Record<string, OrgKpiSu
     return { rows, nodesByRegion };
   }, []);
 
+  const [regionFilter, setRegionFilter] = useState("all");
+  const [query, setQuery] = useState("");
+
+  const visibleRows = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return rows.filter(
+      (row) =>
+        (regionFilter === "all" || row.regionCode === regionFilter) &&
+        (!q || row.grantee.toLowerCase().includes(q) || row.organization.toLowerCase().includes(q)),
+    );
+  }, [rows, regionFilter, query]);
+
   const selectedNode = useMemo(() => {
     if (!selected) return null;
     const node = nodesByRegion.get(selected.regionCode)?.get(selected.name);
@@ -54,6 +66,36 @@ export function RelationshipsTable({ kpiMap }: { kpiMap: Record<string, OrgKpiSu
 
   return (
     <div className="relative">
+      <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end">
+        <label className="flex flex-col gap-1 text-xs font-medium uppercase tracking-wide text-gray-600">
+          Region
+          <select
+            value={regionFilter}
+            onChange={(e) => setRegionFilter(e.target.value)}
+            className="rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-normal normal-case tracking-normal text-[var(--raisin)]"
+          >
+            <option value="all">All regions</option>
+            {REGIONS.map((region) => (
+              <option key={region.code} value={region.code}>
+                {region.label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="flex flex-1 flex-col gap-1 text-xs font-medium uppercase tracking-wide text-gray-600">
+          Search
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Grantee or organization name"
+            className="rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-normal normal-case tracking-normal text-[var(--raisin)]"
+          />
+        </label>
+        <p className="text-sm text-gray-500 sm:pb-2" aria-live="polite">
+          {visibleRows.length} of {rows.length} relationships
+        </p>
+      </div>
       <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white">
         <table className="w-full text-sm">
           <thead>
@@ -66,7 +108,14 @@ export function RelationshipsTable({ kpiMap }: { kpiMap: Record<string, OrgKpiSu
             </tr>
           </thead>
           <tbody>
-            {rows.map((row, i) => (
+            {visibleRows.length === 0 && (
+              <tr>
+                <td colSpan={5} className="px-4 py-6 text-center text-gray-500">
+                  No relationships match these filters.
+                </td>
+              </tr>
+            )}
+            {visibleRows.map((row, i) => (
               <tr key={i} className="border-b border-gray-100 last:border-0 hover:bg-gray-50">
                 <td className="whitespace-nowrap px-4 py-2.5 text-gray-500">{row.regionLabel}</td>
                 <td className="px-4 py-2.5">

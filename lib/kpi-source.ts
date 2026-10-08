@@ -222,29 +222,40 @@ export async function getKpiMap(): Promise<Record<string, OrgKpiSummary>> {
 export async function getEcosystemKpiTotals(): Promise<EcosystemKpiTotals> {
   const map = await getKpiMap();
 
-  const byPeriod = new Map<string, { served: number; outreach: number; partners: number }>();
+  type MetricKey = "served" | "outreach" | "partners";
+  type Bucket = Record<MetricKey, number | null>;
+  const byPeriod = new Map<string, Bucket>();
+  const add = (current: number | null, value: number | null) =>
+    value == null ? current : (current ?? 0) + value;
   for (const summary of Object.values(map)) {
     for (const rec of summary.records) {
-      const bucket = byPeriod.get(rec.period) ?? { served: 0, outreach: 0, partners: 0 };
-      bucket.served += rec.individualsServed ?? 0;
-      bucket.outreach += rec.outreachEvents ?? 0;
-      bucket.partners += rec.organizationsEngaged ?? 0;
+      const bucket = byPeriod.get(rec.period) ?? { served: null, outreach: null, partners: null };
+      bucket.served = add(bucket.served, rec.individualsServed);
+      bucket.outreach = add(bucket.outreach, rec.outreachEvents);
+      bucket.partners = add(bucket.partners, rec.organizationsEngaged);
       byPeriod.set(rec.period, bucket);
     }
   }
 
+  // A period where no submission answered a question (for example, the
+  // 2025 Year End form dropped the "individuals served" total) is listed as
+  // missing instead of being drawn as a misleading zero bar.
   const orderedPeriods = [...byPeriod.keys()].sort((a, b) => periodRank(a) - periodRank(b));
-  const buildSeries = (pick: (b: { served: number; outreach: number; partners: number }) => number) => {
-    const timeline = orderedPeriods.map((period) => ({
-      period: formatPeriodLabel(period),
-      count: pick(byPeriod.get(period)!),
-    }));
-    return { timeline, total: timeline.reduce((sum, point) => sum + point.count, 0) };
+  const buildSeries = (key: MetricKey) => {
+    const timeline: { period: string; count: number }[] = [];
+    const missingPeriods: string[] = [];
+    for (const period of orderedPeriods) {
+      const label = formatPeriodLabel(period);
+      const count = byPeriod.get(period)![key];
+      if (count == null) missingPeriods.push(label);
+      else timeline.push({ period: label, count });
+    }
+    return { timeline, missingPeriods, total: timeline.reduce((sum, point) => sum + point.count, 0) };
   };
 
   return {
-    individualsServed: buildSeries((b) => b.served),
-    outreachEvents: buildSeries((b) => b.outreach),
-    partnerOrganizations: buildSeries((b) => b.partners),
+    individualsServed: buildSeries("served"),
+    outreachEvents: buildSeries("outreach"),
+    partnerOrganizations: buildSeries("partners"),
   };
 }

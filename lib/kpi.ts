@@ -52,6 +52,8 @@ export function formatPeriodLabel(label: string): string {
  *  ecosystem-wide Data page. `period` labels are already display-formatted. */
 export interface EcosystemMetricSeries {
   timeline: { period: string; count: number }[];
+  /** Periods with submissions where nobody answered this question. */
+  missingPeriods: string[];
   total: number;
 }
 

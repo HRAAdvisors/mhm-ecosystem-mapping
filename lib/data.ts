@@ -25,6 +25,7 @@ const CATEGORY_MAP: Record<string, string> = {
   "Government / Municipal": "Housing & Community Development",
   "Workforce Development": "Workforce Training",
   "Digital Equity / Digital Literacy": "Digital Literacy and Device Support",
+  "Digital Literacy & Device Support": "Digital Literacy and Device Support",
 };
 
 /** Partners the tracker hasn't assigned a service category yet. Shown in

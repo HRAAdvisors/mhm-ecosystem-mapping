@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# demo GIFs (download only, not part of the site)
+gifs/
+public/gifs/

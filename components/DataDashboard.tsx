@@ -42,6 +42,7 @@ export function DataDashboard({
   const servedLive = hasLive(live?.individualsServed);
   const servedTimeline = servedLive ? live!.individualsServed.timeline : reportData.individualsServed.timeline;
   const servedTotal = servedLive ? live!.individualsServed.total : reportData.individualsServed.totalServed;
+  const servedMissing = servedLive ? live!.individualsServed.missingPeriods ?? [] : [];
 
   const outreachLive = hasLive(live?.outreachEvents);
   const outreachTimeline = outreachLive ? live!.outreachEvents.timeline : reportData.programEngagement.communityOutreachEvents;
@@ -64,6 +65,12 @@ export function DataDashboard({
           </h1>
           <p className="mt-4 text-sm sm:text-base text-gray-600">
             Complete data from the August 2026 ecosystem mapping analysis, covering grantee relationships, reach, and impact.
+          </p>
+          <p className="mt-5 flex items-center gap-3 rounded-lg border border-[var(--cobalt)] bg-white px-4 py-3 text-sm font-medium text-[var(--raisin)] md:hidden">
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 shrink-0 text-[var(--cobalt)]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="7" y="2" width="10" height="20" rx="2" transform="rotate(90 12 12)" />
+            </svg>
+            On a phone, turn it sideways to landscape view for the best experience.
           </p>
         </div>
 
@@ -185,16 +192,17 @@ export function DataDashboard({
           <p className="text-gray-600 mb-8">
             Three of 20 funded grantees – Human I-T, Computdopt, and City of Pharr – account for $2.1 million of reported spending – about half of the total $4.3 million spending reported.
           </p>
-          <div className="h-96">
+          <div className="h-[34rem]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={reportData.recentFunding.ytdGrantFundsSpent.slice(0, 15)}
                 layout="vertical"
                 margin={{ top: 5, right: 30, left: 10, bottom: 5 }}
+                barCategoryGap="15%"
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis type="number" tickFormatter={formatDollars} />
-                <YAxis dataKey="organization" type="category" width={190} tick={{ fontSize: 11 }} />
+                <YAxis dataKey="organization" type="category" width={190} interval={0} tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(value) => `$${typeof value === 'number' ? value.toLocaleString() : value}`} />
                 <Bar dataKey="amount" fill="#3C4ED6" />
               </BarChart>
@@ -291,6 +299,11 @@ export function DataDashboard({
               <p className="text-sm text-gray-600 mt-4">
                 <strong className="text-[var(--raisin)]">{servedTotal.toLocaleString()}</strong> total individuals served across reported periods
               </p>
+              {servedMissing.length > 0 && (
+                <p className="text-xs text-gray-500 mt-2">
+                  {servedMissing.join(", ")} not shown. The reporting form for that period did not ask for a total number of individuals served.
+                </p>
+              )}
             </div>
             <div>
               <h3 className="font-semibold text-[var(--raisin)] mb-4">Demographic Trends</h3>
@@ -402,8 +415,6 @@ export function DataDashboard({
                       ]}
                       cx="50%"
                       cy="50%"
-                      labelLine={false}
-                      label={({ name, value }) => `${name}: ${value}`}
                       outerRadius={80}
                       fill="#8884d8"
                       dataKey="value"
@@ -412,6 +423,12 @@ export function DataDashboard({
                       <Cell fill="#A0AEC0" />
                     </Pie>
                     <Tooltip formatter={formatTooltipNumber} />
+                    <Legend
+                      verticalAlign="bottom"
+                      formatter={(value, entry) =>
+                        `${value}: ${(entry.payload as { value?: number } | undefined)?.value ?? ""}`
+                      }
+                    />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
