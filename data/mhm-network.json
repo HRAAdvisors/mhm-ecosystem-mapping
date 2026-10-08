@@ -21833,7 +21833,7 @@
       "granteeAdditionalRegionCodes": []
     },
     {
-      "grantee": "Boys and Girls Club of Zapata",
+      "grantee": null,
       "organization": "Boys and Girls Club of Zapata",
       "organizationCounty": "Zapata",
       "region": "Region K - Tri-County / Laredo area",
@@ -21866,7 +21866,7 @@
       "granteeAdditionalRegionCodes": []
     },
     {
-      "grantee": "Building Promise USA",
+      "grantee": null,
       "organization": "Building Promise USA",
       "organizationCounty": "Travis",
       "region": "Region C - Travis/Austin core",
@@ -21899,7 +21899,7 @@
       "granteeAdditionalRegionCodes": []
     },
     {
-      "grantee": "CARDBoard Project",
+      "grantee": null,
       "organization": "CARDBoard Project",
       "organizationCounty": "Cameron",
       "region": "Region J - South Texas / Rio Grande Valley",
@@ -21932,7 +21932,7 @@
       "granteeAdditionalRegionCodes": []
     },
     {
-      "grantee": "Family Violence Prevention Services, Inc.",
+      "grantee": null,
       "organization": "Family Violence Prevention Services, Inc.",
       "organizationCounty": "Bexar",
       "region": "Region D - Bexar/San Antonio core",
@@ -21965,7 +21965,7 @@
       "granteeAdditionalRegionCodes": []
     },
     {
-      "grantee": "Frontera Healthcare Network",
+      "grantee": null,
       "organization": "Frontera Healthcare Network",
       "organizationCounty": "Mason",
       "region": "Region A - Concho Valley (San Angelo area)",
@@ -21998,8 +21998,8 @@
       "granteeAdditionalRegionCodes": []
     },
     {
-      "grantee": "South Texas Rural Health Service, Inc.",
-      "organization": "South Texas Rural Health Service, Inc.",
+      "grantee": null,
+      "organization": "South Texas Rural Health Services, Inc.",
       "organizationCounty": "Dimmit",
       "region": "Region L - Mid-Border Region",
       "regionSourceJustification": "[High confidence] DE Roster",

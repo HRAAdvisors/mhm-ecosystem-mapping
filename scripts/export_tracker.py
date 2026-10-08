@@ -128,6 +128,18 @@ def clean(v):
     return v
 
 
+# Spelling variants of one organization in the tracker, mapped to the name on
+# the client's 2026 award list. Without this the app treats each spelling as a
+# separate organization (e.g. the "Service" variant lost its 2026 status).
+NAME_ALIASES = {
+    "South Texas Rural Health Service, Inc.": "South Texas Rural Health Services, Inc.",
+}
+
+
+def canonical_name(v):
+    return NAME_ALIASES.get(v, v) if v else v
+
+
 def find_section_bounds(ws):
     """Locate the single header row ('Grantee' in col A) and the row range for
     the relationship section, then the "KEY REGIONAL PLAYERS" title row that
@@ -191,6 +203,18 @@ def extract_rows(ws, start, end, section, column_index):
         if not values.get("organization") and not values.get("grantee"):
             continue
         row = values
+        row["grantee"] = canonical_name(row.get("grantee"))
+        row["organization"] = canonical_name(row.get("organization"))
+        # Key Regional Player rows describe one organization on its own. A few
+        # repeat the name in the Grantee column too, which the app would read
+        # as the organization partnering with itself (a node with no drawable
+        # link). Treat those as the standalone organization row they are.
+        if (
+            section == "key_regional_player"
+            and row.get("grantee")
+            and row.get("grantee") == row.get("organization")
+        ):
+            row["grantee"] = None
         row["section"] = section
         row["sourceRow"] = r
         # The "region"/"additionalRegions" fields describe the ORGANIZATION's
