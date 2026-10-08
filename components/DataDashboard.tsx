@@ -184,32 +184,6 @@ export function DataDashboard({
           </div>
         </section>
 
-        {/* Recent Funding */}
-        <section className="mb-16 bg-white rounded-lg p-8 shadow-sm border border-gray-200">
-          <h2 className="text-2xl font-semibold text-[var(--raisin)] mb-2">
-            DE Recent Funding
-          </h2>
-          <p className="text-gray-600 mb-8">
-            Three of 20 funded grantees – Human I-T, Computdopt, and City of Pharr – account for $2.1 million of reported spending – about half of the total $4.3 million spending reported.
-          </p>
-          <div className="h-[34rem]">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={reportData.recentFunding.ytdGrantFundsSpent.slice(0, 15)}
-                layout="vertical"
-                margin={{ top: 5, right: 30, left: 10, bottom: 5 }}
-                barCategoryGap="15%"
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis type="number" tickFormatter={formatDollars} />
-                <YAxis dataKey="organization" type="category" width={190} interval={0} tick={{ fontSize: 11 }} />
-                <Tooltip formatter={(value) => `$${typeof value === 'number' ? value.toLocaleString() : value}`} />
-                <Bar dataKey="amount" fill="#3C4ED6" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </section>
-
         {/* Total Funding Trends */}
         <section className="mb-16 bg-white rounded-lg p-8 shadow-sm border border-gray-200">
           <h2 className="text-2xl font-semibold text-[var(--raisin)] mb-2">
