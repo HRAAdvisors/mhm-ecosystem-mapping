@@ -11,7 +11,7 @@ export function SiteHeader() {
               MHM
             </span>
             <span className="hidden text-sm text-muted-foreground md:inline">
-              Regional Grantee &amp; Organization Network
+              Regional Digital Equity Grantee &amp; Organization Network
             </span>
           </Link>
           <nav className="flex items-center gap-1 sm:gap-2">
