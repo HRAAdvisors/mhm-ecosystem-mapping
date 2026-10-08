@@ -9,7 +9,7 @@ type StatCategory = {
   bgClass: string;
   borderClass: string;
   textClass: string;
-  stats: { value: string; label: string }[];
+  stats: { value: string; label: string; note?: string }[];
 };
 
 /** "Ecosystem partners" and "Tracked ecosystem relationships" are computed
@@ -38,7 +38,11 @@ function buildCategories(portfolioTotals: PortfolioTotals): StatCategory[] {
       borderClass: "border-teal-200",
       textClass: "text-[var(--teal)]",
       stats: [
-        { value: "$31.3M", label: "Digital equity funding awarded since 2024" },
+        {
+          value: "$31.3M",
+          label: "Digital equity funding awarded since 2024",
+          note: "(Includes grants and donations)",
+        },
         { value: String(portfolioTotals.relationshipCount), label: "Tracked ecosystem relationships" },
       ],
     },
@@ -59,11 +63,13 @@ function buildCategories(portfolioTotals: PortfolioTotals): StatCategory[] {
 function StatCard({
   value,
   label,
+  note,
   category,
   index,
 }: {
   value: string;
   label: string;
+  note?: string;
   category: StatCategory;
   index: number;
 }) {
@@ -100,6 +106,7 @@ function StatCard({
       <p className="text-xs font-semibold text-[var(--raisin)] uppercase tracking-wide">
         {label}
       </p>
+      {note && <p className="mt-1 text-xs text-muted-foreground">{note}</p>}
     </div>
   );
 }
@@ -162,6 +169,7 @@ export function ExecutiveSummary({ portfolioTotals }: { portfolioTotals: Portfol
                       key={stat.label}
                       value={stat.value}
                       label={stat.label}
+                      note={stat.note}
                       category={category}
                       index={index}
                     />
@@ -169,9 +177,6 @@ export function ExecutiveSummary({ portfolioTotals }: { portfolioTotals: Portfol
                 </div>
               </div>
             ))}
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              *Includes grants and donations.
-            </p>
           </div>
         </div>
       </div>
