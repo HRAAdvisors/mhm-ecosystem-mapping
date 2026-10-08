@@ -38,7 +38,7 @@ function buildCategories(portfolioTotals: PortfolioTotals): StatCategory[] {
       borderClass: "border-teal-200",
       textClass: "text-[var(--teal)]",
       stats: [
-        { value: "$31.3M", label: "Digital equity funding awarded since 2024*" },
+        { value: "$31.3M", label: "Digital equity funding awarded since 2024" },
         { value: String(portfolioTotals.relationshipCount), label: "Tracked ecosystem relationships" },
       ],
     },

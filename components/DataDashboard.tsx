@@ -243,7 +243,7 @@ export function DataDashboard({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-green-50 p-6 rounded-lg border border-green-200">
               <p className="text-3xl font-bold text-[#6BCB77] mb-2">$31.3M</p>
-              <p className="text-sm font-medium text-gray-700">Digital equity funding awarded since 2024*</p>
+              <p className="text-sm font-medium text-gray-700">Digital equity funding awarded since 2024</p>
               <p className="text-xs text-gray-500 mb-4">*Includes grants and donations.</p>
               <p className="text-2xl font-bold text-[#6BCB77]">7%</p>
               <p className="text-sm font-medium text-gray-700">Of all MHM organizations funded</p>
