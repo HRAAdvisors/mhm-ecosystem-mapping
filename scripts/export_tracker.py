@@ -204,6 +204,9 @@ def extract_rows(ws, start, end, section, column_index):
         if not values.get("organization") and not values.get("grantee"):
             continue
         row = values
+        amount = row.get("granteeFundingAmount")
+        if isinstance(amount, (int, float)) and not isinstance(amount, bool):
+            row["granteeFundingAmount"] = f"${amount:,.2f}" if amount % 1 else f"${amount:,.0f}"
         row["grantee"] = canonical_name(row.get("grantee"))
         row["organization"] = canonical_name(row.get("organization"))
         # Key Regional Player rows describe one organization on its own. A few
@@ -241,7 +244,10 @@ def main():
     out_path = Path(__file__).resolve().parent.parent / "data" / "mhm-network.json"
 
     wb = openpyxl.load_workbook(source, data_only=True)
-    ws = wb[SHEET_NAME]
+    matching_sheets = [name for name in wb.sheetnames if name.strip() == SHEET_NAME]
+    if len(matching_sheets) != 1:
+        raise RuntimeError(f"Expected exactly one worksheet named {SHEET_NAME!r}, found {matching_sheets}")
+    ws = wb[matching_sheets[0]]
 
     (rel_start, rel_end), (krp_start, krp_end) = find_section_bounds(ws)
     column_index = build_column_index(ws, rel_start - 1)

@@ -32,6 +32,14 @@ export function colorForGranteeStatus(status: "current" | "past" | "not"): strin
   return GRANTEE_STATUS_COLORS[status];
 }
 
+// The light "not" fill is too faint for label text on white, so labels use a
+// darker gray (about 6:1 contrast) while the circle keeps the light fill.
+const NOT_GRANTEE_LABEL_COLOR = "#5F6670";
+
+export function labelColorForGranteeStatus(status: "current" | "past" | "not"): string {
+  return status === "not" ? NOT_GRANTEE_LABEL_COLOR : GRANTEE_STATUS_COLORS[status];
+}
+
 const RAISIN = "#1B1B33";
 const WHITE = "#FFFFFF";
 

@@ -3,6 +3,7 @@
 import {
   colorForCategory,
   colorForGranteeStatus,
+  labelColorForGranteeStatus,
   dashForRelationshipType,
   GRANTEE_LINK_WIDTH,
   opacityForRelationshipStrength,
@@ -693,7 +694,10 @@ export function NetworkGraph({
           .select<SVGTextElement>("text.label-text")
           .attr("font-size", fit.fontSize)
           .attr("font-weight", d.isGrantee ? 700 : 500)
-          .attr("fill", fillColor(d));
+          .attr(
+            "fill",
+            colorMode === "granteeStatus" ? labelColorForGranteeStatus(d.granteeStatus) : fillColor(d),
+          );
         text.selectAll("tspan").remove();
         const startDy = blockTop + fit.fontSize * 0.8;
         fit.lines.forEach((line, i) => {
