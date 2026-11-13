@@ -134,6 +134,22 @@ def clean(v):
 NAME_ALIASES = {
     "South Texas Rural Health Service, Inc.": "South Texas Rural Health Services, Inc.",
     "Rocksprings ISD": "Rocksprings Independent School District",
+    # Acronym-only names spelled out for display (partner orgs only; grantee
+    # names are left alone because KPI reports are matched to them by name).
+    "CASP (Kimble community after-school program)": "Junction Community After School Program & Family Center (CASP)",
+    "ACLU": "American Civil Liberties Union (ACLU)",
+    "FEMA": "Federal Emergency Management Agency (FEMA)",
+    "UTRGV": "University of Texas Rio Grande Valley (UTRGV)",
+    "BCFS": "Baptist Child & Family Services (BCFS)",
+    "Austin ISD": "Austin Independent School District",
+    "Harlandale ISD": "Harlandale Independent School District",
+    "Laredo ISD": "Laredo Independent School District",
+    "Crystal City ISD": "Crystal City Independent School District",
+    "Northside ISD Family Engagement Center": "Northside Independent School District Family Engagement Center",
+    "Region One ESC": "Region One Education Service Center (ESC)",
+    "RGV Broadband Coalition": "Rio Grande Valley Broadband Coalition (RGV Broadband Coalition)",
+    "USDA Telecom Program": "U.S. Department of Agriculture (USDA) Telecom Program",
+    "McCulloch CRCG (Juvenile Probation Office pooled resource group)": "McCulloch Community Resource Coordination Group (CRCG) - Juvenile Probation Office pooled resource group",
 }
 
 
@@ -216,6 +232,12 @@ def extract_rows(ws, start, end, section, column_index):
             and row.get("grantee") == row.get("organization")
         ):
             row["grantee"] = None
+        # A funding cell typed as a plain number in Excel (e.g. 200000) comes
+        # through as an int/float; the app only recognizes "$..." strings
+        # (isRealFunding in lib/data.ts), so normalize to "$200,000".
+        amount = row.get("granteeFundingAmount")
+        if isinstance(amount, (int, float)) and not isinstance(amount, bool):
+            row["granteeFundingAmount"] = f"${amount:,.0f}"
         row["section"] = section
         row["sourceRow"] = r
         # The "region"/"additionalRegions" fields describe the ORGANIZATION's
@@ -241,7 +263,13 @@ def main():
     out_path = Path(__file__).resolve().parent.parent / "data" / "mhm-network.json"
 
     wb = openpyxl.load_workbook(source, data_only=True)
-    ws = wb[SHEET_NAME]
+    # Match the tab name ignoring stray leading/trailing whitespace (the
+    # tracker's tab has been saved as "Master Grantee-Org Sheet " with a
+    # trailing space, which Excel doesn't show).
+    sheet_lookup = {name.strip(): name for name in wb.sheetnames}
+    if SHEET_NAME not in sheet_lookup:
+        raise RuntimeError(f"Sheet {SHEET_NAME!r} not found; workbook has {wb.sheetnames}")
+    ws = wb[sheet_lookup[SHEET_NAME]]
 
     (rel_start, rel_end), (krp_start, krp_end) = find_section_bounds(ws)
     column_index = build_column_index(ws, rel_start - 1)

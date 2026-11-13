@@ -40,7 +40,6 @@ export function OrganizationPanel({
         )}
         {node.fundingAmount && <Row label="Grantee Funding" value={node.fundingAmount} />}
         {node.fundingYear && <Row label="Funding Year" value={node.fundingYear} />}
-        {node.fundingSourceLabel && <Row label="Funding Source" value={node.fundingSourceLabel} />}
         <Row label="Primary Service Area" value={node.serviceArea} />
       </dl>
       {node.kpi && <KpiSection kpi={node.kpi} />}

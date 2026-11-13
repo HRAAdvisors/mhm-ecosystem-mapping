@@ -226,20 +226,6 @@ export function DataDashboard({
           <p className="text-gray-600 mb-8">
             Digital Equity is still a relatively small, recent slice of a much larger health-focused portfolio, making up about 7% of MHM's funded universe.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
-              <p className="text-3xl font-bold text-[var(--cobalt)] mb-2">$1.19B</p>
-              <p className="text-sm font-medium text-gray-700">Awarded across 3,108 grants to 528 organizations since 1996</p>
-            </div>
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
-              <p className="text-3xl font-bold text-[var(--cobalt)] mb-2">$249M</p>
-              <p className="text-sm font-medium text-gray-700">Awarded from 2021-2025 across 430 orgs</p>
-            </div>
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
-              <p className="text-3xl font-bold text-[var(--cobalt)] mb-2">$43.9M</p>
-              <p className="text-sm font-medium text-gray-700">Awarded to organizations in a rural county</p>
-            </div>
-          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-green-50 p-6 rounded-lg border border-green-200">
               <p className="text-3xl font-bold text-[#6BCB77] mb-2">$31.3M</p>
@@ -431,12 +417,6 @@ export function DataDashboard({
           </div>
           <div className="space-y-4">
             <h3 className="font-semibold text-[var(--raisin)]">Key Patterns</h3>
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-              <p className="font-semibold text-[var(--raisin)] text-sm mb-2">DigitalLIFT is a central hub</p>
-              <p className="text-sm text-gray-600">
-                {reportData.collaborationNetwork.relationshipPatterns.digitalLiftAsHub}
-              </p>
-            </div>
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
               <p className="font-semibold text-[var(--raisin)] text-sm mb-2">Reach extends beyond grantees</p>
               <p className="text-sm text-gray-600">
