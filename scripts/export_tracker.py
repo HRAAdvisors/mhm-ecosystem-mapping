@@ -60,7 +60,29 @@ HEADER_MAP = {
     "notesFlags": "Notes / Flags",
     "activeGrant2026": "Active Grant (2026)?",
     "otherMhmGranteeStatus": "Other MHM Grantee Status",
+    "granteeActivity": "Grantee Activity",
 }
+
+# Fixes for known typos/variants in the tracker's "Grantee Activity" cells.
+# "Digital Navigation Training" is the same activity as "Digital Navigation".
+ACTIVITY_FIXES = {
+    "Digital Literarcy Training": "Digital Literacy Training",
+    "Digital Navigation Training": "Digital Navigation",
+}
+
+
+def activity_tags(raw):
+    """Splits a "Grantee Activity" cell (normally "A; B; C", but a few cells
+    use commas or have a trailing delimiter) into a clean, de-duplicated list
+    of tags, in the order written."""
+    if not raw:
+        return []
+    tags = []
+    for part in re.split(r"[;,]", str(raw)):
+        tag = ACTIVITY_FIXES.get(part.strip(), part.strip())
+        if tag and tag not in tags:
+            tags.append(tag)
+    return tags
 
 REGION_RE = re.compile(r"^Region ([A-L])\b")
 
@@ -137,6 +159,7 @@ NAME_ALIASES = {
     # Acronym-only names spelled out for display (partner orgs only; grantee
     # names are left alone because KPI reports are matched to them by name).
     "CASP (Kimble community after-school program)": "Junction Community After School Program & Family Center (CASP)",
+    "AHEC": "Area Health Education Centers (AHEC)",
     "ACLU": "American Civil Liberties Union (ACLU)",
     "FEMA": "Federal Emergency Management Agency (FEMA)",
     "UTRGV": "University of Texas Rio Grande Valley (UTRGV)",
@@ -238,6 +261,7 @@ def extract_rows(ws, start, end, section, column_index):
         amount = row.get("granteeFundingAmount")
         if isinstance(amount, (int, float)) and not isinstance(amount, bool):
             row["granteeFundingAmount"] = f"${amount:,.0f}"
+        row["granteeActivities"] = activity_tags(row.pop("granteeActivity", None))
         row["section"] = section
         row["sourceRow"] = r
         # The "region"/"additionalRegions" fields describe the ORGANIZATION's
@@ -260,7 +284,12 @@ def extract_rows(ws, start, end, section, column_index):
 
 def main():
     source = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_SOURCE
-    out_path = Path(__file__).resolve().parent.parent / "data" / "mhm-network.json"
+    # Optional second argument overrides the output file (default: the app's data file).
+    out_path = (
+        Path(sys.argv[2])
+        if len(sys.argv) > 2
+        else Path(__file__).resolve().parent.parent / "data" / "mhm-network.json"
+    )
 
     wb = openpyxl.load_workbook(source, data_only=True)
     # Match the tab name ignoring stray leading/trailing whitespace (the

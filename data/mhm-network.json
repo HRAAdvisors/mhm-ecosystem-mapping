@@ -102,7 +102,12 @@
         "K"
       ],
       "granteeRegionCode": "E",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation",
+        "Online Safety & Security"
+      ]
     },
     {
       "grantee": "Bastrop County Cares",
@@ -138,7 +143,12 @@
         "E"
       ],
       "granteeRegionCode": "E",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation",
+        "Online Safety & Security"
+      ]
     },
     {
       "grantee": "Bastrop County Cares",
@@ -171,7 +181,12 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": "E",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation",
+        "Online Safety & Security"
+      ]
     },
     {
       "grantee": "Brownsville Housing Opportunity Corporation",
@@ -204,7 +219,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Brownsville Housing Opportunity Corporation",
@@ -237,7 +256,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Brownsville Housing Opportunity Corporation",
@@ -270,7 +293,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Brownsville Housing Opportunity Corporation",
@@ -306,7 +333,11 @@
         "E"
       ],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Brownsville Housing Opportunity Corporation",
@@ -339,7 +370,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Brownsville Housing Opportunity Corporation",
@@ -372,7 +407,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Brownsville Housing Opportunity Corporation",
@@ -405,7 +444,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Building Promise USA",
@@ -440,6 +483,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -475,6 +523,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -510,6 +563,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -545,6 +603,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -580,6 +643,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -615,6 +683,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -650,6 +723,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -685,6 +763,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -720,6 +803,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -755,6 +843,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -790,6 +883,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -825,6 +923,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -860,6 +963,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -895,6 +1003,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -930,6 +1043,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -965,6 +1083,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1000,6 +1123,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1035,6 +1163,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1070,6 +1203,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1105,6 +1243,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1142,6 +1285,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1177,6 +1325,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1212,6 +1365,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1247,6 +1405,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1282,6 +1445,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1317,6 +1485,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1352,6 +1525,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1387,6 +1565,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1422,6 +1605,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1457,6 +1645,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1492,6 +1685,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1527,6 +1725,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1562,6 +1765,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1597,6 +1805,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1632,6 +1845,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1667,6 +1885,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1702,6 +1925,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1737,6 +1965,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1772,6 +2005,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1807,6 +2045,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1842,6 +2085,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -1875,7 +2123,10 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "CARDBoard Project",
@@ -1908,7 +2159,10 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "CARDBoard Project",
@@ -1941,7 +2195,10 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "City of Mercedes",
@@ -1976,7 +2233,11 @@
         "K"
       ],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "City of Mercedes",
@@ -2012,7 +2273,11 @@
         "E"
       ],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "City of Mercedes",
@@ -2045,7 +2310,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "City of Mercedes",
@@ -2078,7 +2347,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "City of Mercedes",
@@ -2111,7 +2384,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "City of Mercedes",
@@ -2144,7 +2421,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "City of Mercedes",
@@ -2177,7 +2458,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "City of Pharr",
@@ -2210,7 +2495,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "City of Pharr",
@@ -2246,7 +2535,11 @@
         "E"
       ],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "City of Pharr",
@@ -2279,7 +2572,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "City of Pharr",
@@ -2312,7 +2609,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "City of Pharr",
@@ -2345,7 +2646,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "City of Pharr",
@@ -2378,7 +2683,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "City of Pharr",
@@ -2411,7 +2720,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "City of Pharr",
@@ -2444,7 +2757,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Communities Unlimited, Inc.",
@@ -2479,6 +2796,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2514,6 +2835,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2549,6 +2874,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2586,6 +2915,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2621,6 +2954,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2658,6 +2995,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2693,6 +3034,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2728,6 +3073,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2763,6 +3112,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2798,6 +3151,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2833,6 +3190,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2868,6 +3229,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2903,6 +3268,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2938,6 +3307,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -2973,6 +3346,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -3008,6 +3385,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -3043,6 +3424,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -3078,6 +3463,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -3113,6 +3502,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -3148,6 +3541,10 @@
       "granteeRegionCode": "K",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -3184,7 +3581,12 @@
         "E"
       ],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3217,7 +3619,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3250,7 +3657,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3283,7 +3695,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3318,7 +3735,12 @@
         "L"
       ],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3351,7 +3773,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3384,7 +3811,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3417,7 +3849,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3450,7 +3887,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3485,7 +3927,12 @@
         "L"
       ],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3518,7 +3965,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3551,7 +4003,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3584,7 +4041,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3617,7 +4079,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3650,7 +4117,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3683,7 +4155,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3716,7 +4193,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3749,7 +4231,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3782,7 +4269,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3815,7 +4307,12 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3848,7 +4345,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3881,7 +4383,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3914,7 +4421,12 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Community Council of South Central Texas, Inc.",
@@ -3947,7 +4459,12 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Compudopt",
@@ -3985,6 +4502,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4023,6 +4546,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4061,6 +4590,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4099,6 +4634,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4137,6 +4678,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4175,6 +4722,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4213,6 +4766,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4253,6 +4812,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4291,6 +4856,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4329,6 +4900,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4367,6 +4944,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4405,6 +4988,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4443,6 +5032,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4481,6 +5076,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4519,6 +5120,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4557,6 +5164,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4595,6 +5208,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4633,6 +5252,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4671,6 +5296,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4709,6 +5340,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4747,6 +5384,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4785,6 +5428,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4823,6 +5472,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4861,6 +5516,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4899,6 +5560,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4937,6 +5604,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -4975,6 +5648,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5013,6 +5692,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5051,6 +5736,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5089,6 +5780,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5127,6 +5824,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5165,6 +5868,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5203,6 +5912,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5241,6 +5956,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5279,6 +6000,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5317,6 +6044,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5355,6 +6088,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5393,6 +6132,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5431,6 +6176,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5469,6 +6220,12 @@
         "J",
         "L",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -5502,7 +6259,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5535,7 +6297,12 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5568,7 +6335,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5601,7 +6373,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5636,7 +6413,12 @@
         "J"
       ],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5669,7 +6451,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5702,7 +6489,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5735,7 +6527,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5768,7 +6565,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5801,7 +6603,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5834,7 +6641,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5867,7 +6679,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5900,7 +6717,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5933,7 +6755,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5966,7 +6793,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -5999,7 +6831,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6032,7 +6869,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6065,7 +6907,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6098,7 +6945,12 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6131,7 +6983,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6164,7 +7021,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6197,7 +7059,12 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6230,7 +7097,12 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6263,7 +7135,12 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6296,7 +7173,12 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6329,7 +7211,12 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6362,7 +7249,12 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6395,7 +7287,12 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Connect Humanity",
@@ -6428,7 +7325,12 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "digitalLIFT",
@@ -6464,6 +7366,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6500,6 +7406,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6536,6 +7446,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6572,6 +7486,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6608,6 +7526,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6644,6 +7566,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6680,6 +7606,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6716,6 +7646,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6752,6 +7686,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6788,6 +7726,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6824,6 +7766,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6860,6 +7806,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6896,6 +7846,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6932,6 +7886,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -6968,6 +7926,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7004,6 +7966,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7040,6 +8006,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7076,6 +8046,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7112,6 +8086,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7148,6 +8126,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7184,6 +8166,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7220,6 +8206,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7256,6 +8246,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7292,6 +8286,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7328,6 +8326,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7364,6 +8366,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7402,6 +8408,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7438,6 +8448,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7474,6 +8488,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7510,6 +8528,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7546,6 +8568,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7582,6 +8608,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7618,6 +8648,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7654,6 +8688,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7692,6 +8730,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7728,6 +8770,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7764,6 +8810,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7800,6 +8850,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7836,6 +8890,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7872,6 +8930,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7908,6 +8970,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7944,6 +9010,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -7980,6 +9050,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8016,6 +9090,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8052,6 +9130,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8088,6 +9170,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8124,6 +9210,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8160,6 +9250,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8196,6 +9290,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8232,6 +9330,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8265,7 +9367,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Empower House SA",
@@ -8298,7 +9405,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Empower House SA",
@@ -8331,7 +9443,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Empower House SA",
@@ -8366,7 +9483,12 @@
         "K"
       ],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Empower House SA",
@@ -8402,7 +9524,12 @@
         "E"
       ],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Empower House SA",
@@ -8435,7 +9562,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Empower House SA",
@@ -8468,7 +9600,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Empower House SA",
@@ -8501,7 +9638,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Empower House SA",
@@ -8534,7 +9676,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Empower House SA",
@@ -8567,7 +9714,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Empower House SA",
@@ -8600,7 +9752,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Empower House SA",
@@ -8633,7 +9790,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Family Service Association of San Antonio, Inc.",
@@ -8668,6 +9830,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8703,6 +9870,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8738,6 +9910,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8773,6 +9950,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8808,6 +9990,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8843,6 +10030,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8880,6 +10072,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8915,6 +10112,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8950,6 +10152,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -8985,6 +10192,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9023,6 +10235,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9058,6 +10275,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9093,6 +10315,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9128,6 +10355,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9163,6 +10395,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9198,6 +10435,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9233,6 +10475,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9268,6 +10515,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9305,6 +10557,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9340,6 +10597,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9375,6 +10637,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9410,6 +10677,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9445,6 +10717,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9480,6 +10757,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9515,6 +10797,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9550,6 +10837,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9585,6 +10877,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9620,6 +10917,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9655,6 +10957,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9690,6 +10997,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9725,6 +11037,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9760,6 +11077,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9795,6 +11117,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9830,6 +11157,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9865,6 +11197,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9900,6 +11237,11 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -9933,7 +11275,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Online Safety & Security"
+      ]
     },
     {
       "grantee": "Family Violence Prevention Services, Inc.",
@@ -9966,7 +11313,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Online Safety & Security"
+      ]
     },
     {
       "grantee": "Family Violence Prevention Services, Inc.",
@@ -9999,7 +11351,12 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Online Safety & Security"
+      ]
     },
     {
       "grantee": "Family Violence Prevention Services, Inc.",
@@ -10032,7 +11389,12 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Online Safety & Security"
+      ]
     },
     {
       "grantee": "Family Violence Prevention Services, Inc.",
@@ -10065,7 +11427,12 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Online Safety & Security"
+      ]
     },
     {
       "grantee": "Frontera Healthcare Network",
@@ -10100,6 +11467,10 @@
       "granteeRegionCode": "A",
       "granteeAdditionalRegionCodes": [
         "B"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -10135,6 +11506,10 @@
       "granteeRegionCode": "A",
       "granteeAdditionalRegionCodes": [
         "B"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -10172,6 +11547,10 @@
       "granteeRegionCode": "A",
       "granteeAdditionalRegionCodes": [
         "B"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -10207,6 +11586,10 @@
       "granteeRegionCode": "A",
       "granteeAdditionalRegionCodes": [
         "B"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -10242,6 +11625,10 @@
       "granteeRegionCode": "A",
       "granteeAdditionalRegionCodes": [
         "B"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -10277,6 +11664,10 @@
       "granteeRegionCode": "A",
       "granteeAdditionalRegionCodes": [
         "B"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -10312,6 +11703,10 @@
       "granteeRegionCode": "A",
       "granteeAdditionalRegionCodes": [
         "B"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -10347,6 +11742,10 @@
       "granteeRegionCode": "A",
       "granteeAdditionalRegionCodes": [
         "B"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -10382,6 +11781,10 @@
       "granteeRegionCode": "A",
       "granteeAdditionalRegionCodes": [
         "B"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -10417,6 +11820,10 @@
       "granteeRegionCode": "A",
       "granteeAdditionalRegionCodes": [
         "B"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -10452,6 +11859,10 @@
       "granteeRegionCode": "A",
       "granteeAdditionalRegionCodes": [
         "B"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -10485,7 +11896,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Girls Inc. of San Antonio",
@@ -10518,7 +11933,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Girls Inc. of San Antonio",
@@ -10553,7 +11972,11 @@
         "K"
       ],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Girls Inc. of San Antonio",
@@ -10589,7 +12012,11 @@
         "E"
       ],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Girls Inc. of San Antonio",
@@ -10622,7 +12049,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Girls Inc. of San Antonio",
@@ -10655,7 +12086,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Girls Inc. of San Antonio",
@@ -10688,7 +12123,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Girls Inc. of San Antonio",
@@ -10721,7 +12160,11 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Girls Inc. of San Antonio",
@@ -10754,7 +12197,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Girls Inc. of San Antonio",
@@ -10787,7 +12234,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Goodwill Industries of Central Texas",
@@ -10825,6 +12276,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -10863,6 +12319,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -10901,6 +12362,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -10939,6 +12405,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -10977,6 +12448,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11015,6 +12491,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11053,6 +12534,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11091,6 +12577,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11129,6 +12620,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11170,6 +12666,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11208,6 +12709,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11246,6 +12752,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11284,6 +12795,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11322,6 +12838,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11360,6 +12881,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11398,6 +12924,11 @@
         "B",
         "E",
         "G"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11433,6 +12964,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11470,6 +13004,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11505,6 +13042,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11540,6 +13080,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11575,6 +13118,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11610,6 +13156,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11645,6 +13194,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11680,6 +13232,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11715,6 +13270,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11750,6 +13308,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11785,6 +13346,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11820,6 +13384,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11855,6 +13422,9 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "K"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -11891,6 +13461,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -11927,6 +13502,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -11963,6 +13543,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -11999,6 +13584,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12035,6 +13625,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12071,6 +13666,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12107,6 +13707,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12143,6 +13748,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12179,6 +13789,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12215,6 +13830,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12251,6 +13871,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12287,6 +13912,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12323,6 +13953,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12359,6 +13994,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12395,6 +14035,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12431,6 +14076,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12467,6 +14117,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12503,6 +14158,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12539,6 +14199,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12575,6 +14240,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12611,6 +14281,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12647,6 +14322,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12683,6 +14363,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12719,6 +14404,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12755,6 +14445,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12791,6 +14486,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12827,6 +14527,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12863,6 +14568,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12899,6 +14609,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12935,6 +14650,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -12971,6 +14691,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13007,6 +14732,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13043,6 +14773,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13079,6 +14814,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13115,6 +14855,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13151,6 +14896,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13187,6 +14937,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13223,6 +14978,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13259,6 +15019,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13295,6 +15060,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13331,6 +15101,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13367,6 +15142,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13403,6 +15183,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13439,6 +15224,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -13478,6 +15268,10 @@
       "granteeAdditionalRegionCodes": [
         "C",
         "J"
+      ],
+      "granteeActivities": [
+        "Advocacy",
+        "Internet Access"
       ]
     },
     {
@@ -13516,6 +15310,10 @@
       "granteeAdditionalRegionCodes": [
         "C",
         "J"
+      ],
+      "granteeActivities": [
+        "Advocacy",
+        "Internet Access"
       ]
     },
     {
@@ -13552,6 +15350,10 @@
       "granteeAdditionalRegionCodes": [
         "C",
         "J"
+      ],
+      "granteeActivities": [
+        "Advocacy",
+        "Internet Access"
       ]
     },
     {
@@ -13588,6 +15390,10 @@
       "granteeAdditionalRegionCodes": [
         "C",
         "J"
+      ],
+      "granteeActivities": [
+        "Advocacy",
+        "Internet Access"
       ]
     },
     {
@@ -13624,6 +15430,10 @@
       "granteeAdditionalRegionCodes": [
         "C",
         "J"
+      ],
+      "granteeActivities": [
+        "Advocacy",
+        "Internet Access"
       ]
     },
     {
@@ -13660,6 +15470,10 @@
       "granteeAdditionalRegionCodes": [
         "C",
         "J"
+      ],
+      "granteeActivities": [
+        "Advocacy",
+        "Internet Access"
       ]
     },
     {
@@ -13696,6 +15510,10 @@
       "granteeAdditionalRegionCodes": [
         "C",
         "J"
+      ],
+      "granteeActivities": [
+        "Advocacy",
+        "Internet Access"
       ]
     },
     {
@@ -13731,6 +15549,10 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -13766,6 +15588,10 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -13803,6 +15629,10 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -13841,6 +15671,10 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -13878,6 +15712,10 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -13913,6 +15751,10 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -13950,6 +15792,10 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -13985,6 +15831,10 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -14020,6 +15870,10 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -14053,7 +15907,8 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": "Boys and Girls Club of Zapata",
@@ -14086,7 +15941,10 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "K",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Boysville Inc.",
@@ -14119,7 +15977,8 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": "City of El Cenizo",
@@ -14152,7 +16011,8 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "K",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": "City of San Antonio",
@@ -14185,7 +16045,10 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Healthier Texas",
@@ -14218,7 +16081,8 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "C",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": "Kinney County",
@@ -14251,7 +16115,8 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": "Menard ISD",
@@ -14284,7 +16149,8 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "A",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": "Nueces Canyon Consolidated ISD",
@@ -14317,7 +16183,8 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": "Rocksprings Independent School District",
@@ -14350,7 +16217,11 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "San Antonio Foundation for Excellence in Education",
@@ -14383,7 +16254,8 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": "South Texas Rural Health Services, Inc.",
@@ -14418,6 +16290,10 @@
       "granteeRegionCode": "L",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -14453,7 +16329,8 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "J"
-      ]
+      ],
+      "granteeActivities": []
     },
     {
       "grantee": "Building Promise USA",
@@ -14488,6 +16365,11 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "E"
+      ],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -14521,7 +16403,10 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Family Violence Prevention Services, Inc.",
@@ -14554,7 +16439,12 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Online Safety & Security"
+      ]
     },
     {
       "grantee": "Frontera Healthcare Network",
@@ -14589,6 +16479,10 @@
       "granteeRegionCode": "A",
       "granteeAdditionalRegionCodes": [
         "B"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -14622,7 +16516,11 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Latinitas, Inc.",
@@ -14657,6 +16555,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -14690,7 +16591,12 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "digitalLIFT",
@@ -14726,6 +16632,10 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "E"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -14759,7 +16669,11 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Human-I-T",
@@ -14795,6 +16709,11 @@
       "granteeAdditionalRegionCodes": [
         "D",
         "K"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -14830,6 +16749,10 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
       ]
     },
     {
@@ -14863,7 +16786,11 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -14896,7 +16823,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -14929,7 +16860,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -14965,7 +16900,11 @@
         "E"
       ],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -14998,7 +16937,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15031,7 +16974,11 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15064,7 +17011,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15097,7 +17048,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15132,7 +17087,11 @@
         "J"
       ],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15167,7 +17126,11 @@
         "L"
       ],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15200,7 +17163,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15233,7 +17200,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15266,7 +17237,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15299,7 +17274,11 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15332,7 +17311,11 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15365,7 +17348,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15398,7 +17385,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15431,7 +17422,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15464,7 +17459,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15497,7 +17496,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15530,7 +17533,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15563,7 +17570,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15596,7 +17607,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15629,7 +17644,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15662,7 +17681,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15695,7 +17718,11 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "La Union del Pueblo Entero",
@@ -15730,7 +17757,11 @@
         "J"
       ],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Latinitas, Inc.",
@@ -15765,6 +17796,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -15800,6 +17834,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -15835,6 +17872,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -15873,6 +17913,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -15908,6 +17951,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -15943,6 +17989,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -15980,6 +18029,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16015,6 +18067,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16052,6 +18107,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16087,6 +18145,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16122,6 +18183,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16157,6 +18221,9 @@
       "granteeRegionCode": "C",
       "granteeAdditionalRegionCodes": [
         "D"
+      ],
+      "granteeActivities": [
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16192,6 +18259,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16230,6 +18302,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16265,6 +18342,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16300,6 +18382,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16335,6 +18422,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16370,6 +18462,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16405,6 +18502,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16440,6 +18542,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16475,6 +18582,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16510,6 +18622,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16545,6 +18662,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16580,6 +18702,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16615,11 +18742,16 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
       "grantee": "MHP Salud",
-      "organization": "AHEC",
+      "organization": "Area Health Education Centers (AHEC)",
       "organizationCounty": "Hidalgo",
       "region": "Region J - South Texas / Rio Grande Valley",
       "regionSourceJustification": "[Medium confidence] Area Health Education Center — assumed the Lower Rio Grande Valley AHEC given MHP Salud's RGV focus.",
@@ -16650,6 +18782,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16685,6 +18822,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16720,6 +18862,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16755,6 +18902,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16790,6 +18942,11 @@
       "granteeRegionCode": "J",
       "granteeAdditionalRegionCodes": [
         "L"
+      ],
+      "granteeActivities": [
+        "Internet Access",
+        "Digital Navigation",
+        "Digital Literacy Training"
       ]
     },
     {
@@ -16826,7 +18983,11 @@
         "E"
       ],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Mission Road Developmental Center",
@@ -16861,7 +19022,11 @@
         "D"
       ],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -16894,7 +19059,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -16927,7 +19096,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -16960,7 +19133,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -16993,7 +19170,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17026,7 +19207,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17059,7 +19244,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17092,7 +19281,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17125,7 +19318,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17158,7 +19355,11 @@
       "regionCode": null,
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17191,7 +19392,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17224,7 +19429,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17257,7 +19466,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17290,7 +19503,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17323,7 +19540,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17356,7 +19577,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17389,7 +19614,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17422,7 +19651,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17455,7 +19688,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17488,7 +19725,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Older Adults Technology Services",
@@ -17521,7 +19762,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "People's Community Clinic",
@@ -17554,7 +19799,12 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": "C",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "People's Community Clinic",
@@ -17590,7 +19840,12 @@
         "E"
       ],
       "granteeRegionCode": "C",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "People's Community Clinic",
@@ -17625,7 +19880,12 @@
         "D"
       ],
       "granteeRegionCode": "C",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -17658,7 +19918,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -17691,7 +19955,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -17724,7 +19992,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -17757,7 +20029,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -17790,7 +20066,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -17826,7 +20106,11 @@
         "E"
       ],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -17859,7 +20143,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -17892,7 +20180,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -17925,7 +20217,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -17958,7 +20254,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -17991,7 +20291,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -18024,7 +20328,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Restore Education",
@@ -18057,7 +20365,11 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Rocksprings Independent School District",
@@ -18090,7 +20402,11 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Internet Access"
+      ]
     },
     {
       "grantee": "SA Digital Connects",
@@ -18128,6 +20444,12 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -18163,6 +20485,12 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -18198,6 +20526,12 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -18233,6 +20567,12 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -18268,6 +20608,12 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -18303,6 +20649,12 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -18338,6 +20690,12 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -18373,6 +20731,12 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -18408,6 +20772,12 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -18443,6 +20813,12 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -18480,6 +20856,12 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -18517,6 +20899,12 @@
       "granteeRegionCode": "D",
       "granteeAdditionalRegionCodes": [
         "F"
+      ],
+      "granteeActivities": [
+        "Coalition",
+        "Advocacy",
+        "Internet Access",
+        "Digital Navigation"
       ]
     },
     {
@@ -18550,7 +20938,10 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access"
+      ]
     },
     {
       "grantee": "City of San Antonio",
@@ -18583,7 +20974,10 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access"
+      ]
     },
     {
       "grantee": "City of San Antonio",
@@ -18619,7 +21013,10 @@
         "E"
       ],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access"
+      ]
     },
     {
       "grantee": "City of San Antonio",
@@ -18652,7 +21049,10 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access"
+      ]
     },
     {
       "grantee": "City of San Antonio",
@@ -18685,7 +21085,10 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access"
+      ]
     },
     {
       "grantee": "Sunrise Homeless Navigation Center",
@@ -18718,7 +21121,12 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": "C",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Sunrise Homeless Navigation Center",
@@ -18754,7 +21162,12 @@
         "E"
       ],
       "granteeRegionCode": "C",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Sunrise Homeless Navigation Center",
@@ -18787,7 +21200,12 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": "C",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Sunrise Homeless Navigation Center",
@@ -18822,7 +21240,12 @@
         "D"
       ],
       "granteeRegionCode": "C",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Sunrise Homeless Navigation Center",
@@ -18855,7 +21278,12 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": "C",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Sunrise Homeless Navigation Center",
@@ -18888,7 +21316,12 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": "C",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Device Access",
+        "Digital Literacy Training",
+        "Digital Navigation"
+      ]
     },
     {
       "grantee": "Zapata County Independent School District",
@@ -18923,7 +21356,12 @@
         "K"
       ],
       "granteeRegionCode": "K",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Zapata County Independent School District",
@@ -18956,7 +21394,12 @@
       "regionCode": "K",
       "additionalRegionCodes": [],
       "granteeRegionCode": "K",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": "Zapata County Independent School District",
@@ -18989,7 +21432,12 @@
       "regionCode": "K",
       "additionalRegionCodes": [],
       "granteeRegionCode": "K",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": [
+        "Internet Access",
+        "Device Access",
+        "Digital Literacy Training"
+      ]
     },
     {
       "grantee": null,
@@ -19022,7 +21470,8 @@
       "regionCode": "A",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19055,7 +21504,8 @@
       "regionCode": "A",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19088,7 +21538,8 @@
       "regionCode": "B",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19121,7 +21572,8 @@
       "regionCode": "B",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19154,7 +21606,8 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19187,7 +21640,8 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19220,7 +21674,8 @@
       "regionCode": "E",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19253,7 +21708,8 @@
       "regionCode": "E",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19286,7 +21742,8 @@
       "regionCode": "F",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19319,7 +21776,8 @@
       "regionCode": "F",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19352,7 +21810,8 @@
       "regionCode": "G",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19385,7 +21844,8 @@
       "regionCode": "G",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19418,7 +21878,8 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19451,7 +21912,8 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19484,7 +21946,8 @@
       "regionCode": "K",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19517,7 +21980,8 @@
       "regionCode": "K",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19550,7 +22014,8 @@
       "regionCode": "K",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19583,7 +22048,8 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19616,7 +22082,8 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19649,7 +22116,8 @@
       "regionCode": "A",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19682,7 +22150,8 @@
       "regionCode": "A",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19715,7 +22184,8 @@
       "regionCode": "A",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19748,7 +22218,8 @@
       "regionCode": "A",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19781,7 +22252,8 @@
       "regionCode": "A",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19814,7 +22286,8 @@
       "regionCode": "A",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19847,7 +22320,8 @@
       "regionCode": "A",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19880,7 +22354,8 @@
       "regionCode": "B",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19913,7 +22388,8 @@
       "regionCode": "B",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19946,7 +22422,8 @@
       "regionCode": "B",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -19979,7 +22456,8 @@
       "regionCode": "B",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20012,7 +22490,8 @@
       "regionCode": "B",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20045,7 +22524,8 @@
       "regionCode": "B",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20078,7 +22558,8 @@
       "regionCode": "B",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20111,7 +22592,8 @@
       "regionCode": "B",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20144,7 +22626,8 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20177,7 +22660,8 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20210,7 +22694,8 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20243,7 +22728,8 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20276,7 +22762,8 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20309,7 +22796,8 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20342,7 +22830,8 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20375,7 +22864,8 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20408,7 +22898,8 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20441,7 +22932,8 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20474,7 +22966,8 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20507,7 +23000,8 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20540,7 +23034,8 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20573,7 +23068,8 @@
       "regionCode": "E",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20606,7 +23102,8 @@
       "regionCode": "E",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20639,7 +23136,8 @@
       "regionCode": "E",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20672,7 +23170,8 @@
       "regionCode": "E",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20705,7 +23204,8 @@
       "regionCode": "E",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20738,7 +23238,8 @@
       "regionCode": "E",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20771,7 +23272,8 @@
       "regionCode": "F",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20804,7 +23306,8 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20837,7 +23340,8 @@
       "regionCode": "F",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20870,7 +23374,8 @@
       "regionCode": "F",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20903,7 +23408,8 @@
       "regionCode": "F",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20936,7 +23442,8 @@
       "regionCode": "F",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -20969,7 +23476,8 @@
       "regionCode": "G",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21002,7 +23510,8 @@
       "regionCode": "G",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21035,7 +23544,8 @@
       "regionCode": "G",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21068,7 +23578,8 @@
       "regionCode": "G",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21101,7 +23612,8 @@
       "regionCode": "G",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21134,7 +23646,8 @@
       "regionCode": "G",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21167,7 +23680,8 @@
       "regionCode": "G",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21200,7 +23714,8 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21233,7 +23748,8 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21266,7 +23782,8 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21299,7 +23816,8 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21332,7 +23850,8 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21365,7 +23884,8 @@
       "regionCode": "K",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21398,7 +23918,8 @@
       "regionCode": "K",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21431,7 +23952,8 @@
       "regionCode": "K",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21464,7 +23986,8 @@
       "regionCode": "K",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21497,7 +24020,8 @@
       "regionCode": "K",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21530,7 +24054,8 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21563,7 +24088,8 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21596,7 +24122,8 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21629,7 +24156,8 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21662,7 +24190,8 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21695,7 +24224,8 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21728,7 +24258,8 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21761,7 +24292,8 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": null,
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21794,7 +24326,8 @@
       "regionCode": "K",
       "additionalRegionCodes": [],
       "granteeRegionCode": "K",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21827,7 +24360,8 @@
       "regionCode": "C",
       "additionalRegionCodes": [],
       "granteeRegionCode": "C",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21860,7 +24394,8 @@
       "regionCode": "J",
       "additionalRegionCodes": [],
       "granteeRegionCode": "J",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21893,7 +24428,8 @@
       "regionCode": "D",
       "additionalRegionCodes": [],
       "granteeRegionCode": "D",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21926,7 +24462,8 @@
       "regionCode": "A",
       "additionalRegionCodes": [],
       "granteeRegionCode": "A",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     },
     {
       "grantee": null,
@@ -21959,7 +24496,8 @@
       "regionCode": "L",
       "additionalRegionCodes": [],
       "granteeRegionCode": "L",
-      "granteeAdditionalRegionCodes": []
+      "granteeAdditionalRegionCodes": [],
+      "granteeActivities": []
     }
   ]
 }

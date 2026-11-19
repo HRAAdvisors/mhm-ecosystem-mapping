@@ -42,6 +42,21 @@ export function OrganizationPanel({
         {node.fundingYear && <Row label="Funding Year" value={node.fundingYear} />}
         <Row label="Primary Service Area" value={node.serviceArea} />
       </dl>
+      {node.activities.length > 0 && (
+        <div className="mt-2">
+          <div className="mb-1 text-muted-foreground">Grantee Activity</div>
+          <div className="flex flex-wrap gap-1">
+            {node.activities.map((activity) => (
+              <span
+                key={activity}
+                className="rounded-full bg-[#2f9e8f]/15 px-2 py-0.5 text-[10px] font-medium leading-none text-[#1d6b61]"
+              >
+                {activity}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
       {node.kpi && <KpiSection kpi={node.kpi} />}
       {node.connections.length === 0 && (
         <div className="mt-2 border-t border-border pt-2">

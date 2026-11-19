@@ -220,6 +220,15 @@ function lookupActiveGrant(name: string): string | null {
   return null;
 }
 
+/** A grantee's activity tags: recorded on every row where it's the grantee,
+ *  so the first row that has any is representative. */
+function lookupActivities(name: string): string[] {
+  for (const row of ALL_ROWS) {
+    if (row.grantee === name && row.granteeActivities?.length) return row.granteeActivities;
+  }
+  return [];
+}
+
 function isGranteeAnywhere(name: string): boolean {
   return ALL_ROWS.some(
     (row) => row.grantee === name || (row.organization === name && row.isGrantee === "Yes"),
@@ -452,6 +461,7 @@ export function buildGraph(regionCode: string): Graph {
       fundingYear: granteeStatus === "current" ? "2026" : (funding?.year ?? null),
       fundingSourceLabel: funding?.sourceLabel ?? null,
       activeGrant: lookupActiveGrant(name),
+      activities: lookupActivities(name),
       otherMhmGrantee: lookupOtherMhmGrantee(name),
       primaryRegionCodes: Array.from(touchedRegions),
       secondaryRegionCodes: Array.from(secondaryRegions),

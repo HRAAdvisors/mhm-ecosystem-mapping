@@ -27,6 +27,10 @@ export interface TrackerRow {
   newVsExisting: string | null;
   notesFlags: string | null;
   activeGrant2026: string | null;
+  /** What the GRANTEE does (e.g. "Device Access", "Digital Navigation"), from
+   *  the tracker's "Grantee Activity" column, split into clean tags. Empty for
+   *  rows with no grantee or no recorded activity. */
+  granteeActivities: string[];
   /** Whether this row's ORGANIZATION holds an MHM grant outside the Digital
    *  Equity program, e.g. from a health-focused grant theme. Independent of
    *  `isGrantee`/`activeGrant2026`, which are specific to Digital Equity. */
@@ -81,6 +85,8 @@ export interface GraphNode {
    *  (e.g. "MHM Digital Equity Program" vs. an all-MHM-programs total). */
   fundingSourceLabel: string | null;
   activeGrant: string | null;
+  /** Grantee activity tags (empty for non-grantees or when none recorded). */
+  activities: string[];
   /** Whether this org holds an MHM grant outside the Digital Equity program
    *  (e.g. a health-focused grant), independent of its Digital Equity
    *  grantee status above. Null if the tracker doesn't say. */
