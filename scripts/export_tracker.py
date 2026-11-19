@@ -160,6 +160,8 @@ NAME_ALIASES = {
     # names are left alone because KPI reports are matched to them by name).
     "CASP (Kimble community after-school program)": "Junction Community After School Program & Family Center (CASP)",
     "AHEC": "Area Health Education Centers (AHEC)",
+    "FLUJOS (Flood Justice Utilizing Satellite Observation)": "Flood Justice Utilizing Satellite Observation (FLUJOS)",
+    "FLUJOS": "Flood Justice Utilizing Satellite Observation (FLUJOS)",
     "ACLU": "American Civil Liberties Union (ACLU)",
     "FEMA": "Federal Emergency Management Agency (FEMA)",
     "UTRGV": "University of Texas Rio Grande Valley (UTRGV)",
